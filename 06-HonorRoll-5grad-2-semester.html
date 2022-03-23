@@ -3,14 +3,34 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+  />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" >
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/scrolls.js"></script>
+     <!-- Sparkling Effect On Text Using jQuery -->
+    <link href="css/SparklingStars.css" rel="stylesheet" />
+    <script src="/path/to/cdn/jquery.slim.min.js"></script>
+    <script src="js/SparklingStars.js"></script>
+    <!-- Sparkling Effect On Text Using jQuery -->
     <title>榮譽榜-110學年度五下</title>
   </head>
   <style>
-    nav { overflow-y: visible; z-index: 100;}  
-    .carousel-item img { width: 100%; height: 300px;}
+    nav {
+      overflow-y: visible;      
+      z-index: 100;
+    }  
+    .carousel-item img {
+      width: 100%;
+      height: 300px;
+    }
+    table, th, tr, td { border: 1px #aaa solid; }
+    .biaoti { text-align: center; font-size: 20px; background-color: rgb(208, 96, 236); color: #fff; }
+    td:nth-child(1) { text-align: center; }
+    td:nth-child(2) { text-align: center; }
+    tr:nth-child(odd) { background-color: #e5c6e9;}
+    /* .animate__bounce { display: inline-block; margin: 0 0.5rem; animation: bounce; animation-duration: 2s; animation-iteration-count: 1;} */
     .dropdown-menu.Link { left: auto; right: 0;}
     @media screen and (min-width: 768px) {
       .dropdown:hover .dropdown-menu { display: block; }    
@@ -209,6 +229,28 @@
     </button>
   </div> 
 
+  <br>
+  <div class="container">
+    <div class="row">
+      <!-- <h1 class="animate__bounce"><span class="sparkling">榮譽榜</span></h1> -->
+      <h1><span class="sparkling">110學年度五下榮譽榜</span></h1>
+      <table>
+        <th class="biaoti" style="width: 10%">姓名</th>
+        <th class="biaoti" style="width: 20%">日期</th>
+        <th class="biaoti" style="width: 70%">事蹟</th>
+        <tr>
+          <td>宇勛</td>
+          <td>111.01.22</td>
+          <td>2022年南投縣璉紅臺體盃五人制足球錦標賽榮獲U12歲男子組亞軍</td>
+        </tr>
+        
+        
+      </table>
+
+
+    </div>
+  </div>
+<br>
   <script>
     click_resize = () => {
       if (document.documentElement.clientWidth > 768) {
@@ -217,12 +259,34 @@
       } else {
         $("span.nav-link").attr("data-bs-toggle", "dropdown")
       }
-    }
-  
-    window.onresize = click_resize
-  
+    }  
+    window.onresize = click_resize  
     click_resize();
-  </script>
+  </script> 
+  
+  <!-- 平滑回到 TOP -->
+<script>
+	for(var i = 0; i < 100; i++) {
+		$(".demo").append("<p>jQuery Scrolls.js: Back To Top Plugin Example</p>")
+	}
+</script>
+<script type="text/javascript">
+	scroller.init();
+</script>
+<script type="text/javascript">
 
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-36251023-1']);
+  _gaq.push(['_setDomainName', 'jqueryscript.net']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+<!-- 平滑回到 TOP -->
     </body>
- </html> 
+ </html>
