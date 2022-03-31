@@ -11,9 +11,47 @@
   <style>
     nav { overflow-y: visible; z-index: 100;}   
     .carousel-item img { width: 100%; height: 300px;}
-    .piauti { font-size: 20px; font-weight: bold; color: rgb(24, 19, 41);}
-    table, th, tr,td { border: 1px solid #aaa; text-align: center; }
-    table th { text-align: center; }
+    .piauti { font-size: 20px; font-weight: bold; color: rgb(24, 19, 41);}   
+
+    .Record {
+      width: 80%;
+      margin: 20px auto;
+    }
+    table {
+      border-spacing: 0;
+      width: 100%;
+    }
+    tr {
+      text-align: center;
+    }
+    th {
+      padding: 10px;
+    }
+    table tbody tr:nth-child(odd){
+      background-color: #eee
+    }
+    table thead {
+      background-color: blue;
+      color: white;
+    }
+    table thead th:first-child {
+      border-radius: 5px 0 0 0;
+      border: 1px solid blue;
+    }
+    table thead th:last-child {
+      border-radius: 0 5px 0 0;
+      border-right: 1px solid blue;
+    }
+    table tbody tr:last-child td:first-child {
+      border-radius: 0 0 0 5px;
+    }
+
+    table tbody tr:last-child td:last-child {
+      border-radius: 0 0 5px 0;
+    }
+
+
+
     .Title { font-weight: bold; color: rgb(220, 188, 247); text-shadow: 1px 1px 0px purple;}
     .dropdown-menu.Link { left: auto; right: 0;}
     @media screen and (min-width: 768px) {
@@ -228,112 +266,118 @@
             
       <p><span class="piauti">(5)成長過程紀錄分組：</span>五乙小朋友分成四組，從3/31起至學期末，於每週星期四第二節下課時間進行測量並記錄量測資料。(<a href="https://drive.google.com/file/d/1nWOGCDKXvwyptYx_RL-qIp_SEzs_B2Fc/view?usp=sharing" target="blank" style=" color: red">愛蘭國小茭白筍生長數值紀錄表</a>)</p>
       <p><span class="piauti">(6)茭白筍生長數值紀錄：</span></p>
-      <table>
-          <tr>        
-            <th style="width: 20%;">日期</th>
-            <th style="width: 16%;">組別</th>
-            <th style="width: 16%;">葉長(cm)</th>
-            <th style="width: 16%;">葉寬(cm)</th>
-            <th style="width: 16%;">株高(cm)</th>
-            <th style="width: 16%;">分蘗數</th>
-          </tr>
-          <tr>
-            <th>111.03.31</th>
-            <td>1</td>
-            <td>44</td>
-            <td>0.8</td>
-            <td>89</td>
-            <td>26</td>
-          </tr>
-          <tr>
-            <th>111.04.07</th>
-            <td>2</td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-          </tr>
-          <tr>
-            <th>111.04.14</th>
-            <td>3</td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-          </tr>
-          <tr>
-            <th>111.04.21</th>
-            <td>4</td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-          </tr>
-          <tr>
-            <th>111.04.28</th>
-            <td>1</td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-          </tr>
-          <tr>
-            <th>111.05.05</th>
-            <td>2</td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-          </tr>
-          <tr>
-            <th>111.05.12</th>
-            <td>3</td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-          </tr>
-          <tr>
-            <th>111.05.19</th>
-            <td>4</td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-          </tr>
-          <tr>
-            <th>111.05.26</th>
-            <td>1</td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-          </tr>
-          <tr>
-            <th>111.06.02</th>
-            <td>2</td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-          </tr>
-          <tr>
-            <th>111.06.09</th>
-            <td>3</td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-          </tr>
-          <tr>
-            <th>111.06.16</th>
-            <td>4</td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-          </tr>
-      </table>
+
+      <div class="Record">
+        <table>
+          <thead>
+            <th>日期</th>
+            <th>組別</th>
+            <th>葉長(cm)</th>
+            <th>葉寬(cm)</th>
+            <th>株高(cm)</th>
+            <th>分蘗數</th>
+          </thead>
+          <tbody>
+            <tr>
+              <th>111.03.31</th>
+              <td>1</td>
+              <td>44</td>
+              <td>0.8</td>
+              <td>89</td>
+              <td>26</td>
+            </tr>
+            <tr>
+              <th>111.04.07</th>
+              <td>2</td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+            </tr>
+            <tr>
+              <th>111.04.14</th>
+              <td>3</td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+            </tr>
+            <tr>
+              <th>111.04.21</th>
+              <td>4</td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+            </tr>
+            <tr>
+              <th>111.04.28</th>
+              <td>1</td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+            </tr>
+            <tr>
+              <th>111.05.05</th>
+              <td>2</td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+            </tr>
+            <tr>
+              <th>111.05.12</th>
+              <td>3</td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+            </tr>
+            <tr>
+              <th>111.05.19</th>
+              <td>4</td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+            </tr>
+            <tr>
+              <th>111.05.26</th>
+              <td>1</td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+            </tr>
+            <tr>
+              <th>111.06.02</th>
+              <td>2</td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+            </tr>
+            <tr>
+              <th>111.06.09</th>
+              <td>3</td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+            </tr>
+            <tr>
+              <th>111.06.16</th>
+              <td>4</td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      
     </div><br>
 
 
