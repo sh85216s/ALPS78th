@@ -88,7 +88,7 @@ table tbody tr:last-child td:first-child { border-radius: 0 0 0 5px; }
 tr:last-child td:first-child{ border-bottom-left-radius: 5px; }
 table tbody tr:last-child td:last-child { border-radius: 0 0 5px 0; }
 
-.Title { font-size: 28px; font-weight: bold; color: rgb(141, 83, 248);}
+.Title { font-size: 28px; font-weight: bold; color: #fff; text-align: left;}
 tr:hover { background-color: rgb(239, 216, 250); }
 th {background-color: #bb59f8; color: #fff;}
 .th4 { text-align: left; }
