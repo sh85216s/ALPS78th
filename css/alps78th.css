@@ -99,19 +99,14 @@ th {background-color: #bb59f8; color: #fff;}
     margin: auto;
     border: solid 1px #58129F;
     border-radius: 50%;
-    padding: 60px 0;
-    text-align: center;
+    padding: 55px 0;
+    text-align: center;    
 }
 
 .unitChief02 {
-    width: 180px;
-    height: 180px;
-    display: block;
-    margin: auto;
-    border: solid 1px #58129F;
-    border-radius: 50%;
-    padding: 50px 0;
-    text-align: center;
+    border: dashed 1px #58129F;
+    text-align: left;
+    background-color: rgb(243, 239, 250);  
 }
 .zoom-img,
 .zoom-img-wrap {
