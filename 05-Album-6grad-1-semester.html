@@ -1,177 +1,230 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
-  />
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" >
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="js/scrolls.js"></script>
-    <title>相簿-111學年度六上</title>
-  </head>
-  <style>
-    nav {
-      overflow-y: visible;      
-      z-index: 100;
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="js/scrolls.js"></script>
+  <title>相簿-111學年度六上</title>
+</head>
+<style>
+  nav {
+    overflow-y: visible;
+    z-index: 100;
+  }
+
+  .animate__bounce {
+    display: inline-block;
+    margin: 0 0.5rem;
+    animation: bounceIn;
+    animation-duration: 2s;
+    padding: 10px 0;
+    background: linear-gradient(90deg, rgba(199, 116, 212, 1) 0%, rgba(141, 7, 224, 1) 35%, rgba(71, 7, 190, 1) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .carousel-item img {
+    width: 100%;
+    height: 300px;
+  }
+
+  .card .SM {
+    overflow: hidden;
+  }
+
+  .card:hover {
+    border-color: rgb(207, 160, 235);
+    background-color: rgb(248, 248, 221);
+  }
+
+  .card img {
+    transform: scale(1, 1);
+    transition: all .5s ease-out;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .card img:hover {
+    transform: scale(1.2, 1.2);
+  }
+
+  .dropdown-menu.Link {
+    left: auto;
+    right: 0;
+  }
+
+  @media screen and (min-width: 768px) {
+    .dropdown:hover .dropdown-menu {
+      display: block;
     }
-    .animate__bounce { display: inline-block; margin: 0 0.5rem; animation: bounceIn; animation-duration: 2s; padding: 10px 0; 
-      background: linear-gradient(90deg, rgba(199,116,212,1) 0%, rgba(141,7,224,1) 35%, rgba(71,7,190,1) 100%);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-    }
-    .carousel-item img {
-      width: 100%;
-      height: 300px;
-    }
-    .card .SM { overflow:hidden;}
-    .card:hover {
-      border-color: rgb(207, 160, 235);
-      background-color: rgb(248, 248, 221);
-        }
-    .card img { transform:scale(1,1);transition: all .5s ease-out; height: 100%; object-fit: cover;}
-    .card img:hover{ transform:scale(1.2,1.2);}
-    .dropdown-menu.Link { left: auto; right: 0;}
-    @media screen and (min-width: 768px) {
-      .dropdown:hover .dropdown-menu { display: block; }
-    } 
-  </style>
-  <body>
-    <nav class="navbar navbar-expand-lg navbar-dark" style="position: fixed; top: 0px; width: 100%; background-color: #58129F; z-index: 70;">
-      <div class="container-fluid">
-        <span class="navbar-brand" style="font-size: 24px;">愛蘭國小78屆六乙班網</span>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarScroll">
-          <ul class="navbar-nav ms-auto my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 500px;">
-            <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="index.html">首頁</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" aria-current="page" href="https://reminiscent-legend-2b8.notion.site/2899cfffcf9348e9bba3f692efc2a061?v=30aeb7d2a9ce4b81ab4866bde22e922c" target="blank">公告</a>
-            </li>            
-            <li class="nav-item dropdown">
-              <span class="nav-link dropdown-toggle" id="navbarScrollingDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">班級經營</span>
-              <ul class="dropdown-menu" aria-labelledby="navbarScrollingDropdown">
-                <li><a class="dropdown-item" href="01-01-OnDuty.html">班級幹部、值日生、分組</a></li>                
-                <li><a class="dropdown-item" href="01-04-HomeworkSheet.html">功課表、科任老師、出題老師</a></li>
-                <li><a class="dropdown-item" href="01-05-Sweeping.html">掃地區域工作分配</a></li>
-                <li><a class="dropdown-item" href="01-06-FeeDetails.html">班費明細</a></li>
-                <li><a class="dropdown-item" href="01-07-AcademyCompetition.html">學藝競賽</a></li>
-                <li><a class="dropdown-item" href="01-08-OutdoorTeaching.html">校外教學</a></li>
-                <li><a class="dropdown-item" href="01-09-Societies.html">社團、團隊</a></li>
-                <li><a class="dropdown-item" href="01-10-EngLearningSupportNativeLanguage.html">英語手牽手、學習扶助、原民語</a></li>
-                <li><a class="dropdown-item" href="01-11-ParentContactNumber-NotPublic.html">家長聯絡電話(不公開)</a></li>
-                <li><a class="dropdown-item" href="01-12-BasicInformationStudents-NotPublic.html">學生基本資料(不公開)</a></li>
+  }
+</style>
 
-                <li><a class="dropdown-item" href="01-13-StudentAccountPassword-NotPublic.html">學生帳、密(不公開)</a></li>
-              </ul>
-            </li>            
-            <li class="nav-item dropdown">
-              <span class="nav-link dropdown-toggle" id="navbarScrollingDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">主題課程</span>
-              <ul class="dropdown-menu" aria-labelledby="navbarScrollingDropdown">
-                <li><a class="dropdown-item" href="02-5grad-1-semester.html">110學年度五上</a></li>
-                <li><a class="dropdown-item" href="02-5grad-2-semester.html">110學年度五下</a></li>                
-                <!-- <li><hr class="dropdown-divider"></li> -->
-                <li><a class="dropdown-item" href="02-6grad-1-semester.html">111學年度六上</a></li>
-                <li><a class="dropdown-item" href="02-6grad-2-semester.html">111學年度六下</a></li>
-              </ul>
-            </li>
+<body>
+  <nav class="navbar navbar-expand-lg navbar-dark"
+    style="position: fixed; top: 0px; width: 100%; background-color: #58129F; z-index: 70;">
+    <div class="container-fluid">
+      <span class="navbar-brand" style="font-size: 24px;">愛蘭國小78屆六乙班網</span>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll"
+        aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarScroll">
+        <ul class="navbar-nav ms-auto my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 500px;">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="index.html">首頁</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" aria-current="page"
+              href="https://reminiscent-legend-2b8.notion.site/2899cfffcf9348e9bba3f692efc2a061?v=30aeb7d2a9ce4b81ab4866bde22e922c"
+              target="blank">公告</a>
+          </li>
+          <li class="nav-item dropdown">
+            <span class="nav-link dropdown-toggle" id="navbarScrollingDropdown" role="button" data-bs-toggle="dropdown"
+              aria-expanded="false">班級經營</span>
+            <ul class="dropdown-menu" aria-labelledby="navbarScrollingDropdown">
+              <li><a class="dropdown-item" href="01-01-OnDuty.html">班級幹部、值日生、分組</a></li>
+              <li><a class="dropdown-item" href="01-04-HomeworkSheet.html">功課表、科任老師、出題老師</a></li>
+              <li><a class="dropdown-item" href="01-05-Sweeping.html">掃地區域工作分配</a></li>
+              <li><a class="dropdown-item" href="01-06-FeeDetails.html">班費明細</a></li>
+              <li><a class="dropdown-item" href="01-07-AcademyCompetition.html">學藝競賽</a></li>
+              <li><a class="dropdown-item" href="01-08-OutdoorTeaching.html">校外教學</a></li>
+              <li><a class="dropdown-item" href="01-09-Societies.html">社團、團隊</a></li>
+              <li><a class="dropdown-item" href="01-10-EngLearningSupportNativeLanguage.html">英語手牽手、學習扶助、原民語</a></li>
+              <li><a class="dropdown-item" href="01-11-ParentContactNumber-NotPublic.html">家長聯絡電話(不公開)</a></li>
+              <li><a class="dropdown-item" href="01-12-BasicInformationStudents-NotPublic.html">學生基本資料(不公開)</a></li>
 
-            <li class="nav-item dropdown">
-              <span class="nav-link dropdown-toggle" id="navbarScrollingDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">學童作品</span>
-              <ul class="dropdown-menu" aria-labelledby="navbarScrollingDropdown">
-                <li><a class="dropdown-item" href="04-01-ZizaniaShootsLittleBook.html">茭白筍小書</a></li>
-                <li><a class="dropdown-item" href="04-02-ParentChildStudyLlist.html">親子共讀學習單</a></li>                
-                <li><a class="dropdown-item" href="04-03-PrincipalQuest.html">校長小客人</a></li>
-                <li><a class="dropdown-item" href="04-04-Recommended_books.html">好書報報</a></li>
-                <li><a class="dropdown-item" href="04-05-SchoolBasedCurse_worksheets.html">校本課程(蝴蝶)學習單</a></li>
-              </ul>
-            </li>            
+              <li><a class="dropdown-item" href="01-13-StudentAccountPassword-NotPublic.html">學生帳、密(不公開)</a></li>
+            </ul>
+          </li>
+          <li class="nav-item dropdown">
+            <span class="nav-link dropdown-toggle" id="navbarScrollingDropdown" role="button" data-bs-toggle="dropdown"
+              aria-expanded="false">主題課程</span>
+            <ul class="dropdown-menu" aria-labelledby="navbarScrollingDropdown">
+              <li><a class="dropdown-item" href="02-5grad-1-semester.html">110學年度五上</a></li>
+              <li><a class="dropdown-item" href="02-5grad-2-semester.html">110學年度五下</a></li>
+              <!-- <li><hr class="dropdown-divider"></li> -->
+              <li><a class="dropdown-item" href="02-6grad-1-semester.html">111學年度六上</a></li>
+              <li><a class="dropdown-item" href="02-6grad-2-semester.html">111學年度六下</a></li>
+            </ul>
+          </li>
 
-            <li class="nav-item dropdown">
-              <span class="nav-link dropdown-toggle" id="navbarScrollingDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">相簿</span>
-              <ul class="dropdown-menu" aria-labelledby="navbarScrollingDropdown">
-                <li><a class="dropdown-item" href="05-Album-5grad-1-semester.html">110學年度五上</a></li>
-                <li><a class="dropdown-item" href="05-Album-5grad-2-semester.html">110學年度五下</a></li>                
-                <li><a class="dropdown-item" href="05-Album-6grad-1-semester.html">111學年度六上</a></li>
-                <li><a class="dropdown-item" href="05-Album-6grad-2-semester.html">111學年度六下</a></li>
-              </ul>
-            </li>
+          <li class="nav-item dropdown">
+            <span class="nav-link dropdown-toggle" id="navbarScrollingDropdown" role="button" data-bs-toggle="dropdown"
+              aria-expanded="false">學童作品</span>
+            <ul class="dropdown-menu" aria-labelledby="navbarScrollingDropdown">
+              <li><a class="dropdown-item" href="04-01-ZizaniaShootsLittleBook.html">茭白筍小書</a></li>
+              <li><a class="dropdown-item" href="04-02-ParentChildStudyLlist.html">親子共讀學習單</a></li>
+              <li><a class="dropdown-item" href="04-03-PrincipalQuest.html">校長小客人</a></li>
+              <li><a class="dropdown-item" href="04-04-Recommended_books.html">好書報報</a></li>
+              <li><a class="dropdown-item" href="04-05-SchoolBasedCurse_worksheets.html">校本課程(蝴蝶)學習單</a></li>
+            </ul>
+          </li>
 
-            <li class="nav-item dropdown">
-              <span class="nav-link dropdown-toggle" id="navbarScrollingDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">榮譽榜</span>
-              <ul class="dropdown-menu" aria-labelledby="navbarScrollingDropdown">
-                <li><a class="dropdown-item" href="06-HonorRoll-5grad-1-semester.html">110學年度五上</a></li>
-                <li><a class="dropdown-item" href="06-HonorRoll-5grad-2-semester.html">110學年度五下</a></li>
-                <li><a class="dropdown-item" href="06-HonorRoll-6grad-1-semester.html">111學年度六上</a></li>
-                <li><a class="dropdown-item" href="06-HonorRoll-6grad-2-semester.html">111學年度六下</a></li>
-              </ul>
-            </li>            
+          <li class="nav-item dropdown">
+            <span class="nav-link dropdown-toggle" id="navbarScrollingDropdown" role="button" data-bs-toggle="dropdown"
+              aria-expanded="false">相簿</span>
+            <ul class="dropdown-menu" aria-labelledby="navbarScrollingDropdown">
+              <li><a class="dropdown-item" href="05-Album-5grad-1-semester.html">110學年度五上</a></li>
+              <li><a class="dropdown-item" href="05-Album-5grad-2-semester.html">110學年度五下</a></li>
+              <li><a class="dropdown-item" href="05-Album-6grad-1-semester.html">111學年度六上</a></li>
+              <li><a class="dropdown-item" href="05-Album-6grad-2-semester.html">111學年度六下</a></li>
+            </ul>
+          </li>
 
-            <li class="nav-item dropdown">
-              <span class="nav-link dropdown-toggle" id="navbarScrollingDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">行事曆</span>
-              <ul class="dropdown-menu" aria-labelledby="navbarScrollingDropdown">
-                <li><a class="dropdown-item" href="07-GoogleCalndar.html">Google行事曆</a></li>
-                <li><a class="dropdown-item" href="07-Calendar-2021.html">辦公日曆</a></li>
-                <li><a class="dropdown-item" href="07-CalendarKeyCalendar.html">愛蘭重點行事曆</a></li>
-              </ul>
-            </li>
+          <li class="nav-item dropdown">
+            <span class="nav-link dropdown-toggle" id="navbarScrollingDropdown" role="button" data-bs-toggle="dropdown"
+              aria-expanded="false">榮譽榜</span>
+            <ul class="dropdown-menu" aria-labelledby="navbarScrollingDropdown">
+              <li><a class="dropdown-item" href="06-HonorRoll-5grad-1-semester.html">110學年度五上</a></li>
+              <li><a class="dropdown-item" href="06-HonorRoll-5grad-2-semester.html">110學年度五下</a></li>
+              <li><a class="dropdown-item" href="06-HonorRoll-6grad-1-semester.html">111學年度六上</a></li>
+              <li><a class="dropdown-item" href="06-HonorRoll-6grad-2-semester.html">111學年度六下</a></li>
+            </ul>
+          </li>
 
-            <li class="nav-item dropdown">
-              <span class="nav-link dropdown-toggle" id="navbarScrollingDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">數位學習</span>
-              <ul class="dropdown-menu" aria-labelledby="navbarScrollingDropdown">
-                <li><a class="dropdown-item" href="https://sites.google.com/site/sjsshuweijiaoxuewang/" target="blank">SJS數位學習網</a></li>
-                <li><a class="dropdown-item" href="https://www.notion.so/" target="blank">Notion</a></li>
-                <li><a class="dropdown-item" href="https://www.icrt.com.tw/index.php" target="blank">ICRT</a></li>
-                <li><a class="dropdown-item" href="https://www.coolenglish.edu.tw/" target="blank">coolenglish(酷英)</a></li>
-                <li><a class="dropdown-item" href="https://contest.hlc.edu.tw/typing/" target="blank">花蓮縣打字練習網</a></li>
-                <li><a class="dropdown-item" href="https://classroom.google.com/" target="blank">Google classroom</a></li>
-                <li><a class="dropdown-item" href="https://meet.google.com/" target="blank">Google meet</a></li>
-                <li><a class="dropdown-item" href="https://coggle.it/" target="blank">Coggle(心智圖)</a></li>
-                <li><a class="dropdown-item" href="https://kahoot.it/" target="blank">Kahoot學生端</a></li>
-                <li><a class="dropdown-item" href="https://adl.edu.tw/" target="blank">因材網</a></li>
-                <li><a class="dropdown-item" href="https://www.learnmode.net/" target="blank">學習吧</a></li>
-                <li><a class="dropdown-item" href="https://www.nlpi.edu.tw/" target="blank">國立公共資訊圖書館</a></li>
-                <li><a class="dropdown-item" href="https://www.junyiacademy.org/" target="blank">均一教育平台</a></li>
-              </ul>
-            </li>
+          <li class="nav-item dropdown">
+            <span class="nav-link dropdown-toggle" id="navbarScrollingDropdown" role="button" data-bs-toggle="dropdown"
+              aria-expanded="false">行事曆</span>
+            <ul class="dropdown-menu" aria-labelledby="navbarScrollingDropdown">
+              <li><a class="dropdown-item" href="07-GoogleCalndar.html">Google行事曆</a></li>
+              <li><a class="dropdown-item" href="07-Calendar-2021.html">辦公日曆</a></li>
+              <li><a class="dropdown-item" href="07-CalendarKeyCalendar.html">愛蘭重點行事曆</a></li>
+            </ul>
+          </li>
 
-            <li class="nav-item dropdown">
-              <span class="nav-link dropdown-toggle" id="navbarScrollingDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">常用連結</span>
-              <ul class="dropdown-menu Link" aria-labelledby="navbarScrollingDropdown">
-                <li><a class="dropdown-item" href="https://alps.ntct.edu.tw" target="blank">愛蘭國小</a></li>
-                <li><a class="dropdown-item" href="https://adl.edu.tw/" target="blank">因材網</a></li>
-                <li><a class="dropdown-item" href="https://www.junyiacademy.org/" target="blank">均一教育平台</a></li>
-                <li><a class="dropdown-item" href="https://eschool.ntct.edu.tw/" target="blank">南投縣校務行政系統</a></li>
-                <li><a class="dropdown-item" href="https://dict.mini.moe.edu.tw/" target="blank">國語小字典</a></li>
-                <li><a class="dropdown-item" href="http://dict.revised.moe.edu.tw/cbdic/" target="blank">重編國語辭典修訂本</a></li>
-                <li><a class="dropdown-item" href="https://stroke-order.learningweb.moe.edu.tw/" target="blank">筆順學習網</a></li>
-                <li><a class="dropdown-item" href="http://163.20.160.14/~word/" target="blank">書法教學網</a></li>
-                <li><a class="dropdown-item" href="http://163.20.160.14/~moodle/course/view.php?id=22" target="blank">國小硬筆字教學實務</a></li>
-                <li><a class="dropdown-item" href="http://write.phc.edu.tw/" target="blank">澎湖縣硬筆書法教學網</a></li>
-                <li><a class="dropdown-item" href="http://163.20.160.14/~ntc/course/index.php?categoryid=17" target="blank">新北市書法教學網</a></li>
-                <li><a class="dropdown-item" href="http://www.emath.math.ncu.edu.tw/e_school/" target="blank">子由數學小學堂</a></li>
-                <li><a class="dropdown-item" href="https://tw.dictionary.search.yahoo.com/" target="blank">奇摩英語字典</a></li>
-                <li><a class="dropdown-item" href="https://translate.google.com.tw/?hl=zh-TW" target="blank">Google翻譯</a></li>
-                <li><a class="dropdown-item" href="https://www.egame.kh.edu.tw/" target="blank">U世代島嶼學習樂園</a></li>               
-              </ul>
-            </li> 
-          </ul>
-        </div>
+          <li class="nav-item dropdown">
+            <span class="nav-link dropdown-toggle" id="navbarScrollingDropdown" role="button" data-bs-toggle="dropdown"
+              aria-expanded="false">數位學習</span>
+            <ul class="dropdown-menu" aria-labelledby="navbarScrollingDropdown">
+              <li><a class="dropdown-item" href="https://sites.google.com/site/sjsshuweijiaoxuewang/"
+                  target="blank">SJS數位學習網</a></li>
+              <li><a class="dropdown-item" href="https://www.notion.so/" target="blank">Notion</a></li>
+              <li><a class="dropdown-item" href="https://www.icrt.com.tw/index.php" target="blank">ICRT</a></li>
+              <li><a class="dropdown-item" href="https://www.coolenglish.edu.tw/" target="blank">coolenglish(酷英)</a>
+              </li>
+              <li><a class="dropdown-item" href="https://contest.hlc.edu.tw/typing/" target="blank">花蓮縣打字練習網</a></li>
+              <li><a class="dropdown-item" href="https://classroom.google.com/" target="blank">Google classroom</a></li>
+              <li><a class="dropdown-item" href="https://meet.google.com/" target="blank">Google meet</a></li>
+              <li><a class="dropdown-item" href="https://coggle.it/" target="blank">Coggle(心智圖)</a></li>
+              <li><a class="dropdown-item" href="https://kahoot.it/" target="blank">Kahoot學生端</a></li>
+              <li><a class="dropdown-item" href="https://adl.edu.tw/" target="blank">因材網</a></li>
+              <li><a class="dropdown-item" href="https://www.learnmode.net/" target="blank">學習吧</a></li>
+              <li><a class="dropdown-item" href="https://www.nlpi.edu.tw/" target="blank">國立公共資訊圖書館</a></li>
+              <li><a class="dropdown-item" href="https://www.junyiacademy.org/" target="blank">均一教育平台</a></li>
+            </ul>
+          </li>
+
+          <li class="nav-item dropdown">
+            <span class="nav-link dropdown-toggle" id="navbarScrollingDropdown" role="button" data-bs-toggle="dropdown"
+              aria-expanded="false">常用連結</span>
+            <ul class="dropdown-menu Link" aria-labelledby="navbarScrollingDropdown">
+              <li><a class="dropdown-item" href="https://alps.ntct.edu.tw" target="blank">愛蘭國小</a></li>
+              <li><a class="dropdown-item" href="https://adl.edu.tw/" target="blank">因材網</a></li>
+              <li><a class="dropdown-item" href="https://www.junyiacademy.org/" target="blank">均一教育平台</a></li>
+              <li><a class="dropdown-item" href="https://eschool.ntct.edu.tw/" target="blank">南投縣校務行政系統</a></li>
+              <li><a class="dropdown-item" href="https://dict.mini.moe.edu.tw/" target="blank">國語小字典</a></li>
+              <li><a class="dropdown-item" href="http://dict.revised.moe.edu.tw/cbdic/" target="blank">重編國語辭典修訂本</a>
+              </li>
+              <li><a class="dropdown-item" href="https://stroke-order.learningweb.moe.edu.tw/" target="blank">筆順學習網</a>
+              </li>
+              <li><a class="dropdown-item" href="http://163.20.160.14/~word/" target="blank">書法教學網</a></li>
+              <li><a class="dropdown-item" href="http://163.20.160.14/~moodle/course/view.php?id=22"
+                  target="blank">國小硬筆字教學實務</a></li>
+              <li><a class="dropdown-item" href="http://write.phc.edu.tw/" target="blank">澎湖縣硬筆書法教學網</a></li>
+              <li><a class="dropdown-item" href="http://163.20.160.14/~ntc/course/index.php?categoryid=17"
+                  target="blank">新北市書法教學網</a></li>
+              <li><a class="dropdown-item" href="http://www.emath.math.ncu.edu.tw/e_school/" target="blank">子由數學小學堂</a>
+              </li>
+              <li><a class="dropdown-item" href="https://tw.dictionary.search.yahoo.com/" target="blank">奇摩英語字典</a></li>
+              <li><a class="dropdown-item" href="https://translate.google.com.tw/?hl=zh-TW" target="blank">Google翻譯</a>
+              </li>
+              <li><a class="dropdown-item" href="https://www.egame.kh.edu.tw/" target="blank">U世代島嶼學習樂園</a></li>
+            </ul>
+          </li>
+        </ul>
       </div>
-    </nav>
+    </div>
+  </nav>
 
   <!-- Carousel -->
   <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
     <div class="carousel-indicators">
-      <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-      <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
-      <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
-      <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="3" aria-label="Slide 4"></button>
-      <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="4" aria-label="Slide 5"></button>
+      <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active"
+        aria-current="true" aria-label="Slide 1"></button>
+      <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"
+        aria-label="Slide 2"></button>
+      <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"
+        aria-label="Slide 3"></button>
+      <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="3"
+        aria-label="Slide 4"></button>
+      <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="4"
+        aria-label="Slide 5"></button>
     </div>
     <div class="carousel-inner">
       <div class="carousel-item active">
@@ -183,7 +236,7 @@
       </div>
       <div class="carousel-item">
         <img src="img/02.jpg" class="d-block" alt="...">
-        <div class="carousel-caption d-md-block">          
+        <div class="carousel-caption d-md-block">
           <h5>追求卓越，成功自然會找上門來</h5>
           <p> Chase excellence,success will follow. </p>
         </div>
@@ -197,117 +250,132 @@
       </div>
       <div class="carousel-item">
         <img src="img/04.jpg" class="d-block" alt="...">
-        <div class="carousel-caption d-md-block">          
+        <div class="carousel-caption d-md-block">
           <h5>追求卓越，成功自然會找上門來</h5>
           <p> Chase excellence,success will follow. </p>
         </div>
       </div>
       <div class="carousel-item">
         <img src="img/05.jpg" class="d-block" alt="...">
-        <div class="carousel-caption d-md-block">          
+        <div class="carousel-caption d-md-block">
           <h5>追求卓越，成功自然會找上門來</h5>
           <p> Chase excellence,success will follow. </p>
         </div>
       </div>
     </div>
-    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
+      data-bs-slide="prev">
       <span class="carousel-control-prev-icon" aria-hidden="true"></span>
       <span class="visually-hidden">Previous</span>
     </button>
-    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators"
+      data-bs-slide="next">
       <span class="carousel-control-next-icon" aria-hidden="true"></span>
       <span class="visually-hidden">Next</span>
     </button>
-  </div> 
-
-<br>
-
-<div class="container">
-  <div class="row">
-    <div class="col">
-      <h2 class="animate__bounce">111學年度六上相簿</h2>
-    </div>
   </div>
-    
-  <!-- 第1列 -->
-  <div class="row">
-    <div class="col-md-3">
-      <div class="card h-100">
-        <div class="SM ratio ratio-4x3">
-          <a href="https://photos.app.goo.gl/fLVRw4NbtVH3Fghr6" target="blank"><img src="https://lh3.googleusercontent.com/pw/AL9nZEVxgpYrge04heQqsHs407yWWWTR6krToRuQlQLySnzAYlbdMnCwSoNe3I9KCUdzJ-EN1t43Rgyfhahj4We2BXGvVpAfdtMTvnBJP1Ej3V8pY163DfteKhHHt57Bh9_JhBsezWHL2FUrP6Yqz1Og1Ahing=w1240-h929-no?authuser=0" class="card-img-top" title="前往相簿" alt="..."></a>
-        </div>
-        <div class="card-body">
-          <h5 class="card-title">六年級校本課程-蝴蝶介紹</h5>
-          <p class="card-text" style="font-size: 13px;">時間：2022.09.15&nbsp;&nbsp;10:20~11:50<br>地點：本校玉山圖書館<br>活動內容：<br>蝴蝶概說(簡介、生活史、壽命、度冬、吸水)、學習單書寫說明</p>
-        </div>
-      </div>     
-    </div>
 
-    <div class="col-md-3">
-      <div class="card h-100">
-        <div class="SM ratio ratio-4x3">
-          <a href="https://photos.app.goo.gl/zC925dhbDH9eYNj7A" target="blank"><img src="https://lh3.googleusercontent.com/pw/AL9nZEWMPmruJN35wfzyRqh46j9jC4jlSsKakk4ynu0K6cMEOi7UM4uPvDYQ0WjU6ERPI9myqhAK4iSEELzVNb8nMZ5XKrE_tqMdVwwuhMfJHIO-PSm60Lo7S8z0mDUsUHKfl_pdvD_IV4vbrwXeKX-5gGUvtA=w1165-h873-no?authuser=0" class="card-img-top" title="前往相簿" alt="..."></a>
-        </div>
-        <div class="card-body">
-          <h5 class="card-title">六年級校本課程-蝴蝶介紹</h5>
-          <p class="card-text" style="font-size: 13px;">時間：2022.09.22&nbsp;&nbsp;10:20~11:50<br>地點：本校玉山圖書館<br>活動內容：<br>介紹蝴蝶婚禮、蝴蝶的卵、蝴蝶的幼蟲、蝴蝶羽化、蝴蝶的成蟲</p>
-        </div>
-      </div>     
-    </div>
+  <br>
 
-    <div class="col-md-3">
-      <div class="card h-100">
-          <div class="SM ratio ratio-4x3">
-            <a href="https://photos.app.goo.gl/CVMcjY4WRpy1tBvp6" target="blank"><img src="https://lh3.googleusercontent.com/pw/AL9nZEXHDs2_YOySP5eYZ1WCtFwLUZOzqwzO_IOrZ2PDJhocMbuWqDwJ0HfDmCufEse2jBvZWEzZKyuTA8PDRWy1IS-f9FQhicq1oftkDwY9IW7_T5Qs2sA-TE4fE_MaaRl0-cyUs1jf3mb7UF4V1dSKHS3zUA=w1164-h873-no?authuser=0" class="card-img-top" title="前往相簿" alt="..."></a>
-          </div>
-        <div class="card-body">
-          <h5 class="card-title">國語第四課Drawio小組協作</h5>
-          <p class="card-text" style="font-size: 13px;">時間：2022.09.23<br>地點：電腦教室<br>活動內容：<br>小組協作，利用 Drawio 共同完成國語第四課「珍珠鳥」課文架構。</p>
-        </div>
-      </div>     
-    </div>
-
-    <div class="col-md-3">
-          <div class="card h-100">
-            <div class="SM ratio ratio-4x3">
-               <a href="https://photos.app.goo.gl/36CazDpnZ3FCHjJ28" target="blank"><img src="https://lh3.googleusercontent.com/pw/AL9nZEVWSbTmJ9PeVq4Eev8TYO_1OJweE41htdjiZDRlqdBfbfedB4cWOFNDutsLgZWXMl1q3sQLGqhe4-KEz5M5-XHPyVEOJ0huPfiw3sP67evzI0zEGYH2BFczDN1c4BBdmF92YuKBvNf6qJsrGubY5dvJ5g=w920-h690-no?authuser=0" class="card-img-top" title="前往相簿" alt="..."></a>
-          </div>
-        <div class="card-body">
-          <h5 class="card-title">國語第四課報告</h5>
-          <p class="card-text" style="font-size: 13px;">時間：2022.09.26<br>地點：六乙教室<br>活動內容：<br>各小組的每1位成員分工報告國語L4</p>
-        </div>
-      </div>      
-    </div>
-  </div><br>
-
-  <!-- 第2列 -->
-  <div class="row">
-    <div class="col-md-3">
-      <div class="card h-100">
-        <div class="SM ratio ratio-4x3">
-           <a href="https://photos.app.goo.gl/7HCGxXoEPfgVyu598" target="blank"><img src="https://lh3.googleusercontent.com/pw/AL9nZEWQlEBRevczvTWUt0MAEyhF_MnjGjjXH6CEM25iW-9k6iLPPsq3S3Hq3xlZz7XU_GkwM22YixBBN4tsds29kXL9fuhGshF6-sb-L7aE9sLet17oeYpxBT-ClOOd-z4-fKhH2Yw2LY6-P2oe9auZWSNGww=w1165-h873-no?authuser=0" class="card-img-top" title="前往相簿" alt="..."></a>
+  <div class="container">
+    <div class="row">
+      <div class="col">
+        <h2 class="animate__bounce">111學年度六上相簿</h2>
       </div>
-    <div class="card-body">
-      <h5 class="card-title">六乙觀課</h5>
-      <p class="card-text" style="font-size: 13px;">時間：2022.09.28<br>地點：六乙教室<br>活動內容：<br>針對康軒六上數學3-1圖形規律做教學演示</p>
-    </div>
-  </div>      
-</div>      
     </div>
 
-    <!-- <div class="col-md-3">
-      <div class="card h-100">
-        <div class="SM ratio ratio-4x3">
-          <a href="https://photos.app.goo.gl/BnSU4kf8dmZ7FwEa6" target="blank"><img src="https://lh3.googleusercontent.com/pw/AM-JKLWKSdjdq6FQcRPNCDDL8WEA1UIMAQ9HkK5dDAEZS0r2RxCdV6VXTGOnniWnrpOeEWVd-SEEOow4N_29FhnWGrrfK0wiOfXFmoHCHFhbamWouSUGo0YFsFqCDGTcuDeJamlCqnAXCpgn-13gx8JNkayBCw=w1394-h930-no?authuser=0" class="card-img-top" title="前往相簿" alt="..."></a>
+    <!-- 第1列 -->
+    <div class="row">
+      <div class="col-md-3">
+        <div class="card h-100">
+          <div class="SM ratio ratio-4x3">
+            <a href="https://photos.app.goo.gl/fLVRw4NbtVH3Fghr6" target="blank"><img
+                src="https://lh3.googleusercontent.com/pw/AL9nZEVxgpYrge04heQqsHs407yWWWTR6krToRuQlQLySnzAYlbdMnCwSoNe3I9KCUdzJ-EN1t43Rgyfhahj4We2BXGvVpAfdtMTvnBJP1Ej3V8pY163DfteKhHHt57Bh9_JhBsezWHL2FUrP6Yqz1Og1Ahing=w1240-h929-no?authuser=0"
+                class="card-img-top" title="前往相簿" alt="..."></a>
+          </div>
+          <div class="card-body">
+            <h5 class="card-title">六年級校本課程-蝴蝶介紹(第1場)</h5>
+            <p class="card-text" style="font-size: 13px;">
+              時間：2022.09.15&nbsp;&nbsp;10:20~11:50<br>地點：本校玉山圖書館<br>活動內容：<br>蝴蝶概說(簡介、生活史、壽命、度冬、吸水)、學習單書寫說明</p>
+          </div>
         </div>
-        <div class="card-body">
-          <h5 class="card-title">茭白筍觀察、測量</h5>
-          <p class="card-text" style="font-size: 13px;">時間：2022.03.21<br>地點：東棟穿堂、生態池<br>活動內容：<br>暨大團隊到校指導五年級小朋友如何觀察茭白筍，以及如何測量並記錄。</p>
-        </div>
-      </div>     
-    </div> -->
+      </div>
 
-    <!-- <div class="col-md-3">
+      <div class="col-md-3">
+        <div class="card h-100">
+          <div class="SM ratio ratio-4x3">
+            <a href="https://photos.app.goo.gl/zC925dhbDH9eYNj7A" target="blank"><img
+                src="https://lh3.googleusercontent.com/pw/AL9nZEWMPmruJN35wfzyRqh46j9jC4jlSsKakk4ynu0K6cMEOi7UM4uPvDYQ0WjU6ERPI9myqhAK4iSEELzVNb8nMZ5XKrE_tqMdVwwuhMfJHIO-PSm60Lo7S8z0mDUsUHKfl_pdvD_IV4vbrwXeKX-5gGUvtA=w1165-h873-no?authuser=0"
+                class="card-img-top" title="前往相簿" alt="..."></a>
+          </div>
+          <div class="card-body">
+            <h5 class="card-title">六年級校本課程-蝴蝶介紹(第2場)</h5>
+            <p class="card-text" style="font-size: 13px;">
+              時間：2022.09.22&nbsp;&nbsp;10:20~11:50<br>地點：本校玉山圖書館<br>活動內容：<br>介紹蝴蝶婚禮、蝴蝶的卵、蝴蝶的幼蟲、蝴蝶羽化、蝴蝶的成蟲</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-3">
+        <div class="card h-100">
+          <div class="SM ratio ratio-4x3">
+            <a href="https://photos.app.goo.gl/CVMcjY4WRpy1tBvp6" target="blank"><img
+                src="https://lh3.googleusercontent.com/pw/AL9nZEXHDs2_YOySP5eYZ1WCtFwLUZOzqwzO_IOrZ2PDJhocMbuWqDwJ0HfDmCufEse2jBvZWEzZKyuTA8PDRWy1IS-f9FQhicq1oftkDwY9IW7_T5Qs2sA-TE4fE_MaaRl0-cyUs1jf3mb7UF4V1dSKHS3zUA=w1164-h873-no?authuser=0"
+                class="card-img-top" title="前往相簿" alt="..."></a>
+          </div>
+          <div class="card-body">
+            <h5 class="card-title">國語第四課Drawio小組協作</h5>
+            <p class="card-text" style="font-size: 13px;">時間：2022.09.23<br>地點：電腦教室<br>活動內容：<br>小組協作，利用 Drawio
+              共同完成國語第四課「珍珠鳥」課文架構。</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-3">
+        <div class="card h-100">
+          <div class="SM ratio ratio-4x3">
+            <a href="https://photos.app.goo.gl/36CazDpnZ3FCHjJ28" target="blank"><img
+                src="https://lh3.googleusercontent.com/pw/AL9nZEVWSbTmJ9PeVq4Eev8TYO_1OJweE41htdjiZDRlqdBfbfedB4cWOFNDutsLgZWXMl1q3sQLGqhe4-KEz5M5-XHPyVEOJ0huPfiw3sP67evzI0zEGYH2BFczDN1c4BBdmF92YuKBvNf6qJsrGubY5dvJ5g=w920-h690-no?authuser=0"
+                class="card-img-top" title="前往相簿" alt="..."></a>
+          </div>
+          <div class="card-body">
+            <h5 class="card-title">國語第四課報告</h5>
+            <p class="card-text" style="font-size: 13px;">時間：2022.09.26<br>地點：六乙教室<br>活動內容：<br>各小組的每1位成員分工報告國語L4</p>
+          </div>
+        </div>
+      </div>
+    </div><br>
+
+    <!-- 第2列 -->
+    <div class="row">
+      <div class="col-md-3">
+        <div class="card h-100">
+          <div class="SM ratio ratio-4x3">
+            <a href="https://photos.app.goo.gl/7HCGxXoEPfgVyu598" target="blank"><img
+                src="https://lh3.googleusercontent.com/pw/AL9nZEWQlEBRevczvTWUt0MAEyhF_MnjGjjXH6CEM25iW-9k6iLPPsq3S3Hq3xlZz7XU_GkwM22YixBBN4tsds29kXL9fuhGshF6-sb-L7aE9sLet17oeYpxBT-ClOOd-z4-fKhH2Yw2LY6-P2oe9auZWSNGww=w1165-h873-no?authuser=0"
+                class="card-img-top" title="前往相簿" alt="..."></a>
+          </div>
+          <div class="card-body">
+            <h5 class="card-title">六乙觀課</h5>
+            <p class="card-text" style="font-size: 13px;">時間：2022.09.28<br>地點：六乙教室<br>活動內容：<br>針對康軒六上數學3-1圖形規律做教學演示</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-3">
+        <div class="card h-100">
+          <div class="SM ratio ratio-4x3">
+            <a href="https://photos.app.goo.gl/eDnNQWfyK4LNJswk8" target="blank"><img
+                src="https://lh3.googleusercontent.com/pw/AL9nZEWz0CdI0gEhAcrjdNZdg_l2L9zEQrRMk4TQJjThzscgCW0_wZLLP7T_IrshsfK5_ypCpa3ptQQuZH_8pK9ktG1luFsLqIWoGkcuxWwXNkoPq6PwoZWP1s5OCusPjRS5_HSGRWX89AJLe8_i1qz8n1Ut7w=w920-h690-no?authuser=0"
+                class="card-img-top" title="前往相簿" alt="..."></a>
+          </div>
+          <div class="card-body">
+            <h5 class="card-title">六年級校本課程-蝴蝶介紹(第3場)</h5>
+            <p class="card-text" style="font-size: 13px;">時間：2022.09.29<br>地點：本校玉山圖書館<br>活動內容：<br>蝴蝶的天敵、蝴蝶的防禦機制</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- <div class="col-md-3">
       <div class="card h-100">
           <div class="SM ratio ratio-4x3">
             <a href="https://photos.app.goo.gl/AdtpBVuX5Yh5sCnN9" target="blank"><img src="https://lh3.googleusercontent.com/pw/AM-JKLXobmYz9YXsQT_YjQPUbwJZxtC2QRBuYICsyXhdyw2b2-iHi3mNg6Yg8T7KYU8rNdLeVJVAJ1P2lpnM4dlqyAOQX5oSQe5_bodZ3lKenDeR_FO3p71xxuceaDmcjqocWGy11jCBo2-9cxpVJuQ7p1LmCQ=w1310-h873-no?authuser=0" class="card-img-top" title="前往相簿" alt="..."></a>
@@ -319,7 +387,7 @@
       </div>     
     </div> -->
 
-    <!-- <div class="col-md-3">
+      <!-- <div class="col-md-3">
           <div class="card h-100">
             <div class="SM ratio ratio-4x3">
                <a href="https://photos.app.goo.gl/HAcCcyHaaYsLm9rm7" target="blank"><img src="https://lh3.googleusercontent.com/pw/AM-JKLUETZ9mBPBb2pZ0WXrbQ4zdzkuVoeW_V0hd2yf2j8e4V1tG7vz5WeA0dQZkG5LNJik3Dl5XSBX1rCBxRKuyHI9aMkMzI2AgrHtObPJ4qOawx8z88m-SUOwESN2qKFC4_k6Y1P8lB_bsq3HThdlUPZl9Jg=w1394-h930-no?authuser=0" class="card-img-top" title="前往相簿" alt="..."></a>
@@ -330,9 +398,9 @@
         </div>
       </div>      
     </div> -->
-  </div><br>
-  <!-- 第3列 -->
-  <!-- <div class="row">
+    </div><br>
+    <!-- 第3列 -->
+    <!-- <div class="row">
     <div class="col-md-3">
       <div class="card h-100">
         <div class="SM ratio ratio-4x3">
@@ -383,47 +451,48 @@
 
     
   </div><br> -->
-  
 
-  <script>
-    click_resize = () => {
-      if (document.documentElement.clientWidth > 768) {
-        // data-bs-toggle="dropdown"
-        $("span.nav-link").removeAttr("data-bs-toggle")
-      } else {
-        $("span.nav-link").attr("data-bs-toggle", "dropdown")
+
+    <script>
+      click_resize = () => {
+        if (document.documentElement.clientWidth > 768) {
+          // data-bs-toggle="dropdown"
+          $("span.nav-link").removeAttr("data-bs-toggle")
+        } else {
+          $("span.nav-link").attr("data-bs-toggle", "dropdown")
+        }
       }
-    }
-  
-    window.onresize = click_resize
-  
-    click_resize();
-  </script>
 
-<!-- 平滑回到 TOP -->
-<script>
-	for(var i = 0; i < 100; i++) {
-		$(".demo").append("<p>jQuery Scrolls.js: Back To Top Plugin Example</p>")
-	}
-</script>
-<script type="text/javascript">
-	scroller.init();
-</script>
-<script type="text/javascript">
+      window.onresize = click_resize
 
-  var _gaq = _gaq || [];
-  _gaq.push(['_setAccount', 'UA-36251023-1']);
-  _gaq.push(['_setDomainName', 'jqueryscript.net']);
-  _gaq.push(['_trackPageview']);
+      click_resize();
+    </script>
 
-  (function() {
-    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-  })();
+    <!-- 平滑回到 TOP -->
+    <script>
+      for (var i = 0; i < 100; i++) {
+        $(".demo").append("<p>jQuery Scrolls.js: Back To Top Plugin Example</p>")
+      }
+    </script>
+    <script type="text/javascript">
+      scroller.init();
+    </script>
+    <script type="text/javascript">
 
-</script>
-<!-- 平滑回到 TOP -->
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-36251023-1']);
+      _gaq.push(['_setDomainName', 'jqueryscript.net']);
+      _gaq.push(['_trackPageview']);
 
-    </body>
- </html>
+      (function () {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
+
+    </script>
+    <!-- 平滑回到 TOP -->
+
+</body>
+
+</html>
