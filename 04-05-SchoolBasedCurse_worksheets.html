@@ -13,7 +13,8 @@
 
     <!-- Zoom Js -->
     <script src="js/zoom.js"></script>
-
+    <script src="js/scrolls.js"></script>    
+    <!-- <link rel="stylesheet" href="css/alps78th.css"> -->
     <title>111學年度六上校本課程(蝴蝶)學習單</title>
   </head>
   <style>
@@ -473,6 +474,15 @@
   window.onresize = click_resize
   click_resize();
 </script>
-
+<!-- 平滑回到 TOP -->
+<script>
+	for(var i = 0; i < 100; i++) {
+		$(".demo").append("<p>jQuery Scrolls.js: Back To Top Plugin Example</p>")
+	}
+</script>
+<script type="text/javascript">
+	scroller.init();
+</script>
+<!-- 平滑回到 TOP -->
    </body>
 </html>
