@@ -46,7 +46,6 @@ var scroller = {
 			padding:"15px 10px",
 			textAlign: "center",
 			boxSizing: "content-box"
-
 		});
 
 		$(scrollTopButton).on("mouseover", function(){
