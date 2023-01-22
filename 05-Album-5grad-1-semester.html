@@ -1,188 +1,246 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
-  />
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" >
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="js/scrolls.js"></script>    
-    <title>相簿-110學年度五上</title>
-  </head>
-  <style>
-    nav {
-      overflow-y: visible;      
-      z-index: 100;
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="js/scrolls.js"></script>
+  <title>相簿-110學年度五上</title>
+</head>
+<style>
+  nav {
+    overflow-y: visible;
+    z-index: 100;
+  }
+
+  .animate__bounce {
+    display: inline-block;
+    margin: 0 0.5rem;
+    animation: bounceIn;
+    animation-duration: 2s;
+    padding: 10px 0;
+    background: linear-gradient(90deg, rgba(199, 116, 212, 1) 0%, rgba(141, 7, 224, 1) 35%, rgba(71, 7, 190, 1) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .carousel-item img {
+    width: 100%;
+    height: 300px;
+  }
+
+  .card .SM {
+    overflow: hidden;
+  }
+
+  .card:hover {
+    border-color: rgb(207, 160, 235);
+    background-color: rgb(248, 248, 221);
+  }
+
+  .card img {
+    transform: scale(1, 1);
+    transition: all .5s ease-out;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .card img:hover {
+    transform: scale(1.2, 1.2);
+  }
+
+  .dropdown-menu.Link {
+    left: auto;
+    right: 0;
+  }
+
+  @media screen and (min-width: 768px) {
+    .dropdown:hover .dropdown-menu {
+      display: block;
     }
-    .animate__bounce { display: inline-block; margin: 0 0.5rem; animation: bounceIn; animation-duration: 2s; padding: 10px 0; 
-      background: linear-gradient(90deg, rgba(199,116,212,1) 0%, rgba(141,7,224,1) 35%, rgba(71,7,190,1) 100%);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-    }
-    .carousel-item img {
-      width: 100%;
-      height: 300px;
-    }
-    .card .SM { overflow:hidden;}
-    .card:hover {
-      border-color: rgb(207, 160, 235);
-      background-color: rgb(248, 248, 221);
-        }
-    .card img { transform:scale(1,1);transition: all .5s ease-out; height: 100%; object-fit: cover;}
-    .card img:hover{ transform:scale(1.2,1.2);}
-    .dropdown-menu.Link { left: auto; right: 0;}
-    @media screen and (min-width: 768px) {
-      .dropdown:hover .dropdown-menu { display: block; }
-    } 
-  </style>
-  <body>
-    <nav class="navbar navbar-expand-lg navbar-dark" style="position: fixed; top: 0px; width: 100%; background-color: #58129F; z-index: 70;">
-      <div class="container-fluid">
-        <span class="navbar-brand" style="font-size: 24px;">愛蘭國小78屆六乙班網</span>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarScroll">
-          <ul class="navbar-nav ms-auto my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 500px;">
+  }
+</style>
 
-            <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="index.html">首頁</a>
-            </li>
+<body>
+  <nav class="navbar navbar-expand-lg navbar-dark"
+    style="position: fixed; top: 0px; width: 100%; background-color: #58129F; z-index: 70;">
+    <div class="container-fluid">
+      <span class="navbar-brand" style="font-size: 24px;">愛蘭國小78屆六乙班網</span>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll"
+        aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarScroll">
+        <ul class="navbar-nav ms-auto my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 500px;">
 
-            <li class="nav-item">
-              <a class="nav-link" aria-current="page" href="https://reminiscent-legend-2b8.notion.site/2899cfffcf9348e9bba3f692efc2a061?v=30aeb7d2a9ce4b81ab4866bde22e922c" target="blank">公告</a>
-            </li>
-            
-            <li class="nav-item dropdown">
-              <span class="nav-link dropdown-toggle" id="navbarScrollingDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">班級經營</span>
-              <ul class="dropdown-menu" aria-labelledby="navbarScrollingDropdown">
-                <li><a class="dropdown-item" href="01-01-OnDuty.html">班級幹部、值日生、分組</a></li>                
-                <li><a class="dropdown-item" href="01-04-HomeworkSheet.html">功課表、科任老師、出題老師</a></li>
-                <li><a class="dropdown-item" href="01-05-Sweeping.html">掃地區域工作分配</a></li>
-                <li><a class="dropdown-item" href="01-06-FeeDetails.html">班費明細</a></li>
-                <li><a class="dropdown-item" href="01-07-AcademyCompetition.html">學藝競賽</a></li>
-                <li><a class="dropdown-item" href="01-08-OutdoorTeaching.html">校外教學</a></li>
-                <li><a class="dropdown-item" href="01-09-Societies.html">社團、團隊</a></li>
-                <li><a class="dropdown-item" href="01-10-EngLearningSupportNativeLanguage.html">英語手牽手、學習扶助、原民語</a></li>
-                <li><a class="dropdown-item" href="01-11-ParentContactNumber-NotPublic.html">家長聯絡電話(不公開)</a></li>
-                <li><a class="dropdown-item" href="01-12-BasicInformationStudents-NotPublic.html">學生基本資料(不公開)</a></li>
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="index.html">首頁</a>
+          </li>
 
-                <li><a class="dropdown-item" href="01-13-StudentAccountPassword-NotPublic.html">學生帳、密(不公開)</a></li>
-              </ul>
-            </li>
-            
-            
-            <li class="nav-item dropdown">
-              <span class="nav-link dropdown-toggle" id="navbarScrollingDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">主題課程</span>
-              <ul class="dropdown-menu" aria-labelledby="navbarScrollingDropdown">
-                <li><a class="dropdown-item" href="02-5grad-1-semester.html">110學年度五上</a></li>
-                <li><a class="dropdown-item" href="02-5grad-2-semester.html">110學年度五下</a></li>                
-                <!-- <li><hr class="dropdown-divider"></li> -->
-                <li><a class="dropdown-item" href="02-6grad-1-semester.html">111學年度六上</a></li>
-                <li><a class="dropdown-item" href="02-6grad-2-semester.html">111學年度六下</a></li>
-              </ul>
-            </li> 
+          <li class="nav-item">
+            <a class="nav-link" aria-current="page"
+              href="https://reminiscent-legend-2b8.notion.site/2899cfffcf9348e9bba3f692efc2a061?v=30aeb7d2a9ce4b81ab4866bde22e922c"
+              target="blank">公告</a>
+          </li>
+
+          <li class="nav-item dropdown">
+            <span class="nav-link dropdown-toggle" id="navbarScrollingDropdown" role="button" data-bs-toggle="dropdown"
+              aria-expanded="false">班級經營</span>
+            <ul class="dropdown-menu" aria-labelledby="navbarScrollingDropdown">
+              <li><a class="dropdown-item" href="01-01-OnDuty.html">班級幹部、值日生、分組</a></li>
+              <li><a class="dropdown-item" href="01-04-HomeworkSheet.html">功課表、科任老師、出題老師</a></li>
+              <li><a class="dropdown-item" href="01-05-Sweeping.html">掃地區域工作分配</a></li>
+              <li><a class="dropdown-item" href="01-06-FeeDetails.html">班費明細</a></li>
+              <li><a class="dropdown-item" href="01-07-AcademyCompetition.html">學藝競賽</a></li>
+              <li><a class="dropdown-item" href="01-08-OutdoorTeaching.html">校外教學</a></li>
+              <li><a class="dropdown-item" href="01-09-Societies.html">社團、團隊</a></li>
+              <li><a class="dropdown-item" href="01-10-EngLearningSupportNativeLanguage.html">英語手牽手、學習扶助、原民語</a></li>
+              <li><a class="dropdown-item" href="01-11-ParentContactNumber-NotPublic.html">家長聯絡電話(不公開)</a></li>
+              <li><a class="dropdown-item" href="01-12-BasicInformationStudents-NotPublic.html">學生基本資料(不公開)</a></li>
+
+              <li><a class="dropdown-item" href="01-13-StudentAccountPassword-NotPublic.html">學生帳、密(不公開)</a></li>
+            </ul>
+          </li>
 
 
-            <li class="nav-item dropdown">
-              <span class="nav-link dropdown-toggle" id="navbarScrollingDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">學童作品</span>
-              <ul class="dropdown-menu" aria-labelledby="navbarScrollingDropdown">
-                <li><a class="dropdown-item" href="04-01-ZizaniaShootsLittleBook.html">茭白筍小書</a></li>
-                <li><a class="dropdown-item" href="04-02-ParentChildStudyLlist.html">親子共讀學習單</a></li>                
-                <li><a class="dropdown-item" href="04-03-PrincipalQuest.html">校長小客人</a></li>
-                <li><a class="dropdown-item" href="04-04-Recommended_books.html">好書報報</a></li>
-                <li><a class="dropdown-item" href="04-05-SchoolBasedCurse_worksheets.html">校本課程(蝴蝶)學習單</a></li>
-              </ul>
-            </li>
-            
 
-            <li class="nav-item dropdown">
-              <span class="nav-link dropdown-toggle" id="navbarScrollingDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">相簿</span>
-              <ul class="dropdown-menu" aria-labelledby="navbarScrollingDropdown">
-                <li><a class="dropdown-item" href="05-Album-5grad-1-semester.html">110學年度五上</a></li>
-                <li><a class="dropdown-item" href="05-Album-5grad-2-semester.html">110學年度五下</a></li>                
-                <li><a class="dropdown-item" href="05-Album-6grad-1-semester.html">111學年度六上</a></li>
-                <li><a class="dropdown-item" href="05-Album-6grad-2-semester.html">111學年度六下</a></li>
-              </ul>
-            </li>
+          <li class="nav-item dropdown">
+            <span class="nav-link dropdown-toggle" id="navbarScrollingDropdown-theme" role="button"
+              data-bs-toggle="dropdown" aria-expanded="false">主題課程</span>
+            <ul class="dropdown-menu" aria-labelledby="navbarScrollingDropdown-theme">
+              <li><a class="dropdown-item" href="02-5grad-1-semester.html">110學年度五上</a></li>
+              <li><a class="dropdown-item" href="02-5grad-2-semester.html">110學年度五下</a></li>
+              <!-- <li><hr class="dropdown-divider"></li> -->
+              <li><a class="dropdown-item" href="02-6grad-1-semester.html">111學年度六上</a></li>
+              <li><a class="dropdown-item" href="02-6grad-2-semester.html">111學年度六下</a></li>
+            </ul>
+          </li>
 
 
-            <li class="nav-item dropdown">
-              <span class="nav-link dropdown-toggle" id="navbarScrollingDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">榮譽榜</span>
-              <ul class="dropdown-menu" aria-labelledby="navbarScrollingDropdown">
-                <li><a class="dropdown-item" href="06-HonorRoll-5grad-1-semester.html">110學年度五上</a></li>
-                <li><a class="dropdown-item" href="06-HonorRoll-5grad-2-semester.html">110學年度五下</a></li>
-                <li><a class="dropdown-item" href="06-HonorRoll-6grad-1-semester.html">111學年度六上</a></li>
-                <li><a class="dropdown-item" href="06-HonorRoll-6grad-2-semester.html">111學年度六下</a></li>
-              </ul>
-            </li>
-            
-
-            <li class="nav-item dropdown">
-              <span class="nav-link dropdown-toggle" id="navbarScrollingDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">行事曆</span>
-              <ul class="dropdown-menu" aria-labelledby="navbarScrollingDropdown">
-                <li><a class="dropdown-item" href="07-GoogleCalndar.html">Google行事曆</a></li>
-                <li><a class="dropdown-item" href="07-Calendar-2021.html">辦公日曆</a></li>
-                <li><a class="dropdown-item" href="07-CalendarKeyCalendar.html">愛蘭重點行事曆</a></li>
-              </ul>
-            </li>
+          <li class="nav-item dropdown">
+            <span class="nav-link dropdown-toggle" id="navbarScrollingDropdown-work" role="button"
+              data-bs-toggle="dropdown" aria-expanded="false">學童作品</span>
+            <ul class="dropdown-menu" aria-labelledby="navbarScrollingDropdown-work">
+              <li><a class="dropdown-item" href="04-01-ZizaniaShootsLittleBook.html">茭白筍小書</a></li>
+              <li><a class="dropdown-item" href="04-02-ParentChildStudyLlist.html">親子共讀學習單</a></li>
+              <li><a class="dropdown-item" href="04-03-PrincipalQuest.html">校長小客人</a></li>
+              <li><a class="dropdown-item" href="04-04-Recommended_books.html">好書報報</a></li>
+              <li><a class="dropdown-item" href="04-05-SchoolBasedCurse_worksheets.html">校本課程(蝴蝶)學習單</a></li>
+            </ul>
+          </li>
 
 
-            <li class="nav-item dropdown">
-              <span class="nav-link dropdown-toggle" id="navbarScrollingDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">數位學習</span>
-              <ul class="dropdown-menu" aria-labelledby="navbarScrollingDropdown">
-                <li><a class="dropdown-item" href="https://sites.google.com/site/sjsshuweijiaoxuewang/" target="blank">SJS數位學習網</a></li>
-                <li><a class="dropdown-item" href="https://www.notion.so/" target="blank">Notion</a></li>
-                <li><a class="dropdown-item" href="https://www.icrt.com.tw/index.php" target="blank">ICRT</a></li>
-                <li><a class="dropdown-item" href="https://www.coolenglish.edu.tw/" target="blank">coolenglish(酷英)</a></li>
-                <li><a class="dropdown-item" href="https://contest.hlc.edu.tw/typing/" target="blank">花蓮縣打字練習網</a></li>
-                <li><a class="dropdown-item" href="https://classroom.google.com/" target="blank">Google classroom</a></li>
-                <li><a class="dropdown-item" href="https://meet.google.com/" target="blank">Google meet</a></li>
-                <li><a class="dropdown-item" href="https://coggle.it/" target="blank">Coggle(心智圖)</a></li>
-                <li><a class="dropdown-item" href="https://kahoot.it/" target="blank">Kahoot學生端</a></li>
-                <li><a class="dropdown-item" href="https://adl.edu.tw/" target="blank">因材網</a></li>
-                <li><a class="dropdown-item" href="https://www.learnmode.net/" target="blank">學習吧</a></li>
-                <li><a class="dropdown-item" href="https://www.nlpi.edu.tw/" target="blank">國立公共資訊圖書館</a></li>
-                <li><a class="dropdown-item" href="https://www.junyiacademy.org/" target="blank">均一教育平台</a></li>
-              </ul>
-            </li>
+          <li class="nav-item dropdown">
+            <span class="nav-link dropdown-toggle" id="navbarScrollingDropdown-photo" role="button"
+              data-bs-toggle="dropdown" aria-expanded="false">相簿</span>
+            <ul class="dropdown-menu" aria-labelledby="navbarScrollingDropdown-photo">
+              <li><a class="dropdown-item" href="05-Album-5grad-1-semester.html">110學年度五上</a></li>
+              <li><a class="dropdown-item" href="05-Album-5grad-2-semester.html">110學年度五下</a></li>
+              <li><a class="dropdown-item" href="05-Album-6grad-1-semester.html">111學年度六上</a></li>
+              <li><a class="dropdown-item" href="05-Album-6grad-2-semester.html">111學年度六下</a></li>
+            </ul>
+          </li>
 
 
-            <li class="nav-item dropdown">
-              <span class="nav-link dropdown-toggle" id="navbarScrollingDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">常用連結</span>
-              <ul class="dropdown-menu Link" aria-labelledby="navbarScrollingDropdown">
-                <li><a class="dropdown-item" href="https://alps.ntct.edu.tw" target="blank">愛蘭國小</a></li>
-                <li><a class="dropdown-item" href="https://adl.edu.tw/" target="blank">因材網</a></li>
-                <li><a class="dropdown-item" href="https://www.junyiacademy.org/" target="blank">均一教育平台</a></li>
-                <li><a class="dropdown-item" href="https://eschool.ntct.edu.tw/" target="blank">南投縣校務行政系統</a></li>
-                <li><a class="dropdown-item" href="https://dict.mini.moe.edu.tw/" target="blank">國語小字典</a></li>
-                <li><a class="dropdown-item" href="http://dict.revised.moe.edu.tw/cbdic/" target="blank">重編國語辭典修訂本</a></li>
-                <li><a class="dropdown-item" href="https://stroke-order.learningweb.moe.edu.tw/" target="blank">筆順學習網</a></li>
-                <li><a class="dropdown-item" href="http://163.20.160.14/~word/" target="blank">書法教學網</a></li>
-                <li><a class="dropdown-item" href="http://163.20.160.14/~moodle/course/view.php?id=22" target="blank">國小硬筆字教學實務</a></li>
-                <li><a class="dropdown-item" href="http://write.phc.edu.tw/" target="blank">澎湖縣硬筆書法教學網</a></li>
-                <li><a class="dropdown-item" href="http://163.20.160.14/~ntc/course/index.php?categoryid=17" target="blank">新北市書法教學網</a></li>
-                <li><a class="dropdown-item" href="http://www.emath.math.ncu.edu.tw/e_school/" target="blank">子由數學小學堂</a></li>
-                <li><a class="dropdown-item" href="https://tw.dictionary.search.yahoo.com/" target="blank">奇摩英語字典</a></li>
-                <li><a class="dropdown-item" href="https://translate.google.com.tw/?hl=zh-TW" target="blank">Google翻譯</a></li>
-                <li><a class="dropdown-item" href="https://www.egame.kh.edu.tw/" target="blank">U世代島嶼學習樂園</a></li>               
-              </ul>
-            </li> 
-          </ul>
-        </div>
+
+          <li class="nav-item dropdown">
+            <span class="nav-link dropdown-toggle" id="navbarScrollingDropdown-honor" role="button"
+              data-bs-toggle="dropdown" aria-expanded="false">榮譽榜</span>
+            <ul class="dropdown-menu" aria-labelledby="navbarScrollingDropdown-honor">
+              <li><a class="dropdown-item" href="06-HonorRoll-5grad-1-semester.html">110學年度五上</a></li>
+              <li><a class="dropdown-item" href="06-HonorRoll-5grad-2-semester.html">110學年度五下</a></li>
+              <li><a class="dropdown-item" href="06-HonorRoll-6grad-1-semester.html">111學年度六上</a></li>
+              <li><a class="dropdown-item" href="06-HonorRoll-6grad-2-semester.html">111學年度六下</a></li>
+            </ul>
+          </li>
+
+
+
+          <li class="nav-item dropdown">
+            <span class="nav-link dropdown-toggle" id="navbarScrollingDropdown-cal" role="button"
+              data-bs-toggle="dropdown" aria-expanded="false">行事曆</span>
+            <ul class="dropdown-menu" aria-labelledby="navbarScrollingDropdown-cal">
+              <li><a class="dropdown-item" href="07-GoogleCalndar.html">Google行事曆</a></li>
+              <li><a class="dropdown-item" href="07-Calendar-2021.html">辦公日曆</a></li>
+              <li><a class="dropdown-item" href="07-CalendarKeyCalendar.html">愛蘭重點行事曆</a></li>
+            </ul>
+          </li>
+
+
+          <li class="nav-item dropdown">
+            <span class="nav-link dropdown-toggle" id="navbarScrollingDropdown-digital-study" role="button"
+              data-bs-toggle="dropdown" aria-expanded="false">數位學習</span>
+            <ul class="dropdown-menu" aria-labelledby="navbarScrollingDropdown-digital-study">
+              <li><a class="dropdown-item" href="https://sites.google.com/site/sjsshuweijiaoxuewang/"
+                  target="blank">SJS數位學習網</a></li>
+              <li><a class="dropdown-item" href="https://www.notion.so/" target="blank">Notion</a></li>
+              <li><a class="dropdown-item" href="https://www.icrt.com.tw/index.php" target="blank">ICRT</a></li>
+              <li><a class="dropdown-item" href="https://www.coolenglish.edu.tw/" target="blank">coolenglish(酷英)</a>
+              </li>
+              <li><a class="dropdown-item" href="https://contest.hlc.edu.tw/typing/" target="blank">花蓮縣打字練習網</a></li>
+              <li><a class="dropdown-item" href="https://classroom.google.com/" target="blank">Google classroom</a></li>
+              <li><a class="dropdown-item" href="https://meet.google.com/" target="blank">Google meet</a></li>
+              <li><a class="dropdown-item" href="https://coggle.it/" target="blank">Coggle(心智圖)</a></li>
+              <li><a class="dropdown-item" href="https://kahoot.it/" target="blank">Kahoot學生端</a></li>
+              <li><a class="dropdown-item" href="https://adl.edu.tw/" target="blank">因材網</a></li>
+              <li><a class="dropdown-item" href="https://www.learnmode.net/" target="blank">學習吧</a></li>
+              <li><a class="dropdown-item" href="https://www.nlpi.edu.tw/" target="blank">國立公共資訊圖書館</a></li>
+              <li><a class="dropdown-item" href="https://www.junyiacademy.org/" target="blank">均一教育平台</a></li>
+            </ul>
+          </li>
+
+
+
+          <li class="nav-item dropdown">
+            <span class="nav-link dropdown-toggle" id="navbarScrollingDropdown-normal" role="button"
+              data-bs-toggle="dropdown" aria-expanded="false">常用連結</span>
+            <ul class="dropdown-menu Link" aria-labelledby="navbarScrollingDropdown-normal">
+              <li><a class="dropdown-item" href="https://alps.ntct.edu.tw" target="blank">愛蘭國小</a></li>
+              <li><a class="dropdown-item" href="https://adl.edu.tw/" target="blank">因材網</a></li>
+              <li><a class="dropdown-item" href="https://www.junyiacademy.org/" target="blank">均一教育平台</a></li>
+              <li><a class="dropdown-item" href="https://eschool.ntct.edu.tw/" target="blank">南投縣校務行政系統</a></li>
+              <li><a class="dropdown-item" href="https://dict.mini.moe.edu.tw/" target="blank">國語小字典</a></li>
+              <li><a class="dropdown-item" href="http://dict.revised.moe.edu.tw/cbdic/" target="blank">重編國語辭典修訂本</a>
+              </li>
+              <li><a class="dropdown-item" href="https://stroke-order.learningweb.moe.edu.tw/" target="blank">筆順學習網</a>
+              </li>
+              <li><a class="dropdown-item" href="http://163.20.160.14/~word/" target="blank">書法教學網</a></li>
+              <li><a class="dropdown-item" href="http://163.20.160.14/~moodle/course/view.php?id=22"
+                  target="blank">國小硬筆字教學實務</a></li>
+              <li><a class="dropdown-item" href="http://write.phc.edu.tw/" target="blank">澎湖縣硬筆書法教學網</a></li>
+              <li><a class="dropdown-item" href="http://163.20.160.14/~ntc/course/index.php?categoryid=17"
+                  target="blank">新北市書法教學網</a></li>
+              <li><a class="dropdown-item" href="http://www.emath.math.ncu.edu.tw/e_school/" target="blank">子由數學小學堂</a>
+              </li>
+              <li><a class="dropdown-item" href="https://tw.dictionary.search.yahoo.com/" target="blank">奇摩英語字典</a></li>
+              <li><a class="dropdown-item" href="https://translate.google.com.tw/?hl=zh-TW" target="blank">Google翻譯</a>
+              </li>
+              <li><a class="dropdown-item" href="https://www.egame.kh.edu.tw/" target="blank">U世代島嶼學習樂園</a></li>
+            </ul>
+          </li>
+        </ul>
       </div>
-    </nav>
+    </div>
+  </nav>
 
   <!-- Carousel -->
   <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
     <div class="carousel-indicators">
-      <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-      <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
-      <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
-      <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="3" aria-label="Slide 4"></button>
-      <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="4" aria-label="Slide 5"></button>
+      <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active"
+        aria-current="true" aria-label="Slide 1"></button>
+      <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"
+        aria-label="Slide 2"></button>
+      <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"
+        aria-label="Slide 3"></button>
+      <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="3"
+        aria-label="Slide 4"></button>
+      <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="4"
+        aria-label="Slide 5"></button>
     </div>
     <div class="carousel-inner">
       <div class="carousel-item active">
@@ -194,7 +252,7 @@
       </div>
       <div class="carousel-item">
         <img src="img/02.jpg" class="d-block" alt="...">
-        <div class="carousel-caption d-md-block">          
+        <div class="carousel-caption d-md-block">
           <h5>追求卓越，成功自然會找上門來</h5>
           <p> Chase excellence,success will follow. </p>
         </div>
@@ -208,160 +266,189 @@
       </div>
       <div class="carousel-item">
         <img src="img/04.jpg" class="d-block" alt="...">
-        <div class="carousel-caption d-md-block">          
+        <div class="carousel-caption d-md-block">
           <h5>追求卓越，成功自然會找上門來</h5>
           <p> Chase excellence,success will follow. </p>
         </div>
       </div>
       <div class="carousel-item">
         <img src="img/05.jpg" class="d-block" alt="...">
-        <div class="carousel-caption d-md-block">          
+        <div class="carousel-caption d-md-block">
           <h5>追求卓越，成功自然會找上門來</h5>
           <p> Chase excellence,success will follow. </p>
         </div>
       </div>
     </div>
-    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
+      data-bs-slide="prev">
       <span class="carousel-control-prev-icon" aria-hidden="true"></span>
       <span class="visually-hidden">Previous</span>
     </button>
-    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators"
+      data-bs-slide="next">
       <span class="carousel-control-next-icon" aria-hidden="true"></span>
       <span class="visually-hidden">Next</span>
     </button>
-  </div> 
-
-<br>
-
-<div class="container">
-  <div class="row">
-    <div class="col">
-      <h2 class="animate__bounce">110學年度五上相簿</h2>
-    </div>
   </div>
-    
-  <!-- 第1列 -->
-  <div class="row">
-    <div class="col-12 col-md-3">
-      <div class="card h-100">
-        <div class="SM">        
-          <a href="https://photos.app.goo.gl/f6TZK9ZSc7LaaezMA" target="blank"><img src="https://lh3.googleusercontent.com/pw/AM-JKLW7_eaAXPHx6HUumxevDL-M09vjLVvM3001yYMJe6jMgIHbjHQ_SiO1XnqT4M4eK73aC6GVrABbCTo1-6GnRajbPXpuliEE6X7mnITmmi10B_8uwP3t4Ti8oTFqzbf4D6ORr45fnspFbSxZp5G9dh4j9w=w1176-h881-no?authuser=0" class="card-img-top" title="前往相簿" alt="..."></a>
-        </div>
-        <div class="card-body">
-          <h5 class="card-title">校本課程體驗活動</h5>
-          <p class="card-text" style="font-size: 13px;">時間：2021.09.11&nbsp;&nbsp;8:00~11:30<br>地點：埔里水頭陳老爹農場<br>活動內容：<br>1.生態導覽+版畫拓印<br>2.水田導覽+水圳摸蜆玩水<br> 3.暨大團隊LED介紹+水質檢測</p>
-        </div>
+
+  <br>
+
+  <div class="container">
+    <div class="row">
+      <div class="col">
+        <h2 class="animate__bounce">110學年度五上相簿</h2>
       </div>
     </div>
 
-    <div class="col-12 col-md-3">
-      <div class="card h-100">
+    <!-- 第1列 -->
+    <div class="row">
+      <div class="col-12 col-md-3">
+        <div class="card h-100">
           <div class="SM">
-            <a href="https://photos.app.goo.gl/9g8AKHt4bfwge4yo6" target="blank"><img src="https://lh3.googleusercontent.com/pw/AM-JKLXzcGmL3K8LNsVw5hlxVb_qzANMyWTEg8ob1IsBlamGIq4-UZASfZq0ZgXniAMj-iFM66qbOae-m0Hy0vB4S1eMwOwtWUmOyOkVSsUV2y53a6QF5qUl_gys2PV7sgkAE9evhd9m1fgP0EG26V3Q8Nm-Mg=w1176-h881-no?authuser=0" class="card-img-top" title="前往相簿" alt="..."></a>
+            <a href="https://photos.app.goo.gl/f6TZK9ZSc7LaaezMA" target="blank"><img
+                src="https://lh3.googleusercontent.com/pw/AM-JKLW7_eaAXPHx6HUumxevDL-M09vjLVvM3001yYMJe6jMgIHbjHQ_SiO1XnqT4M4eK73aC6GVrABbCTo1-6GnRajbPXpuliEE6X7mnITmmi10B_8uwP3t4Ti8oTFqzbf4D6ORr45fnspFbSxZp5G9dh4j9w=w1176-h881-no?authuser=0"
+                class="card-img-top" title="前往相簿" alt="..."></a>
           </div>
-        <div class="card-body">
-          <h5 class="card-title">茭白筍簡報</h5>
-          <p class="card-text" style="font-size: 13px;">時間：2021.09.14&nbsp;&nbsp;9:00~11:00<br>地點：愛蘭國小活動中心<br>活動內容：<br>簡報介紹茭白筍的種類、種植、病蟲害防治、產業加工等。</p>
-        </div>
-      </div>      
-    </div>
-
-    <div class="col-12 col-md-3">
-      <div class="card h-100">
-          <div class="SM">
-            <a href="https://photos.app.goo.gl/fMJ68fyefjq8tDoy7" target="blank"><img src="https://lh3.googleusercontent.com/pw/AM-JKLU244zlyS6pHO0PaVfecs2IJb3TlILSapjRg0X_QqWS4l3YT4dPtpDXyDC-otpLvZZ9H36CJju6_1kze2SJZQzE7l0-pHSTN78Hl6V3N8SF33GWnxhRVHTlRAEeb0rZDoFuMRoe10WME3TNNq8qdriYRw=w1175-h882-no?authuser=0" class="card-img-top" title="前往相簿" alt="..."></a>
+          <div class="card-body">
+            <h5 class="card-title">校本課程體驗活動</h5>
+            <p class="card-text" style="font-size: 13px;">
+              時間：2021.09.11&nbsp;&nbsp;8:00~11:30<br>地點：埔里水頭陳老爹農場<br>活動內容：<br>1.生態導覽+版畫拓印<br>2.水田導覽+水圳摸蜆玩水<br>
+              3.暨大團隊LED介紹+水質檢測</p>
           </div>
-        <div class="card-body">
-          <h5 class="card-title">國語L2-Coggle分組共作</h5>
-          <p class="card-text" style="font-size: 13px;">時間：2021.09.23<br>地點：電腦教室<br>活動內容：<br>各小組分工利用Coggle完成國語第二課的文章架構心智圖</p>
-        </div>
-      </div>     
-    </div>
-
-    <div class="col-12 col-md-3">
-          <div class="card h-100">
-            <div class="SM">
-               <a href="https://photos.app.goo.gl/Do9ozrN7cSj3yhCM7" target="blank"><img src="https://lh3.googleusercontent.com/pw/AM-JKLW5TZetDoDYrUhfFP0F7k9lvfYnpO2CNcK3ptFw7rDNqi6N0juQWn-Ag9OKDk7p2CwVxjmpOfdHhrJ91RziUzYqQYB0K1YKyg1P7vJgX6qSqbeHrF-A7j6gKEX-DaO3A0YGHegg2Iuhz-y-SGT0w-sUFQ=w1175-h882-no?authuser=0" class="card-img-top" title="前往相簿" alt="..."></a>
-          </div>
-        <div class="card-body">
-          <h5 class="card-title">國語L2小組報告</h5>
-          <p class="card-text" style="font-size: 13px;">時間：2021.09.24<br>地點：五乙教室<br>活動內容：<br>小組的每1位成員依序針對負責的部分做報告</p>
-        </div>
-      </div>      
-    </div>
-  </div><br>
-
-
-  <!-- 第2列 -->
-  <div class="row">
-    <div class="col-12 col-md-3">
-      <div class="card h-100">
-        <div class="SM">
-          <a href="https://photos.app.goo.gl/NTNsRExT4jvSDkSb7" target="blank"><img src="https://lh3.googleusercontent.com/pw/AM-JKLWa9bSe1NQvQQXWX7yDysjWpOTIRVgkoFpyL801QAopzN8mtE3MPBEW9oTL2GWq9UUpLLCy5ebFMxhHWsRnOuu_MsPoeGC4kugl0vpRx0xtEZLf6QgqhPBH_w2QOgbGFN81Aaw7PgEbUz7tGOgpcsHHSA=w885-h664-no?authuser=0" class="card-img-top" title="前往相簿" alt="..."></a>
-        </div>
-        <div class="card-body">
-          <h5 class="card-title">國語L4小組報告</h5>
-          <p class="card-text" style="font-size: 13px;">時間：2021.10.08<br>地點：五乙教室<br>活動內容：<br>第1組~第3組的每1位成員依序針對負責的部分做報告</p>
         </div>
       </div>
-    </div>
 
-    <div class="col-12 col-md-3">
-      <div class="card h-100">
-        <div class="SM ">
-          <a href="https://photos.app.goo.gl/5pMcv7RZaDwWhbt66" target="blank"><img src="https://lh3.googleusercontent.com/pw/AM-JKLW7Q9_P7bxxt3gkOF1lvppeKOY5nBflIrh4O4Gf5l85Burf2Yq5_WBJUUy68DptQc5QwpWqVf8fYtZesFgJDXmbNDeAHTzhAmxu0qUTd78zyKuzOSsCj3ublbps0Y2_U4CRjaPJdgWLyWjtmKv1WMOc7Q=w885-h664-no?authuser=0" class="card-img-top" title="前往相簿" alt="..."></a>
+      <div class="col-12 col-md-3">
+        <div class="card h-100">
+          <div class="SM">
+            <a href="https://photos.app.goo.gl/9g8AKHt4bfwge4yo6" target="blank"><img
+                src="https://lh3.googleusercontent.com/pw/AM-JKLXzcGmL3K8LNsVw5hlxVb_qzANMyWTEg8ob1IsBlamGIq4-UZASfZq0ZgXniAMj-iFM66qbOae-m0Hy0vB4S1eMwOwtWUmOyOkVSsUV2y53a6QF5qUl_gys2PV7sgkAE9evhd9m1fgP0EG26V3Q8Nm-Mg=w1176-h881-no?authuser=0"
+                class="card-img-top" title="前往相簿" alt="..."></a>
+          </div>
+          <div class="card-body">
+            <h5 class="card-title">茭白筍簡報</h5>
+            <p class="card-text" style="font-size: 13px;">
+              時間：2021.09.14&nbsp;&nbsp;9:00~11:00<br>地點：愛蘭國小活動中心<br>活動內容：<br>簡報介紹茭白筍的種類、種植、病蟲害防治、產業加工等。</p>
+          </div>
         </div>
-        <div class="card-body">
-          <h5 class="card-title">國語L6-Coggle分組共作</h5>
-          <p class="card-text" style="font-size: 13px;">時間：2021.10.14<br>地點：電腦教室<br>活動內容：<br>各小組分工利用Coggle完成國語第六課的文章架構心智圖</p>
-        </div>
-      </div>      
-    </div>
+      </div>
 
-    <div class="col-12 col-md-3">
-      <div class="card h-100">
-        <div class="SM">
-          <a href="https://photos.app.goo.gl/nidZvKt7THwXQm9u9" target="blank"><img src="https://lh3.googleusercontent.com/pw/AM-JKLV-Ienr4nKT6OX0XAMTa0f6bld9sEUvqlS_UVr21scDXrXtFHssL7fAuMoIkQs4W2X4bd8A9r13kDV1OSZB5TzSjHStRASzHkMcJT5fZvlexJ4bRNlZ4I67mocxa71oQLW2TzbQ2laVRxpydR-oNWdYCQ=w1024-h767-no?authuser=0" class="card-img-top" title="前往相簿" alt="..."></a>
+      <div class="col-12 col-md-3">
+        <div class="card h-100">
+          <div class="SM">
+            <a href="https://photos.app.goo.gl/fMJ68fyefjq8tDoy7" target="blank"><img
+                src="https://lh3.googleusercontent.com/pw/AM-JKLU244zlyS6pHO0PaVfecs2IJb3TlILSapjRg0X_QqWS4l3YT4dPtpDXyDC-otpLvZZ9H36CJju6_1kze2SJZQzE7l0-pHSTN78Hl6V3N8SF33GWnxhRVHTlRAEeb0rZDoFuMRoe10WME3TNNq8qdriYRw=w1175-h882-no?authuser=0"
+                class="card-img-top" title="前往相簿" alt="..."></a>
+          </div>
+          <div class="card-body">
+            <h5 class="card-title">國語L2-Coggle分組共作</h5>
+            <p class="card-text" style="font-size: 13px;">
+              時間：2021.09.23<br>地點：電腦教室<br>活動內容：<br>各小組分工利用Coggle完成國語第二課的文章架構心智圖</p>
+          </div>
         </div>
-        <div class="card-body">
-          <h5 class="card-title">朝會頒獎(忠勇老師拍攝)</h5>
-          <p class="card-text" style="font-size: 13px;">時間：2021.10.18<br>地點：中庭<br>活動內容：<br>頒發上學期末領域獎項、進步獎、原民語認證合格證書、一頁書創作獎狀</p>
-          <!-- <a href="https://photos.app.goo.gl/nidZvKt7THwXQm9u9" target="blank" class="btn btn-success">前往相簿</a> -->
-        </div>
-      </div>     
-    </div>
+      </div>
 
-    <div class="col-12 col-md-3">
-      <div class="card h-100">
-        <div class="SM">
-          <a href="https://photos.app.goo.gl/gYyCMnxTieaTDjoBA" target="blank"><img src="https://lh3.googleusercontent.com/pw/AM-JKLUiUoJUrVhO3Eek4Oitw9oZ7Lg4ZGCbvyh4WPzNVfv9bi50Z4qRfR4urw9b14aBtTDu5ezMwPCYc-xuFs2-ux_js-Ete59J2Su4QrUUAitwmYu6lfj3zkku1wWzz-teUoiVCLJtrBM2EqDEgw1d86pQzQ=w1164-h873-no?authuser=0" class="card-img-top" title="前往相簿" alt="..."></a>
+      <div class="col-12 col-md-3">
+        <div class="card h-100">
+          <div class="SM">
+            <a href="https://photos.app.goo.gl/Do9ozrN7cSj3yhCM7" target="blank"><img
+                src="https://lh3.googleusercontent.com/pw/AM-JKLW5TZetDoDYrUhfFP0F7k9lvfYnpO2CNcK3ptFw7rDNqi6N0juQWn-Ag9OKDk7p2CwVxjmpOfdHhrJ91RziUzYqQYB0K1YKyg1P7vJgX6qSqbeHrF-A7j6gKEX-DaO3A0YGHegg2Iuhz-y-SGT0w-sUFQ=w1175-h882-no?authuser=0"
+                class="card-img-top" title="前往相簿" alt="..."></a>
+          </div>
+          <div class="card-body">
+            <h5 class="card-title">國語L2小組報告</h5>
+            <p class="card-text" style="font-size: 13px;">時間：2021.09.24<br>地點：五乙教室<br>活動內容：<br>小組的每1位成員依序針對負責的部分做報告</p>
+          </div>
         </div>
-        <div class="card-body">
-          <h5 class="card-title">施打流感疫苗</h5>
-          <p class="card-text" style="font-size: 13px;">時間：2021.10.21<br>地點：孔子銅像後面穿堂<br>活動內容：<br>埔榮團隊來校幫學童施打流感疫苗</p>
+      </div>
+    </div><br>
+
+
+    <!-- 第2列 -->
+    <div class="row">
+      <div class="col-12 col-md-3">
+        <div class="card h-100">
+          <div class="SM">
+            <a href="https://photos.app.goo.gl/NTNsRExT4jvSDkSb7" target="blank"><img
+                src="https://lh3.googleusercontent.com/pw/AM-JKLWa9bSe1NQvQQXWX7yDysjWpOTIRVgkoFpyL801QAopzN8mtE3MPBEW9oTL2GWq9UUpLLCy5ebFMxhHWsRnOuu_MsPoeGC4kugl0vpRx0xtEZLf6QgqhPBH_w2QOgbGFN81Aaw7PgEbUz7tGOgpcsHHSA=w885-h664-no?authuser=0"
+                class="card-img-top" title="前往相簿" alt="..."></a>
+          </div>
+          <div class="card-body">
+            <h5 class="card-title">國語L4小組報告</h5>
+            <p class="card-text" style="font-size: 13px;">時間：2021.10.08<br>地點：五乙教室<br>活動內容：<br>第1組~第3組的每1位成員依序針對負責的部分做報告
+            </p>
+          </div>
         </div>
-      </div>      
-    </div>
-  </div><br>
+      </div>
+
+      <div class="col-12 col-md-3">
+        <div class="card h-100">
+          <div class="SM ">
+            <a href="https://photos.app.goo.gl/5pMcv7RZaDwWhbt66" target="blank"><img
+                src="https://lh3.googleusercontent.com/pw/AM-JKLW7Q9_P7bxxt3gkOF1lvppeKOY5nBflIrh4O4Gf5l85Burf2Yq5_WBJUUy68DptQc5QwpWqVf8fYtZesFgJDXmbNDeAHTzhAmxu0qUTd78zyKuzOSsCj3ublbps0Y2_U4CRjaPJdgWLyWjtmKv1WMOc7Q=w885-h664-no?authuser=0"
+                class="card-img-top" title="前往相簿" alt="..."></a>
+          </div>
+          <div class="card-body">
+            <h5 class="card-title">國語L6-Coggle分組共作</h5>
+            <p class="card-text" style="font-size: 13px;">
+              時間：2021.10.14<br>地點：電腦教室<br>活動內容：<br>各小組分工利用Coggle完成國語第六課的文章架構心智圖</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-12 col-md-3">
+        <div class="card h-100">
+          <div class="SM">
+            <a href="https://photos.app.goo.gl/nidZvKt7THwXQm9u9" target="blank"><img
+                src="https://lh3.googleusercontent.com/pw/AM-JKLV-Ienr4nKT6OX0XAMTa0f6bld9sEUvqlS_UVr21scDXrXtFHssL7fAuMoIkQs4W2X4bd8A9r13kDV1OSZB5TzSjHStRASzHkMcJT5fZvlexJ4bRNlZ4I67mocxa71oQLW2TzbQ2laVRxpydR-oNWdYCQ=w1024-h767-no?authuser=0"
+                class="card-img-top" title="前往相簿" alt="..."></a>
+          </div>
+          <div class="card-body">
+            <h5 class="card-title">朝會頒獎(忠勇老師拍攝)</h5>
+            <p class="card-text" style="font-size: 13px;">
+              時間：2021.10.18<br>地點：中庭<br>活動內容：<br>頒發上學期末領域獎項、進步獎、原民語認證合格證書、一頁書創作獎狀</p>
+            <!-- <a href="https://photos.app.goo.gl/nidZvKt7THwXQm9u9" target="blank" class="btn btn-success">前往相簿</a> -->
+          </div>
+        </div>
+      </div>
+
+      <div class="col-12 col-md-3">
+        <div class="card h-100">
+          <div class="SM">
+            <a href="https://photos.app.goo.gl/gYyCMnxTieaTDjoBA" target="blank"><img
+                src="https://lh3.googleusercontent.com/pw/AM-JKLUiUoJUrVhO3Eek4Oitw9oZ7Lg4ZGCbvyh4WPzNVfv9bi50Z4qRfR4urw9b14aBtTDu5ezMwPCYc-xuFs2-ux_js-Ete59J2Su4QrUUAitwmYu6lfj3zkku1wWzz-teUoiVCLJtrBM2EqDEgw1d86pQzQ=w1164-h873-no?authuser=0"
+                class="card-img-top" title="前往相簿" alt="..."></a>
+          </div>
+          <div class="card-body">
+            <h5 class="card-title">施打流感疫苗</h5>
+            <p class="card-text" style="font-size: 13px;">時間：2021.10.21<br>地點：孔子銅像後面穿堂<br>活動內容：<br>埔榮團隊來校幫學童施打流感疫苗</p>
+          </div>
+        </div>
+      </div>
+    </div><br>
 
     <!-- 第3列 -->
     <div class="row">
       <div class="col-12 col-md-3">
         <div class="card h-100">
           <div class="SM">
-            <a href="https://photos.app.goo.gl/o8gLNJEeuJxGGRVJA" target="blank"><img src="https://lh3.googleusercontent.com/pw/AM-JKLV42Q4zJ_W2QG561e104TENDDnkYGAIxERB1tYvoKVa7KFowlbIWD6SLFdiTYnog3boA8PteLw0NeAHFfzIvIYUttJZ_TVSzYFFAMkuKjm_RVbqGQplhxjFufvysUHArEXk8kJkv6S7uEvDhc7n5l7_7w=w1239-h929-no?authuser=0" class="card-img-top" title="前往相簿" alt="..."></a>
+            <a href="https://photos.app.goo.gl/o8gLNJEeuJxGGRVJA" target="blank"><img
+                src="https://lh3.googleusercontent.com/pw/AM-JKLV42Q4zJ_W2QG561e104TENDDnkYGAIxERB1tYvoKVa7KFowlbIWD6SLFdiTYnog3boA8PteLw0NeAHFfzIvIYUttJZ_TVSzYFFAMkuKjm_RVbqGQplhxjFufvysUHArEXk8kJkv6S7uEvDhc7n5l7_7w=w1239-h929-no?authuser=0"
+                class="card-img-top" title="前往相簿" alt="..."></a>
           </div>
           <div class="card-body">
             <h5 class="card-title">跳繩比賽</h5>
             <p class="card-text" style="font-size: 13px;">時間：2021.10.25<br>地點：操場<br>活動內容：<br>五年級3人式1分鐘計時跳繩比賽</p>
           </div>
-        </div>     
-      </div>      
+        </div>
+      </div>
 
       <div class="col-12 col-md-3">
         <div class="card h-100">
           <div class="SM">
-            <a href="https://photos.app.goo.gl/sBHc8TwDSXRRNgNZ6" target="blank"><img src="https://lh3.googleusercontent.com/pw/AM-JKLVXwwY6v_FnUXHkDs_EtsiJL6HEDVSyKTLfawdsrlTsE3FsbKyeTFyr4insz4-tDjceAhKMykGUPW6AGQLo82uD8YolvJQ0Cd3L0xYrtII001nY9sqJGHpBB8CAL_pIZTGCq1qJ76mBHHiycQV72j0VrQ=w1119-h839-no?authuser=1" class="card-img-top" title="前往相簿" alt="..."></a>
+            <a href="https://photos.app.goo.gl/sBHc8TwDSXRRNgNZ6" target="blank"><img
+                src="https://lh3.googleusercontent.com/pw/AM-JKLVXwwY6v_FnUXHkDs_EtsiJL6HEDVSyKTLfawdsrlTsE3FsbKyeTFyr4insz4-tDjceAhKMykGUPW6AGQLo82uD8YolvJQ0Cd3L0xYrtII001nY9sqJGHpBB8CAL_pIZTGCq1qJ76mBHHiycQV72j0VrQ=w1119-h839-no?authuser=1"
+                class="card-img-top" title="前往相簿" alt="..."></a>
           </div>
           <div class="card-body">
             <h5 class="card-title">情緒教育</h5>
@@ -369,217 +456,258 @@
           </div>
         </div>
       </div>
-  
+
       <div class="col-12 col-md-3">
         <div class="card h-100">
           <div class="SM">
-           <a href="https://photos.app.goo.gl/xdQwZQsLyJmYGWqt6" target="blank"><img src="https://lh3.googleusercontent.com/pw/AM-JKLXTFzaOWraxZBxtdYH7m1DrzjXfU1Lkal-UD2HLROOJI4H_0wxy5soK9UIgxC4lD7n7Znk2ySDyJmJx9NIbCegAL4sRMnLZcaNiEr7aGwQD31PvySG0Xww2fYdMRo8goHS7ZHAfchdutO2mcwDXveZjjg=w1164-h873-no?authuser=0" class="card-img-top" title="前往相簿" alt="..."></a>
+            <a href="https://photos.app.goo.gl/xdQwZQsLyJmYGWqt6" target="blank"><img
+                src="https://lh3.googleusercontent.com/pw/AM-JKLXTFzaOWraxZBxtdYH7m1DrzjXfU1Lkal-UD2HLROOJI4H_0wxy5soK9UIgxC4lD7n7Znk2ySDyJmJx9NIbCegAL4sRMnLZcaNiEr7aGwQD31PvySG0Xww2fYdMRo8goHS7ZHAfchdutO2mcwDXveZjjg=w1164-h873-no?authuser=0"
+                class="card-img-top" title="前往相簿" alt="..."></a>
           </div>
           <div class="card-body">
             <h5 class="card-title">KAHOOT 線上測驗</h5>
             <p class="card-text" style="font-size: 13px;">時間：2021.10.29<br>地點：電腦教室<br>活動內容：<br>國語 L1 ~ L7 線上課文文意測驗</p>
           </div>
-        </div>      
+        </div>
       </div>
-  
+
       <div class="col-12 col-md-3">
         <div class="card h-100">
           <div class="SM ratio ratio-4x3">
-           <a href="https://photos.app.goo.gl/JuGooHu5eQ5CGW2a6" target="blank"><img src="https://lh3.googleusercontent.com/pw/AM-JKLXoopEt_IwBuyuCqTeEQdn1cEp3FFa_LTYOr7tS99rsZgy5KdQvcjrHGa_9pDRHhS2uKnTcpAE-L_FotRE4idWuunqpCw9GJ2ag_uXOpNTkEJFr12XqHcOHJYNlANhWF5PbJzVQn34DdKaMYvMB3MVA7g=w1394-h930-no?authuser=0" class="card-img-top" title="前往相簿" alt="..."></a>
+            <a href="https://photos.app.goo.gl/JuGooHu5eQ5CGW2a6" target="blank"><img
+                src="https://lh3.googleusercontent.com/pw/AM-JKLXoopEt_IwBuyuCqTeEQdn1cEp3FFa_LTYOr7tS99rsZgy5KdQvcjrHGa_9pDRHhS2uKnTcpAE-L_FotRE4idWuunqpCw9GJ2ag_uXOpNTkEJFr12XqHcOHJYNlANhWF5PbJzVQn34DdKaMYvMB3MVA7g=w1394-h930-no?authuser=0"
+                class="card-img-top" title="前往相簿" alt="..."></a>
           </div>
           <div class="card-body">
             <h5 class="card-title">小提琴比賽賽前熱身</h5>
             <p class="card-text" style="font-size: 13px;">時間：2021.11.08<br>地點：中庭<br>活動內容：<br>中區小提琴比賽賽前熱身</p>
           </div>
-        </div>      
-      </div>  
-      
+        </div>
+      </div>
+
     </div><br>
 
-      <!-- 第4列 -->
+    <!-- 第4列 -->
     <div class="row">
       <div class="col-12 col-md-3">
         <div class="card h-100">
           <div class="SM ratio ratio-4x3">
-            <a href="https://photos.app.goo.gl/917FPkQ74XGKT65p8" target="blank"><img src="https://lh3.googleusercontent.com/pw/AM-JKLUqH_yo80LAuf_Rf6HksF5tM7iQ2m5W8v4US0bHXoPnTqDxrvkX00yow_bZNS_r5JTJt9w2dOFHjgDzIwkEU5UiNovfnloJ88hT9duPpGVRaBMrmkbU4bm3XuhNxqT0b3LwKcz1c3tlgXkHkcJPBMB25A=w1062-h709-no?authuser=0" class="card-img-top" title="前往相簿" alt="..."></a>
+            <a href="https://photos.app.goo.gl/917FPkQ74XGKT65p8" target="blank"><img
+                src="https://lh3.googleusercontent.com/pw/AM-JKLUqH_yo80LAuf_Rf6HksF5tM7iQ2m5W8v4US0bHXoPnTqDxrvkX00yow_bZNS_r5JTJt9w2dOFHjgDzIwkEU5UiNovfnloJ88hT9duPpGVRaBMrmkbU4bm3XuhNxqT0b3LwKcz1c3tlgXkHkcJPBMB25A=w1062-h709-no?authuser=0"
+                class="card-img-top" title="前往相簿" alt="..."></a>
           </div>
           <div class="card-body">
             <h5 class="card-title">原民大未來</h5>
-            <p class="card-text" style="font-size: 13px;">時間：2021.11.10<br>地點：活動中心<br>活動內容：<br>彰化中區扶輪社&彰化松柏扶輪社員民大未來服務計畫</p>
+            <p class="card-text" style="font-size: 13px;">時間：2021.11.10<br>地點：活動中心<br>活動內容：<br>彰化中區扶輪社&彰化松柏扶輪社員民大未來服務計畫
+            </p>
           </div>
-        </div>     
+        </div>
       </div>
-      
+
 
       <div class="col-12 col-md-3">
         <div class="card h-100">
           <div class="SM">
-            <a href="https://photos.app.goo.gl/DLBGoao7jyGtAerw8" target="blank"><img src="https://lh3.googleusercontent.com/pw/AM-JKLWVLoLNc9KmWpNdRulXmZ_8D-IMwK9I5PavaQtvDxW1GaKnpOzoisDjLovThX9_VgPztgDBs3XfBxcnlHBxviV4ldfL2hlRg4Tr4PhS7V9g4qgDi2qPZj_pt2IwPWsIUsQZFnxLX0cWcVo82ZoQJrrxGg=w1167-h874-no?authuser=0" class="card-img-top" title="前往相簿" alt="..."></a>
+            <a href="https://photos.app.goo.gl/DLBGoao7jyGtAerw8" target="blank"><img
+                src="https://lh3.googleusercontent.com/pw/AM-JKLWVLoLNc9KmWpNdRulXmZ_8D-IMwK9I5PavaQtvDxW1GaKnpOzoisDjLovThX9_VgPztgDBs3XfBxcnlHBxviV4ldfL2hlRg4Tr4PhS7V9g4qgDi2qPZj_pt2IwPWsIUsQZFnxLX0cWcVo82ZoQJrrxGg=w1167-h874-no?authuser=0"
+                class="card-img-top" title="前往相簿" alt="..."></a>
           </div>
           <div class="card-body">
             <h5 class="card-title">五上校外教學</h5>
-            <p class="card-text" style="font-size: 13px;">時間：2021.11.12<br>地點：埔中自造中心<br>活動內容：<br>到埔里國中的自造中心做IQ燈、鑰匙圈、手工筆的手作體驗。</p>
+            <p class="card-text" style="font-size: 13px;">
+              時間：2021.11.12<br>地點：埔中自造中心<br>活動內容：<br>到埔里國中的自造中心做IQ燈、鑰匙圈、手工筆的手作體驗。</p>
           </div>
         </div>
       </div>
-  
+
       <div class="col-12 col-md-3">
         <div class="card h-100">
           <div class="SM">
-           <a href="https://photos.app.goo.gl/G7rqMgUAxDoxUVZs7" target="blank"><img src="https://lh3.googleusercontent.com/pw/AM-JKLWPHY9JqPikGFB5xh5zb-ACHnCwNZs2B83IbH_fGVvIaQcicHmaxRALffHcVsrUXLtKVS4Gzkk0jP-Gv33dy5BK_u2FtplGO46lwP3vLAXcAVlwT_vkDXQcXrmYzCUrfYFCUtbiyl8kmrZpBPAtpwWPLw=w1129-h846-no?authuser=0" class="card-img-top" title="前往相簿" alt="..."></a>
+            <a href="https://photos.app.goo.gl/G7rqMgUAxDoxUVZs7" target="blank"><img
+                src="https://lh3.googleusercontent.com/pw/AM-JKLWPHY9JqPikGFB5xh5zb-ACHnCwNZs2B83IbH_fGVvIaQcicHmaxRALffHcVsrUXLtKVS4Gzkk0jP-Gv33dy5BK_u2FtplGO46lwP3vLAXcAVlwT_vkDXQcXrmYzCUrfYFCUtbiyl8kmrZpBPAtpwWPLw=w1129-h846-no?authuser=0"
+                class="card-img-top" title="前往相簿" alt="..."></a>
           </div>
           <div class="card-body">
             <h5 class="card-title">兒童朝會頒獎</h5>
-            <p class="card-text" style="font-size: 13px;">時間：2021.12.6、13<br>地點：中庭<br>活動內容：<br>劭澐-小提琴獨奏國小B組優等、恩哲-11月圖書借閱第一名&字音字形第二名、亨一-作文比賽第一名、柏瑜-射箭鎮賽第四名</p>
+            <p class="card-text" style="font-size: 13px;">
+              時間：2021.12.6、13<br>地點：中庭<br>活動內容：<br>劭澐-小提琴獨奏國小B組優等、恩哲-11月圖書借閱第一名&字音字形第二名、亨一-作文比賽第一名、柏瑜-射箭鎮賽第四名</p>
           </div>
-        </div>      
+        </div>
       </div>
-      
+
       <div class="col-12 col-md-3">
         <div class="card h-100">
           <div class="SM ratio ratio-4x3">
-            <a href="https://photos.app.goo.gl/sNkuwB9qHQHUECZA7" target="blank"><img src="https://lh3.googleusercontent.com/pw/AM-JKLUInav4wOkUoX01REW-J9UovqqyKF_udq5ihauBrHtypm4fUnmCD13uX9RExlYBxdYp5ITbOM4whsgRtcKdaN5NziPVDgy0myGBTipOzKgzjMFLgnTV4Mv5ZmuvCtMlz_QzmXNgQvLAe25IvX3uEAUkdA=w1281-h854-no?authuser=0" class="card-img-top" title="前往相簿" alt="..."></a>
+            <a href="https://photos.app.goo.gl/sNkuwB9qHQHUECZA7" target="blank"><img
+                src="https://lh3.googleusercontent.com/pw/AM-JKLUInav4wOkUoX01REW-J9UovqqyKF_udq5ihauBrHtypm4fUnmCD13uX9RExlYBxdYp5ITbOM4whsgRtcKdaN5NziPVDgy0myGBTipOzKgzjMFLgnTV4Mv5ZmuvCtMlz_QzmXNgQvLAe25IvX3uEAUkdA=w1281-h854-no?authuser=0"
+                class="card-img-top" title="前往相簿" alt="..."></a>
           </div>
           <div class="card-body">
             <h5 class="card-title">演說、朗讀比賽</h5>
             <p class="card-text" style="font-size: 13px;">時間：2021.12.15<br>地點：活動中心<br>活動內容：<br>110學年度五年級演說、朗讀比賽。</p>
           </div>
-        </div>     
+        </div>
       </div>
-      
+
     </div><br>
 
-          <!-- 第5列 -->
-          <div class="row">
-            <div class="col-12 col-md-3">
-              <div class="card h-100">
-                <div class="SM ratio ratio-4x3">
-                  <a href="https://photos.app.goo.gl/fbfXEo8GbbwJGTY27" target="blank"><img src="https://lh3.googleusercontent.com/pw/AM-JKLWSbNJkZYsepune4AsCmXng45Vm59NO2mD33jATgm1rYNsubGp2rgzqbNTfymJEF1CJ0Rvp7HOMx4PWJVhZ-VJMRf84oMSjOo7JkLOER2HgJHyTgux1e5tsgeHA6HdyfwMUkKDzfCSc2qwjsoRCbZvJQQ=w1394-h929-no?authuser=0" class="card-img-top" title="前往相簿" alt="..."></a>
-                </div>
-                <div class="card-body">
-                  <h5 class="card-title">兒童朝會頒獎</h5>
-                  <p class="card-text" style="font-size: 13px;">時間：2021.12.20<br>地點：中庭<br>活動內容：<br>兒童朝會頒發演說、朗讀、好書報報和縣運適性體育國小資源班獎項<br>囿妘演說第一名、沛云朗讀以及好書報報都第一名、佑玲趣味競賽-雙龍搶珠第一名</p>
-                </div>
-              </div>     
-            </div>
-            
-      
-            <div class="col-12 col-md-3">
-              <div class="card h-100">
-                <div class="SM  ratio ratio-4x3">
-                  <a href="https://photos.app.goo.gl/xKKCebSxjKUd1vrH9" target="blank"><img src="https://lh3.googleusercontent.com/pw/AM-JKLVZOL8x6b1UUOfwpRa_t5SY6OBi1E6cUrLI8667I1C4mSSzhyLxPHSHUQ2mDq2LP9kd5Vaoz5-etgeOVUm0V-sifW_aDMewRiRsWMg6IMrhu9QQAwCDSypPL_9yCr0whRU-d1y-yDSAK-r_vPfhJy0M5Q=w1352-h902-no?authuser=0" class="card-img-top" title="前往相簿" alt="..."></a>
-                </div>                
-                <div class="card-body">
-                  <h5 class="card-title">路跑活動</h5>
-                  <p class="card-text" style="font-size: 13px;">時間：2021.12.22<br>地點：愛蘭學區<br>活動內容：<br>愛蘭國小→愛蘭派出所→福安宮→三勰路→天后宮→雙吉路→鎮西宮→房里路→功大企業社→敬善農場→房里路→茭白筍集散中心→公墓區→鐵山路→愛蘭國小(全長約5公里)
-                  </p>
-                </div>
-              </div>
-            </div>
-        
-            <div class="col-12 col-md-3">
-              <div class="card h-100">
-                <div class="SM  ratio ratio-4x3">
-                 <a href="https://photos.app.goo.gl/3aLK2N6736eH9zM16" target="blank"><img src="https://lh3.googleusercontent.com/pw/AM-JKLUIBq8yAFKSOs1NZ2BqSAL29f3VfCCJCkZl0TAxF4eKF_goGToCTsPHXPTOkmk5IO10gCzeSWDQ9OdIRZCerURMTp7ja8OXeaczoSxus_XwdNFURcvwNc_nH6ijXZvqGcI1JOy7X0h01SdOjkrPod7Nng=w592-h395-no?authuser=0" class="card-img-top" title="前往相簿" alt="..."></a>
-                </div>
-                <div class="card-body">
-                  <h5 class="card-title">校慶園遊會</h5>
-                  <p class="card-text" style="font-size: 13px;">時間：2021.12.25<br>地點：教學區、中庭<br>活動內容：<br>9:00~10:30 開幕式、節目表演<br>10:30~13:10 園遊會、巴宰文化節闖關活動、書法家現場揮毫、</p>
-                </div>
-              </div>      
-            </div>
-            
-            <div class="col-12 col-md-3">
-              <div class="card h-100">
-                <div class="SM ratio ratio-4x3">
-                  <a href="https://photos.app.goo.gl/nbYXFdN27PJNGRem6" target="blank"><img src="https://lh3.googleusercontent.com/pw/AM-JKLUSb-mpevkZ-8EsOBbEO18RiHYOO8oDQ0p5fYpf6iVOV4sbSv2MlIXgXMjG0BSxQ1ZzaxKsxpC8f5quVtQNZe6KiJ4cyAWR5IS9b7Iq7RlovDnfapZqdu52-CgYL68RASX4GoibNnPF-FkgadPB0BuANA=w1227-h818-no?authuser=0" class="card-img-top" title="前往相簿" alt="..."></a>
-                </div>
-                <div class="card-body">
-                  <h5 class="card-title">兒童朝會頒獎</h5>
-                  <p class="card-text" style="font-size: 13px;">時間：2022.01.10<br>地點：中庭<br>活動內容：<br>丞睿：100M自由式-銀牌、50M自由式-銀牌、50M蝶式-銀牌、4×50M自由式-金牌、4×50M混合式-金牌<br>友鶴、承裕：戰鼓男女混合組優等<br>士凱、恩哲：圖書館借閱書籍各為第一、五名<br>柏瑜：資訊競賽「運算思維挑戰」比賽第二名<br>路跑：亨一男生組第7名、承裕男生組第8名、友鶴男生組第9名、楓棠女生組第6名、沛云女生組第10名<br>沛云：「英語學習檢核」滿分</p>
-                </div>
-              </div>     
-            </div>            
-          </div><br>
+    <!-- 第5列 -->
+    <div class="row">
+      <div class="col-12 col-md-3">
+        <div class="card h-100">
+          <div class="SM ratio ratio-4x3">
+            <a href="https://photos.app.goo.gl/fbfXEo8GbbwJGTY27" target="blank"><img
+                src="https://lh3.googleusercontent.com/pw/AM-JKLWSbNJkZYsepune4AsCmXng45Vm59NO2mD33jATgm1rYNsubGp2rgzqbNTfymJEF1CJ0Rvp7HOMx4PWJVhZ-VJMRf84oMSjOo7JkLOER2HgJHyTgux1e5tsgeHA6HdyfwMUkKDzfCSc2qwjsoRCbZvJQQ=w1394-h929-no?authuser=0"
+                class="card-img-top" title="前往相簿" alt="..."></a>
+          </div>
+          <div class="card-body">
+            <h5 class="card-title">兒童朝會頒獎</h5>
+            <p class="card-text" style="font-size: 13px;">
+              時間：2021.12.20<br>地點：中庭<br>活動內容：<br>兒童朝會頒發演說、朗讀、好書報報和縣運適性體育國小資源班獎項<br>囿妘演說第一名、沛云朗讀以及好書報報都第一名、佑玲趣味競賽-雙龍搶珠第一名
+            </p>
+          </div>
+        </div>
+      </div>
 
-            <!-- 第6列 -->
-            <div class="row">
-              <div class="col-12 col-md-3">
-                <div class="card h-100">
-                  <div class="SM ratio ratio-4x3">
-                    <a href="https://photos.app.goo.gl/tfsQVcQeEXz886yg8" target="blank"><img src="https://lh3.googleusercontent.com/pw/AM-JKLXqdvSv02Q4rqLt14ygwsZpyy8nn6Ql9q_elc4UvoOT25LFQ3Z_MoS0DkaHJ3wSfW-CP0tCpz4caI8gCgKH3Q5_XBCPSDrTEDE_89c_miimX93EdIUMjWp4I6FAiVSChPq0ON18SOKN-ziDTq6Cnsx_rw=w1394-h930-no?authuser=0" class="card-img-top" title="前往相簿" alt="..."></a>
-                  </div>
-                  <div class="card-body">
-                    <h5 class="card-title">學童防震體驗營活動</h5>
-                    <p class="card-text" style="font-size: 13px;">時間：2022.01.17<br>地點：埔里消防局<br>活動內容：<br>五、六年級小朋友參加埔里扶輪社主辦的學童防震體驗營活動</p>
-                  </div>
-                </div>     
-              </div>
-              
-        
-              <div class="col-12 col-md-3">
-                <div class="card h-100">
-                  <div class="SM  ratio ratio-4x3">
-                    <a href="https://photos.app.goo.gl/GTKu7PkQTao1jvzMA" target="blank"><img src="https://lh3.googleusercontent.com/pw/AM-JKLU4XFBC9rFXgd72VQX5Q-xnYqpNHShNF0jsIiiuYoYBQrXA09lZph3ZuM-5IHYwogNIChu6p1B8O68bG9Faj2jgAcZcN22q8UY4K7LoeG5s0aiwlbu5DBPB_2d8El44_xwbWI3_Wol2w7NMZQZ0yXJ75g=w1394-h929-no?authuser=0" class="card-img-top" title="前往相簿" alt="..."></a>
-                  </div>                
-                  <div class="card-body">
-                    <h5 class="card-title">晨會頒獎</h5>
-                    <p class="card-text" style="font-size: 13px;">時間：2022.01.19<br>地點：中庭<br>活動內容：<br>頒發110學年度第1學期第2次評量成績前三名、進步獎，以及榮譽獎章。<br>評量前3名：沛云、恩哲、亨一<br>進步獎：佑玲、根鋐、羽捷<br>榮譽獎章：沛云(第8次)、楓棠(第6次)、、詠淩(第6次)、劭澐(第5次)、友鶴(第5次)、柏瑜(第5次)
-                    </p>
-                  </div>
-                </div>
-              </div>
-          
-              <div class="col-12 col-md-3">
-                <div class="card h-100">
-                  <div class="SM  ratio ratio-4x3">
-                   <a href="https://photos.app.goo.gl/WxdGYQ4GP8PV9UjW6" target="blank"><img src="https://lh3.googleusercontent.com/pw/AM-JKLW5gu_4lhEZbyGy_lilNkfLvEG-zksO4iRIbkYlXJAyduxiEQ2EhfRhHJrCRpb5QVORGNtrFDJsubyZhfWyCLUKfkw6ugWAjq4o3ZOQn937UJ5r11qfnVq-qOxzxQ2P6APpfgS5DuwBZfTqBz6PdXSzTA=w1394-h929-no?authuser=0" class="card-img-top" title="前往相簿" alt="..."></a>
-                  </div>
-                  <div class="card-body">
-                    <h5 class="card-title">結業式頒獎</h5>
-                    <p class="card-text" style="font-size: 13px;">時間：2022.01.20<br>地點：教學區、中庭<br>活動內容：<br>頒發期末領域獎項及中小聯運獎項<br></p>
-                  </div>
-                </div>      
-              </div>
-              
-              <div class="col-12 col-md-3">
-                <div class="card h-100">
-                  <div class="SM ratio ratio-4x3">
-                    <a href="https://photos.app.goo.gl/5ndJbmq5qFGbWtYB8" target="blank"><img src="https://lh3.googleusercontent.com/pw/AM-JKLU3X6spODPqwYmMWioj8tftGkybm1YB0KHNWbVNUCKwOGEVP6tuZvly6mbyGhVQ6sLHq6A2NyQzRsN2fGRUPX0QPY1EUilF5Qsr4gGSjfxbRQ3RBln1JuJ9MD4WfF0RdE1fwFvlQOtpBx5csJkiOUtxng=w1394-h929-no?authuser=0" class="card-img-top" title="前往相簿" alt="..."></a>
-                  </div>
-                  <div class="card-body">
-                    <h5 class="card-title">期末拍拍照</h5>
-                    <p class="card-text" style="font-size: 13px;">時間：2022.01.20<br>地點：露營區<br>活動內容：<br>期末拍照留念</p>
-                  </div>
-                </div>     
-              </div>            
-            </div><br>        
 
-  <script>
-    click_resize = () => {
-      if (document.documentElement.clientWidth > 768) {
-        // data-bs-toggle="dropdown"
-        $("span.nav-link").removeAttr("data-bs-toggle")
-      } else {
-        $("span.nav-link").attr("data-bs-toggle", "dropdown")
+      <div class="col-12 col-md-3">
+        <div class="card h-100">
+          <div class="SM  ratio ratio-4x3">
+            <a href="https://photos.app.goo.gl/xKKCebSxjKUd1vrH9" target="blank"><img
+                src="https://lh3.googleusercontent.com/pw/AM-JKLVZOL8x6b1UUOfwpRa_t5SY6OBi1E6cUrLI8667I1C4mSSzhyLxPHSHUQ2mDq2LP9kd5Vaoz5-etgeOVUm0V-sifW_aDMewRiRsWMg6IMrhu9QQAwCDSypPL_9yCr0whRU-d1y-yDSAK-r_vPfhJy0M5Q=w1352-h902-no?authuser=0"
+                class="card-img-top" title="前往相簿" alt="..."></a>
+          </div>
+          <div class="card-body">
+            <h5 class="card-title">路跑活動</h5>
+            <p class="card-text" style="font-size: 13px;">
+              時間：2021.12.22<br>地點：愛蘭學區<br>活動內容：<br>愛蘭國小→愛蘭派出所→福安宮→三勰路→天后宮→雙吉路→鎮西宮→房里路→功大企業社→敬善農場→房里路→茭白筍集散中心→公墓區→鐵山路→愛蘭國小(全長約5公里)
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-12 col-md-3">
+        <div class="card h-100">
+          <div class="SM  ratio ratio-4x3">
+            <a href="https://photos.app.goo.gl/3aLK2N6736eH9zM16" target="blank"><img
+                src="https://lh3.googleusercontent.com/pw/AM-JKLUIBq8yAFKSOs1NZ2BqSAL29f3VfCCJCkZl0TAxF4eKF_goGToCTsPHXPTOkmk5IO10gCzeSWDQ9OdIRZCerURMTp7ja8OXeaczoSxus_XwdNFURcvwNc_nH6ijXZvqGcI1JOy7X0h01SdOjkrPod7Nng=w592-h395-no?authuser=0"
+                class="card-img-top" title="前往相簿" alt="..."></a>
+          </div>
+          <div class="card-body">
+            <h5 class="card-title">校慶園遊會</h5>
+            <p class="card-text" style="font-size: 13px;">時間：2021.12.25<br>地點：教學區、中庭<br>活動內容：<br>9:00~10:30
+              開幕式、節目表演<br>10:30~13:10 園遊會、巴宰文化節闖關活動、書法家現場揮毫、</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-12 col-md-3">
+        <div class="card h-100">
+          <div class="SM ratio ratio-4x3">
+            <a href="https://photos.app.goo.gl/nbYXFdN27PJNGRem6" target="blank"><img
+                src="https://lh3.googleusercontent.com/pw/AM-JKLUSb-mpevkZ-8EsOBbEO18RiHYOO8oDQ0p5fYpf6iVOV4sbSv2MlIXgXMjG0BSxQ1ZzaxKsxpC8f5quVtQNZe6KiJ4cyAWR5IS9b7Iq7RlovDnfapZqdu52-CgYL68RASX4GoibNnPF-FkgadPB0BuANA=w1227-h818-no?authuser=0"
+                class="card-img-top" title="前往相簿" alt="..."></a>
+          </div>
+          <div class="card-body">
+            <h5 class="card-title">兒童朝會頒獎</h5>
+            <p class="card-text" style="font-size: 13px;">
+              時間：2022.01.10<br>地點：中庭<br>活動內容：<br>丞睿：100M自由式-銀牌、50M自由式-銀牌、50M蝶式-銀牌、4×50M自由式-金牌、4×50M混合式-金牌<br>友鶴、承裕：戰鼓男女混合組優等<br>士凱、恩哲：圖書館借閱書籍各為第一、五名<br>柏瑜：資訊競賽「運算思維挑戰」比賽第二名<br>路跑：亨一男生組第7名、承裕男生組第8名、友鶴男生組第9名、楓棠女生組第6名、沛云女生組第10名<br>沛云：「英語學習檢核」滿分
+            </p>
+          </div>
+        </div>
+      </div>
+    </div><br>
+
+    <!-- 第6列 -->
+    <div class="row">
+      <div class="col-12 col-md-3">
+        <div class="card h-100">
+          <div class="SM ratio ratio-4x3">
+            <a href="https://photos.app.goo.gl/tfsQVcQeEXz886yg8" target="blank"><img
+                src="https://lh3.googleusercontent.com/pw/AM-JKLXqdvSv02Q4rqLt14ygwsZpyy8nn6Ql9q_elc4UvoOT25LFQ3Z_MoS0DkaHJ3wSfW-CP0tCpz4caI8gCgKH3Q5_XBCPSDrTEDE_89c_miimX93EdIUMjWp4I6FAiVSChPq0ON18SOKN-ziDTq6Cnsx_rw=w1394-h930-no?authuser=0"
+                class="card-img-top" title="前往相簿" alt="..."></a>
+          </div>
+          <div class="card-body">
+            <h5 class="card-title">學童防震體驗營活動</h5>
+            <p class="card-text" style="font-size: 13px;">
+              時間：2022.01.17<br>地點：埔里消防局<br>活動內容：<br>五、六年級小朋友參加埔里扶輪社主辦的學童防震體驗營活動</p>
+          </div>
+        </div>
+      </div>
+
+
+      <div class="col-12 col-md-3">
+        <div class="card h-100">
+          <div class="SM  ratio ratio-4x3">
+            <a href="https://photos.app.goo.gl/GTKu7PkQTao1jvzMA" target="blank"><img
+                src="https://lh3.googleusercontent.com/pw/AM-JKLU4XFBC9rFXgd72VQX5Q-xnYqpNHShNF0jsIiiuYoYBQrXA09lZph3ZuM-5IHYwogNIChu6p1B8O68bG9Faj2jgAcZcN22q8UY4K7LoeG5s0aiwlbu5DBPB_2d8El44_xwbWI3_Wol2w7NMZQZ0yXJ75g=w1394-h929-no?authuser=0"
+                class="card-img-top" title="前往相簿" alt="..."></a>
+          </div>
+          <div class="card-body">
+            <h5 class="card-title">晨會頒獎</h5>
+            <p class="card-text" style="font-size: 13px;">
+              時間：2022.01.19<br>地點：中庭<br>活動內容：<br>頒發110學年度第1學期第2次評量成績前三名、進步獎，以及榮譽獎章。<br>評量前3名：沛云、恩哲、亨一<br>進步獎：佑玲、根鋐、羽捷<br>榮譽獎章：沛云(第8次)、楓棠(第6次)、、詠淩(第6次)、劭澐(第5次)、友鶴(第5次)、柏瑜(第5次)
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-12 col-md-3">
+        <div class="card h-100">
+          <div class="SM  ratio ratio-4x3">
+            <a href="https://photos.app.goo.gl/WxdGYQ4GP8PV9UjW6" target="blank"><img
+                src="https://lh3.googleusercontent.com/pw/AM-JKLW5gu_4lhEZbyGy_lilNkfLvEG-zksO4iRIbkYlXJAyduxiEQ2EhfRhHJrCRpb5QVORGNtrFDJsubyZhfWyCLUKfkw6ugWAjq4o3ZOQn937UJ5r11qfnVq-qOxzxQ2P6APpfgS5DuwBZfTqBz6PdXSzTA=w1394-h929-no?authuser=0"
+                class="card-img-top" title="前往相簿" alt="..."></a>
+          </div>
+          <div class="card-body">
+            <h5 class="card-title">結業式頒獎</h5>
+            <p class="card-text" style="font-size: 13px;">時間：2022.01.20<br>地點：教學區、中庭<br>活動內容：<br>頒發期末領域獎項及中小聯運獎項<br></p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-12 col-md-3">
+        <div class="card h-100">
+          <div class="SM ratio ratio-4x3">
+            <a href="https://photos.app.goo.gl/5ndJbmq5qFGbWtYB8" target="blank"><img
+                src="https://lh3.googleusercontent.com/pw/AM-JKLU3X6spODPqwYmMWioj8tftGkybm1YB0KHNWbVNUCKwOGEVP6tuZvly6mbyGhVQ6sLHq6A2NyQzRsN2fGRUPX0QPY1EUilF5Qsr4gGSjfxbRQ3RBln1JuJ9MD4WfF0RdE1fwFvlQOtpBx5csJkiOUtxng=w1394-h929-no?authuser=0"
+                class="card-img-top" title="前往相簿" alt="..."></a>
+          </div>
+          <div class="card-body">
+            <h5 class="card-title">期末拍拍照</h5>
+            <p class="card-text" style="font-size: 13px;">時間：2022.01.20<br>地點：露營區<br>活動內容：<br>期末拍照留念</p>
+          </div>
+        </div>
+      </div>
+    </div><br>
+    </div>
+
+    <script>
+      click_resize = () => {
+        if (document.documentElement.clientWidth > 768) {
+          // data-bs-toggle="dropdown"
+          $("span.nav-link").removeAttr("data-bs-toggle")
+        } else {
+          $("span.nav-link").attr("data-bs-toggle", "dropdown")
+        }
       }
-    }
-  
-    window.onresize = click_resize
-  
-    click_resize();
-  </script>
 
-<!-- 平滑回到 TOP -->
-<script>
-	for(var i = 0; i < 100; i++) {
-		$(".demo").append("<p>jQuery Scrolls.js: Back To Top Plugin Example</p>")
-	}
-</script>
-<script type="text/javascript">
-	scroller.init();
-</script>
-<!-- 平滑回到 TOP -->
+      window.onresize = click_resize
 
-    </body>
- </html>
+      click_resize();
+    </script>
+
+    <!-- 平滑回到 TOP -->
+    <script>
+      for (var i = 0; i < 100; i++) {
+        $(".demo").append("<p>jQuery Scrolls.js: Back To Top Plugin Example</p>")
+      }
+    </script>
+    <script type="text/javascript">
+      scroller.init();
+    </script>
+    <!-- 平滑回到 TOP -->
+
+</body>
+
+</html>

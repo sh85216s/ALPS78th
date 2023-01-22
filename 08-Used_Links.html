@@ -1,174 +1,213 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" >
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"></script>
-    <title>常用連結</title>
-  </head>
-  <style>
-    nav {
-      overflow-y: visible;      
-      z-index: 100;
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"></script>
+  <title>常用連結</title>
+</head>
+<style>
+  nav {
+    overflow-y: visible;
+    z-index: 100;
+  }
+
+  .carousel-item img {
+    width: 100%;
+    height: 300px;
+  }
+
+  .dropdown-menu.Link {
+    left: auto;
+    right: 0;
+  }
+
+  @media screen and (min-width: 768px) {
+    .dropdown:hover .dropdown-menu {
+      display: block;
     }
-    .carousel-item img {
-      width: 100%;
-      height: 300px;
-    }
-    .dropdown-menu.Link { left: auto; right: 0;}
-    @media screen and (min-width: 768px) {
-      .dropdown:hover .dropdown-menu { display: block; }    
-    } 
-  </style>
-  <body>
-    <nav class="navbar navbar-expand-lg navbar-dark" style="position: fixed; top: 0px; width: 100%; background-color: #58129F; z-index: 70;">
-      <div class="container-fluid">
-        <span class="navbar-brand" style="font-size: 24px;">愛蘭國小78屆六乙班網</span>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarScroll">
-          <ul class="navbar-nav ms-auto my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 500px;">
+  }
+</style>
 
-            <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="index.html">首頁</a>
-            </li>
+<body>
+  <nav class="navbar navbar-expand-lg navbar-dark"
+    style="position: fixed; top: 0px; width: 100%; background-color: #58129F; z-index: 70;">
+    <div class="container-fluid">
+      <span class="navbar-brand" style="font-size: 24px;">愛蘭國小78屆六乙班網</span>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll"
+        aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarScroll">
+        <ul class="navbar-nav ms-auto my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 500px;">
 
-            <li class="nav-item">
-              <a class="nav-link" aria-current="page" href="https://reminiscent-legend-2b8.notion.site/2899cfffcf9348e9bba3f692efc2a061?v=30aeb7d2a9ce4b81ab4866bde22e922c" target="blank">公告</a>
-            </li>
-            
-            <li class="nav-item dropdown">
-              <span class="nav-link dropdown-toggle" id="navbarScrollingDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">班級經營</span>
-              <ul class="dropdown-menu" aria-labelledby="navbarScrollingDropdown">
-                <li><a class="dropdown-item" href="01-01-OnDuty.html">班級幹部、值日生、分組</a></li>                
-                <li><a class="dropdown-item" href="01-04-HomeworkSheet.html">功課表、科任老師、出題老師</a></li>
-                <li><a class="dropdown-item" href="01-05-Sweeping.html">掃地區域工作分配</a></li>
-                <li><a class="dropdown-item" href="01-06-FeeDetails.html">班費明細</a></li>
-                <li><a class="dropdown-item" href="01-07-AcademyCompetition.html">學藝競賽</a></li>
-                <li><a class="dropdown-item" href="01-08-OutdoorTeaching.html">校外教學</a></li>
-                <li><a class="dropdown-item" href="01-09-Societies.html">社團、團隊</a></li>
-                <li><a class="dropdown-item" href="01-10-EngLearningSupportNativeLanguage.html">英語手牽手、學習扶助、原民語</a></li>
-                <li><a class="dropdown-item" href="01-11-ParentContactNumber-NotPublic.html">家長聯絡電話(不公開)</a></li>
-                <li><a class="dropdown-item" href="01-12-BasicInformationStudents-NotPublic.html">學生基本資料(不公開)</a></li>
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="index.html">首頁</a>
+          </li>
 
-                <li><a class="dropdown-item" href="01-13-StudentAccountPassword-NotPublic.html">學生帳、密(不公開)</a></li>
-              </ul>
-            </li>
-            
-            
-            <li class="nav-item dropdown">
-              <span class="nav-link dropdown-toggle" id="navbarScrollingDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">主題課程</span>
-              <ul class="dropdown-menu" aria-labelledby="navbarScrollingDropdown">
-                <li><a class="dropdown-item" href="02-5grad-1-semester.html">110學年度五上</a></li>
-                <li><a class="dropdown-item" href="02-5grad-2-semester.html">110學年度五下</a></li>                
-                <!-- <li><hr class="dropdown-divider"></li> -->
-                <li><a class="dropdown-item" href="02-6grad-1-semester.html">111學年度六上</a></li>
-                <li><a class="dropdown-item" href="02-6grad-2-semester.html">111學年度六下</a></li>
-              </ul>
-            </li> 
+          <li class="nav-item">
+            <a class="nav-link" aria-current="page"
+              href="https://reminiscent-legend-2b8.notion.site/2899cfffcf9348e9bba3f692efc2a061?v=30aeb7d2a9ce4b81ab4866bde22e922c"
+              target="blank">公告</a>
+          </li>
+
+          <li class="nav-item dropdown">
+            <span class="nav-link dropdown-toggle" id="navbarScrollingDropdown" role="button" data-bs-toggle="dropdown"
+              aria-expanded="false">班級經營</span>
+            <ul class="dropdown-menu" aria-labelledby="navbarScrollingDropdown">
+              <li><a class="dropdown-item" href="01-01-OnDuty.html">班級幹部、值日生、分組</a></li>
+              <li><a class="dropdown-item" href="01-04-HomeworkSheet.html">功課表、科任老師、出題老師</a></li>
+              <li><a class="dropdown-item" href="01-05-Sweeping.html">掃地區域工作分配</a></li>
+              <li><a class="dropdown-item" href="01-06-FeeDetails.html">班費明細</a></li>
+              <li><a class="dropdown-item" href="01-07-AcademyCompetition.html">學藝競賽</a></li>
+              <li><a class="dropdown-item" href="01-08-OutdoorTeaching.html">校外教學</a></li>
+              <li><a class="dropdown-item" href="01-09-Societies.html">社團、團隊</a></li>
+              <li><a class="dropdown-item" href="01-10-EngLearningSupportNativeLanguage.html">英語手牽手、學習扶助、原民語</a></li>
+              <li><a class="dropdown-item" href="01-11-ParentContactNumber-NotPublic.html">家長聯絡電話(不公開)</a></li>
+              <li><a class="dropdown-item" href="01-12-BasicInformationStudents-NotPublic.html">學生基本資料(不公開)</a></li>
+
+              <li><a class="dropdown-item" href="01-13-StudentAccountPassword-NotPublic.html">學生帳、密(不公開)</a></li>
+            </ul>
+          </li>
 
 
-            <li class="nav-item dropdown">
-              <span class="nav-link dropdown-toggle" id="navbarScrollingDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">學童作品</span>
-              <ul class="dropdown-menu" aria-labelledby="navbarScrollingDropdown">
-                <li><a class="dropdown-item" href="04-01-ZizaniaShootsLittleBook.html">茭白筍小書</a></li>
-                <li><a class="dropdown-item" href="04-02-ParentChildStudyLlist.html">親子共讀學習單</a></li>                
-                <li><a class="dropdown-item" href="04-03-PrincipalQuest.html">校長小客人</a></li>
-                <li><a class="dropdown-item" href="04-04-Recommended_books.html">好書報報</a></li>
-                <li><a class="dropdown-item" href="04-05-SchoolBasedCurse_worksheets.html">校本課程(蝴蝶)學習單</a></li>
-              </ul>
-            </li>
-            
 
-            <li class="nav-item dropdown">
-              <span class="nav-link dropdown-toggle" id="navbarScrollingDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">相簿</span>
-              <ul class="dropdown-menu" aria-labelledby="navbarScrollingDropdown">
-                <li><a class="dropdown-item" href="05-Album-5grad-1-semester.html">110學年度五上</a></li>
-                <li><a class="dropdown-item" href="05-Album-5grad-2-semester.html">110學年度五下</a></li>                
-                <li><a class="dropdown-item" href="05-Album-6grad-1-semester.html">111學年度六上</a></li>
-                <li><a class="dropdown-item" href="05-Album-6grad-2-semester.html">111學年度六下</a></li>
-              </ul>
-            </li>
+          <li class="nav-item dropdown">
+            <span class="nav-link dropdown-toggle" id="navbarScrollingDropdown-theme" role="button"
+              data-bs-toggle="dropdown" aria-expanded="false">主題課程</span>
+            <ul class="dropdown-menu" aria-labelledby="navbarScrollingDropdown-theme">
+              <li><a class="dropdown-item" href="02-5grad-1-semester.html">110學年度五上</a></li>
+              <li><a class="dropdown-item" href="02-5grad-2-semester.html">110學年度五下</a></li>
+              <!-- <li><hr class="dropdown-divider"></li> -->
+              <li><a class="dropdown-item" href="02-6grad-1-semester.html">111學年度六上</a></li>
+              <li><a class="dropdown-item" href="02-6grad-2-semester.html">111學年度六下</a></li>
+            </ul>
+          </li>
 
 
-            <li class="nav-item dropdown">
-              <span class="nav-link dropdown-toggle" id="navbarScrollingDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">榮譽榜</span>
-              <ul class="dropdown-menu" aria-labelledby="navbarScrollingDropdown">
-                <li><a class="dropdown-item" href="06-HonorRoll-5grad-1-semester.html">110學年度五上</a></li>
-                <li><a class="dropdown-item" href="06-HonorRoll-5grad-2-semester.html">110學年度五下</a></li>
-                <li><a class="dropdown-item" href="06-HonorRoll-6grad-1-semester.html">111學年度六上</a></li>
-                <li><a class="dropdown-item" href="06-HonorRoll-6grad-2-semester.html">111學年度六下</a></li>
-              </ul>
-            </li>
-            
-
-            <li class="nav-item dropdown">
-              <span class="nav-link dropdown-toggle" id="navbarScrollingDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">行事曆</span>
-              <ul class="dropdown-menu" aria-labelledby="navbarScrollingDropdown">
-                <li><a class="dropdown-item" href="07-GoogleCalndar.html">Google行事曆</a></li>
-                <li><a class="dropdown-item" href="07-Calendar-2021.html">辦公日曆</a></li>
-                <li><a class="dropdown-item" href="07-CalendarKeyCalendar.html">愛蘭重點行事曆</a></li>
-              </ul>
-            </li>
+          <li class="nav-item dropdown">
+            <span class="nav-link dropdown-toggle" id="navbarScrollingDropdown-work" role="button"
+              data-bs-toggle="dropdown" aria-expanded="false">學童作品</span>
+            <ul class="dropdown-menu" aria-labelledby="navbarScrollingDropdown-work">
+              <li><a class="dropdown-item" href="04-01-ZizaniaShootsLittleBook.html">茭白筍小書</a></li>
+              <li><a class="dropdown-item" href="04-02-ParentChildStudyLlist.html">親子共讀學習單</a></li>
+              <li><a class="dropdown-item" href="04-03-PrincipalQuest.html">校長小客人</a></li>
+              <li><a class="dropdown-item" href="04-04-Recommended_books.html">好書報報</a></li>
+              <li><a class="dropdown-item" href="04-05-SchoolBasedCurse_worksheets.html">校本課程(蝴蝶)學習單</a></li>
+            </ul>
+          </li>
 
 
-            <li class="nav-item dropdown">
-              <span class="nav-link dropdown-toggle" id="navbarScrollingDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">數位學習</span>
-              <ul class="dropdown-menu" aria-labelledby="navbarScrollingDropdown">
-                <li><a class="dropdown-item" href="https://sites.google.com/site/sjsshuweijiaoxuewang/" target="blank">SJS數位學習網</a></li>
-                <li><a class="dropdown-item" href="https://www.notion.so/" target="blank">Notion</a></li>
-                <li><a class="dropdown-item" href="https://www.icrt.com.tw/index.php" target="blank">ICRT</a></li>
-                <li><a class="dropdown-item" href="https://www.coolenglish.edu.tw/" target="blank">coolenglish(酷英)</a></li>
-                <li><a class="dropdown-item" href="https://contest.hlc.edu.tw/typing/" target="blank">花蓮縣打字練習網</a></li>
-                <li><a class="dropdown-item" href="https://classroom.google.com/" target="blank">Google classroom</a></li>
-                <li><a class="dropdown-item" href="https://meet.google.com/" target="blank">Google meet</a></li>
-                <li><a class="dropdown-item" href="https://coggle.it/" target="blank">Coggle(心智圖)</a></li>
-                <li><a class="dropdown-item" href="https://kahoot.it/" target="blank">Kahoot學生端</a></li>
-                <li><a class="dropdown-item" href="https://adl.edu.tw/" target="blank">因材網</a></li>
-                <li><a class="dropdown-item" href="https://www.learnmode.net/" target="blank">學習吧</a></li>
-                <li><a class="dropdown-item" href="https://www.nlpi.edu.tw/" target="blank">國立公共資訊圖書館</a></li>
-                <li><a class="dropdown-item" href="https://www.junyiacademy.org/" target="blank">均一教育平台</a></li>
-              </ul>
-            </li>
+          <li class="nav-item dropdown">
+            <span class="nav-link dropdown-toggle" id="navbarScrollingDropdown-photo" role="button"
+              data-bs-toggle="dropdown" aria-expanded="false">相簿</span>
+            <ul class="dropdown-menu" aria-labelledby="navbarScrollingDropdown-photo">
+              <li><a class="dropdown-item" href="05-Album-5grad-1-semester.html">110學年度五上</a></li>
+              <li><a class="dropdown-item" href="05-Album-5grad-2-semester.html">110學年度五下</a></li>
+              <li><a class="dropdown-item" href="05-Album-6grad-1-semester.html">111學年度六上</a></li>
+              <li><a class="dropdown-item" href="05-Album-6grad-2-semester.html">111學年度六下</a></li>
+            </ul>
+          </li>
 
 
-            <li class="nav-item dropdown">
-              <span class="nav-link dropdown-toggle" id="navbarScrollingDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">常用連結</span>
-              <ul class="dropdown-menu Link" aria-labelledby="navbarScrollingDropdown">
-                <li><a class="dropdown-item" href="https://alps.ntct.edu.tw" target="blank">愛蘭國小</a></li>
-                <li><a class="dropdown-item" href="https://adl.edu.tw/" target="blank">因材網</a></li>
-                <li><a class="dropdown-item" href="https://www.junyiacademy.org/" target="blank">均一教育平台</a></li>
-                <li><a class="dropdown-item" href="https://eschool.ntct.edu.tw/" target="blank">南投縣校務行政系統</a></li>
-                <li><a class="dropdown-item" href="https://dict.mini.moe.edu.tw/" target="blank">國語小字典</a></li>
-                <li><a class="dropdown-item" href="http://dict.revised.moe.edu.tw/cbdic/" target="blank">重編國語辭典修訂本</a></li>
-                <li><a class="dropdown-item" href="https://stroke-order.learningweb.moe.edu.tw/" target="blank">筆順學習網</a></li>
-                <li><a class="dropdown-item" href="http://163.20.160.14/~word/" target="blank">書法教學網</a></li>
-                <li><a class="dropdown-item" href="http://163.20.160.14/~moodle/course/view.php?id=22" target="blank">國小硬筆字教學實務</a></li>
-                <li><a class="dropdown-item" href="http://write.phc.edu.tw/" target="blank">澎湖縣硬筆書法教學網</a></li>
-                <li><a class="dropdown-item" href="http://163.20.160.14/~ntc/course/index.php?categoryid=17" target="blank">新北市書法教學網</a></li>
-                <li><a class="dropdown-item" href="http://www.emath.math.ncu.edu.tw/e_school/" target="blank">子由數學小學堂</a></li>
-                <li><a class="dropdown-item" href="https://tw.dictionary.search.yahoo.com/" target="blank">奇摩英語字典</a></li>
-                <li><a class="dropdown-item" href="https://translate.google.com.tw/?hl=zh-TW" target="blank">Google翻譯</a></li>
-                <li><a class="dropdown-item" href="https://www.egame.kh.edu.tw/" target="blank">U世代島嶼學習樂園</a></li>               
-              </ul>
-            </li> 
-          </ul>
-        </div>
+
+          <li class="nav-item dropdown">
+            <span class="nav-link dropdown-toggle" id="navbarScrollingDropdown-honor" role="button"
+              data-bs-toggle="dropdown" aria-expanded="false">榮譽榜</span>
+            <ul class="dropdown-menu" aria-labelledby="navbarScrollingDropdown-honor">
+              <li><a class="dropdown-item" href="06-HonorRoll-5grad-1-semester.html">110學年度五上</a></li>
+              <li><a class="dropdown-item" href="06-HonorRoll-5grad-2-semester.html">110學年度五下</a></li>
+              <li><a class="dropdown-item" href="06-HonorRoll-6grad-1-semester.html">111學年度六上</a></li>
+              <li><a class="dropdown-item" href="06-HonorRoll-6grad-2-semester.html">111學年度六下</a></li>
+            </ul>
+          </li>
+
+
+
+          <li class="nav-item dropdown">
+            <span class="nav-link dropdown-toggle" id="navbarScrollingDropdown-cal" role="button"
+              data-bs-toggle="dropdown" aria-expanded="false">行事曆</span>
+            <ul class="dropdown-menu" aria-labelledby="navbarScrollingDropdown-cal">
+              <li><a class="dropdown-item" href="07-GoogleCalndar.html">Google行事曆</a></li>
+              <li><a class="dropdown-item" href="07-Calendar-2021.html">辦公日曆</a></li>
+              <li><a class="dropdown-item" href="07-CalendarKeyCalendar.html">愛蘭重點行事曆</a></li>
+            </ul>
+          </li>
+
+
+          <li class="nav-item dropdown">
+            <span class="nav-link dropdown-toggle" id="navbarScrollingDropdown-digital-study" role="button"
+              data-bs-toggle="dropdown" aria-expanded="false">數位學習</span>
+            <ul class="dropdown-menu" aria-labelledby="navbarScrollingDropdown-digital-study">
+              <li><a class="dropdown-item" href="https://sites.google.com/site/sjsshuweijiaoxuewang/"
+                  target="blank">SJS數位學習網</a></li>
+              <li><a class="dropdown-item" href="https://www.notion.so/" target="blank">Notion</a></li>
+              <li><a class="dropdown-item" href="https://www.icrt.com.tw/index.php" target="blank">ICRT</a></li>
+              <li><a class="dropdown-item" href="https://www.coolenglish.edu.tw/" target="blank">coolenglish(酷英)</a>
+              </li>
+              <li><a class="dropdown-item" href="https://contest.hlc.edu.tw/typing/" target="blank">花蓮縣打字練習網</a></li>
+              <li><a class="dropdown-item" href="https://classroom.google.com/" target="blank">Google classroom</a></li>
+              <li><a class="dropdown-item" href="https://meet.google.com/" target="blank">Google meet</a></li>
+              <li><a class="dropdown-item" href="https://coggle.it/" target="blank">Coggle(心智圖)</a></li>
+              <li><a class="dropdown-item" href="https://kahoot.it/" target="blank">Kahoot學生端</a></li>
+              <li><a class="dropdown-item" href="https://adl.edu.tw/" target="blank">因材網</a></li>
+              <li><a class="dropdown-item" href="https://www.learnmode.net/" target="blank">學習吧</a></li>
+              <li><a class="dropdown-item" href="https://www.nlpi.edu.tw/" target="blank">國立公共資訊圖書館</a></li>
+              <li><a class="dropdown-item" href="https://www.junyiacademy.org/" target="blank">均一教育平台</a></li>
+            </ul>
+          </li>
+
+
+
+          <li class="nav-item dropdown">
+            <span class="nav-link dropdown-toggle" id="navbarScrollingDropdown-normal" role="button"
+              data-bs-toggle="dropdown" aria-expanded="false">常用連結</span>
+            <ul class="dropdown-menu Link" aria-labelledby="navbarScrollingDropdown-normal">
+              <li><a class="dropdown-item" href="https://alps.ntct.edu.tw" target="blank">愛蘭國小</a></li>
+              <li><a class="dropdown-item" href="https://adl.edu.tw/" target="blank">因材網</a></li>
+              <li><a class="dropdown-item" href="https://www.junyiacademy.org/" target="blank">均一教育平台</a></li>
+              <li><a class="dropdown-item" href="https://eschool.ntct.edu.tw/" target="blank">南投縣校務行政系統</a></li>
+              <li><a class="dropdown-item" href="https://dict.mini.moe.edu.tw/" target="blank">國語小字典</a></li>
+              <li><a class="dropdown-item" href="http://dict.revised.moe.edu.tw/cbdic/" target="blank">重編國語辭典修訂本</a>
+              </li>
+              <li><a class="dropdown-item" href="https://stroke-order.learningweb.moe.edu.tw/" target="blank">筆順學習網</a>
+              </li>
+              <li><a class="dropdown-item" href="http://163.20.160.14/~word/" target="blank">書法教學網</a></li>
+              <li><a class="dropdown-item" href="http://163.20.160.14/~moodle/course/view.php?id=22"
+                  target="blank">國小硬筆字教學實務</a></li>
+              <li><a class="dropdown-item" href="http://write.phc.edu.tw/" target="blank">澎湖縣硬筆書法教學網</a></li>
+              <li><a class="dropdown-item" href="http://163.20.160.14/~ntc/course/index.php?categoryid=17"
+                  target="blank">新北市書法教學網</a></li>
+              <li><a class="dropdown-item" href="http://www.emath.math.ncu.edu.tw/e_school/" target="blank">子由數學小學堂</a>
+              </li>
+              <li><a class="dropdown-item" href="https://tw.dictionary.search.yahoo.com/" target="blank">奇摩英語字典</a></li>
+              <li><a class="dropdown-item" href="https://translate.google.com.tw/?hl=zh-TW" target="blank">Google翻譯</a>
+              </li>
+              <li><a class="dropdown-item" href="https://www.egame.kh.edu.tw/" target="blank">U世代島嶼學習樂園</a></li>
+            </ul>
+          </li>
+        </ul>
       </div>
-    </nav>
+    </div>
+  </nav>
 
 
   <!-- Carousel -->
   <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
     <div class="carousel-indicators">
-      <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-      <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
-      <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
-      <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="3" aria-label="Slide 4"></button>
-      <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="4" aria-label="Slide 5"></button>
+      <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active"
+        aria-current="true" aria-label="Slide 1"></button>
+      <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"
+        aria-label="Slide 2"></button>
+      <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"
+        aria-label="Slide 3"></button>
+      <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="3"
+        aria-label="Slide 4"></button>
+      <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="4"
+        aria-label="Slide 5"></button>
     </div>
     <div class="carousel-inner">
       <div class="carousel-item active">
@@ -180,7 +219,7 @@
       </div>
       <div class="carousel-item">
         <img src="img/02.jpg" class="d-block" alt="...">
-        <div class="carousel-caption d-md-block">          
+        <div class="carousel-caption d-md-block">
           <h5>追求卓越，成功自然會找上門來</h5>
           <p> Chase excellence,success will follow. </p>
         </div>
@@ -194,30 +233,32 @@
       </div>
       <div class="carousel-item">
         <img src="img/04.jpg" class="d-block" alt="...">
-        <div class="carousel-caption d-md-block">          
+        <div class="carousel-caption d-md-block">
           <h5>追求卓越，成功自然會找上門來</h5>
           <p> Chase excellence,success will follow. </p>
         </div>
       </div>
       <div class="carousel-item">
         <img src="img/05.jpg" class="d-block" alt="...">
-        <div class="carousel-caption d-md-block">          
+        <div class="carousel-caption d-md-block">
           <h5>追求卓越，成功自然會找上門來</h5>
           <p> Chase excellence,success will follow. </p>
         </div>
       </div>
     </div>
-    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
+      data-bs-slide="prev">
       <span class="carousel-control-prev-icon" aria-hidden="true"></span>
       <span class="visually-hidden">Previous</span>
     </button>
-    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators"
+      data-bs-slide="next">
       <span class="carousel-control-next-icon" aria-hidden="true"></span>
       <span class="visually-hidden">Next</span>
     </button>
-  </div> 
+  </div>
 
-  
+
   <script>
     click_resize = () => {
       if (document.documentElement.clientWidth > 768) {
@@ -227,11 +268,12 @@
         $("span.nav-link").attr("data-bs-toggle", "dropdown")
       }
     }
-  
+
     window.onresize = click_resize
-  
+
     click_resize();
   </script>
 
-    </body>
- </html>
+</body>
+
+</html>

@@ -1,222 +1,272 @@
-
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" >
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"></script>
 
-    <!-- Zoom CSS -->
-    <link rel="stylesheet" type="text/css" href="css/zoom.css">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"></script>
 
-    <!-- Zoom Js -->
-    <script src="js/zoom.js"></script>
-    <script src="js/scrolls.js"></script>    
-    <!-- <link rel="stylesheet" href="css/alps78th.css"> -->
-    <title>111學年度六上校本課程(蝴蝶)學習單</title>
-  </head>
-  <style>
-    img[data-action="zoom"] {
-      cursor: pointer;
-      cursor: -webkit-zoom-in;
-      cursor: -moz-zoom-in;
+  <!-- Zoom CSS -->
+  <link rel="stylesheet" type="text/css" href="css/zoom.css">
+
+  <!-- Zoom Js -->
+  <script src="js/zoom.js"></script>
+  <script src="js/scrolls.js"></script>
+  <!-- <link rel="stylesheet" href="css/alps78th.css"> -->
+  <title>111學年度六上校本課程(蝴蝶)學習單</title>
+</head>
+<style>
+  img[data-action="zoom"] {
+    cursor: pointer;
+    cursor: -webkit-zoom-in;
+    cursor: -moz-zoom-in;
+  }
+
+  .zoom-img,
+  .zoom-img-wrap {
+    position: relative;
+    z-index: 666;
+    -webkit-transition: all 300ms;
+    -o-transition: all 300ms;
+    transition: all 300ms;
+  }
+
+  img.zoom-img {
+    cursor: pointer;
+    cursor: -webkit-zoom-out;
+    cursor: -moz-zoom-out;
+  }
+
+  .zoom-overlay {
+    z-index: 420;
+    background: #fff;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    pointer-events: none;
+    filter: "alpha(opacity=0)";
+    opacity: 0;
+    -webkit-transition: opacity 300ms;
+    -o-transition: opacity 300ms;
+    transition: opacity 300ms;
+  }
+
+  .zoom-overlay-open .zoom-overlay {
+    filter: "alpha(opacity=100)";
+    opacity: 1;
+  }
+
+  .zoom-overlay-open,
+  .zoom-overlay-transitioning {
+    cursor: default;
+  }
+
+  nav {
+    overflow-y: visible;
+    z-index: 100;
+  }
+
+  .carousel-item img {
+    width: 100%;
+    height: 300px;
+  }
+
+  .card-title:hover {
+    color: #fff;
+    background-color: rgb(237, 170, 240);
+  }
+
+  .dropdown-menu.Link {
+    left: auto;
+    right: 0;
+  }
+
+  @media screen and (min-width: 768px) {
+    .dropdown:hover .dropdown-menu {
+      display: block;
     }
-    .zoom-img,
-    .zoom-img-wrap {
-      position: relative;
-      z-index: 666;
-      -webkit-transition: all 300ms;
-          -o-transition: all 300ms;
-              transition: all 300ms;
-    }
-    img.zoom-img {
-      cursor: pointer;
-      cursor: -webkit-zoom-out;
-      cursor: -moz-zoom-out;
-    }
-    .zoom-overlay {
-      z-index: 420;
-      background: #fff;
-      position: fixed;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      pointer-events: none;
-      filter: "alpha(opacity=0)";
-      opacity: 0;
-      -webkit-transition: opacity 300ms;
-          -o-transition: opacity 300ms;
-              transition: opacity 300ms;
-    }
-    .zoom-overlay-open .zoom-overlay {
-      filter: "alpha(opacity=100)";
-      opacity: 1;
-    }
-    .zoom-overlay-open,
-    .zoom-overlay-transitioning {
-      cursor: default;
-    }
+  }
+</style>
 
-    nav {
-      overflow-y: visible;      
-      z-index: 100;
-    }   
-    .carousel-item img { width: 100%; height: 300px; }
-    .card-title:hover { color: #fff; background-color: rgb(237, 170, 240);}   
-    .dropdown-menu.Link { left: auto; right: 0;}
-    @media screen and (min-width: 768px) {
-      .dropdown:hover .dropdown-menu { display: block; }    
-    } 
-  </style>
-  <body>
-    <nav class="navbar navbar-expand-lg navbar-dark" style="position: fixed; top: 0px; width: 100%; background-color: #58129F; z-index: 70;">
-      <div class="container-fluid">
-        <span class="navbar-brand" style="font-size: 24px;">愛蘭國小78屆六乙班網</span>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarScroll">
-          <ul class="navbar-nav ms-auto my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 500px;">
+<body>
+  <nav class="navbar navbar-expand-lg navbar-dark"
+    style="position: fixed; top: 0px; width: 100%; background-color: #58129F; z-index: 70;">
+    <div class="container-fluid">
+      <span class="navbar-brand" style="font-size: 24px;">愛蘭國小78屆六乙班網</span>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll"
+        aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarScroll">
+        <ul class="navbar-nav ms-auto my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 500px;">
 
-            <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="index.html">首頁</a>
-            </li>
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="index.html">首頁</a>
+          </li>
 
-            <li class="nav-item">
-              <a class="nav-link" aria-current="page" href="https://reminiscent-legend-2b8.notion.site/2899cfffcf9348e9bba3f692efc2a061?v=30aeb7d2a9ce4b81ab4866bde22e922c" target="blank">公告</a>
-            </li>
-            
-            <li class="nav-item dropdown">
-              <span class="nav-link dropdown-toggle" id="navbarScrollingDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">班級經營</span>
-              <ul class="dropdown-menu" aria-labelledby="navbarScrollingDropdown">
-                <li><a class="dropdown-item" href="01-01-OnDuty.html">班級幹部、值日生、分組</a></li>                
-                <li><a class="dropdown-item" href="01-04-HomeworkSheet.html">功課表、科任老師、出題老師</a></li>
-                <li><a class="dropdown-item" href="01-05-Sweeping.html">掃地區域工作分配</a></li>
-                <li><a class="dropdown-item" href="01-06-FeeDetails.html">班費明細</a></li>
-                <li><a class="dropdown-item" href="01-07-AcademyCompetition.html">學藝競賽</a></li>
-                <li><a class="dropdown-item" href="01-08-OutdoorTeaching.html">校外教學</a></li>
-                <li><a class="dropdown-item" href="01-09-Societies.html">社團、團隊</a></li>
-                <li><a class="dropdown-item" href="01-10-EngLearningSupportNativeLanguage.html">英語手牽手、學習扶助、原民語</a></li>
-                <li><a class="dropdown-item" href="01-11-ParentContactNumber-NotPublic.html">家長聯絡電話(不公開)</a></li>
-                <li><a class="dropdown-item" href="01-12-BasicInformationStudents-NotPublic.html">學生基本資料(不公開)</a></li>
+          <li class="nav-item">
+            <a class="nav-link" aria-current="page"
+              href="https://reminiscent-legend-2b8.notion.site/2899cfffcf9348e9bba3f692efc2a061?v=30aeb7d2a9ce4b81ab4866bde22e922c"
+              target="blank">公告</a>
+          </li>
 
-                <li><a class="dropdown-item" href="01-13-StudentAccountPassword-NotPublic.html">學生帳、密(不公開)</a></li>
-              </ul>
-            </li>
-            
-            
-            <li class="nav-item dropdown">
-              <span class="nav-link dropdown-toggle" id="navbarScrollingDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">主題課程</span>
-              <ul class="dropdown-menu" aria-labelledby="navbarScrollingDropdown">
-                <li><a class="dropdown-item" href="02-5grad-1-semester.html">110學年度五上</a></li>
-                <li><a class="dropdown-item" href="02-5grad-2-semester.html">110學年度五下</a></li>                
-                <!-- <li><hr class="dropdown-divider"></li> -->
-                <li><a class="dropdown-item" href="02-6grad-1-semester.html">111學年度六上</a></li>
-                <li><a class="dropdown-item" href="02-6grad-2-semester.html">111學年度六下</a></li>
-              </ul>
-            </li> 
+          <li class="nav-item dropdown">
+            <span class="nav-link dropdown-toggle" id="navbarScrollingDropdown" role="button" data-bs-toggle="dropdown"
+              aria-expanded="false">班級經營</span>
+            <ul class="dropdown-menu" aria-labelledby="navbarScrollingDropdown">
+              <li><a class="dropdown-item" href="01-01-OnDuty.html">班級幹部、值日生、分組</a></li>
+              <li><a class="dropdown-item" href="01-04-HomeworkSheet.html">功課表、科任老師、出題老師</a></li>
+              <li><a class="dropdown-item" href="01-05-Sweeping.html">掃地區域工作分配</a></li>
+              <li><a class="dropdown-item" href="01-06-FeeDetails.html">班費明細</a></li>
+              <li><a class="dropdown-item" href="01-07-AcademyCompetition.html">學藝競賽</a></li>
+              <li><a class="dropdown-item" href="01-08-OutdoorTeaching.html">校外教學</a></li>
+              <li><a class="dropdown-item" href="01-09-Societies.html">社團、團隊</a></li>
+              <li><a class="dropdown-item" href="01-10-EngLearningSupportNativeLanguage.html">英語手牽手、學習扶助、原民語</a></li>
+              <li><a class="dropdown-item" href="01-11-ParentContactNumber-NotPublic.html">家長聯絡電話(不公開)</a></li>
+              <li><a class="dropdown-item" href="01-12-BasicInformationStudents-NotPublic.html">學生基本資料(不公開)</a></li>
+
+              <li><a class="dropdown-item" href="01-13-StudentAccountPassword-NotPublic.html">學生帳、密(不公開)</a></li>
+            </ul>
+          </li>
 
 
-            <li class="nav-item dropdown">
-              <span class="nav-link dropdown-toggle" id="navbarScrollingDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">學童作品</span>
-              <ul class="dropdown-menu" aria-labelledby="navbarScrollingDropdown">
-                <li><a class="dropdown-item" href="04-01-ZizaniaShootsLittleBook.html">茭白筍小書</a></li>
-                <li><a class="dropdown-item" href="04-02-ParentChildStudyLlist.html">親子共讀學習單</a></li>                
-                <li><a class="dropdown-item" href="04-03-PrincipalQuest.html">校長小客人</a></li>
-                <li><a class="dropdown-item" href="04-04-Recommended_books.html">好書報報</a></li>
-                <li><a class="dropdown-item" href="04-05-SchoolBasedCurse_worksheets.html">校本課程(蝴蝶)學習單</a></li>
-              </ul>
-            </li>
-            
 
-            <li class="nav-item dropdown">
-              <span class="nav-link dropdown-toggle" id="navbarScrollingDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">相簿</span>
-              <ul class="dropdown-menu" aria-labelledby="navbarScrollingDropdown">
-                <li><a class="dropdown-item" href="05-Album-5grad-1-semester.html">110學年度五上</a></li>
-                <li><a class="dropdown-item" href="05-Album-5grad-2-semester.html">110學年度五下</a></li>                
-                <li><a class="dropdown-item" href="05-Album-6grad-1-semester.html">111學年度六上</a></li>
-                <li><a class="dropdown-item" href="05-Album-6grad-2-semester.html">111學年度六下</a></li>
-              </ul>
-            </li>
+          <li class="nav-item dropdown">
+            <span class="nav-link dropdown-toggle" id="navbarScrollingDropdown-theme" role="button"
+              data-bs-toggle="dropdown" aria-expanded="false">主題課程</span>
+            <ul class="dropdown-menu" aria-labelledby="navbarScrollingDropdown-theme">
+              <li><a class="dropdown-item" href="02-5grad-1-semester.html">110學年度五上</a></li>
+              <li><a class="dropdown-item" href="02-5grad-2-semester.html">110學年度五下</a></li>
+              <!-- <li><hr class="dropdown-divider"></li> -->
+              <li><a class="dropdown-item" href="02-6grad-1-semester.html">111學年度六上</a></li>
+              <li><a class="dropdown-item" href="02-6grad-2-semester.html">111學年度六下</a></li>
+            </ul>
+          </li>
 
 
-            <li class="nav-item dropdown">
-              <span class="nav-link dropdown-toggle" id="navbarScrollingDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">榮譽榜</span>
-              <ul class="dropdown-menu" aria-labelledby="navbarScrollingDropdown">
-                <li><a class="dropdown-item" href="06-HonorRoll-5grad-1-semester.html">110學年度五上</a></li>
-                <li><a class="dropdown-item" href="06-HonorRoll-5grad-2-semester.html">110學年度五下</a></li>
-                <li><a class="dropdown-item" href="06-HonorRoll-6grad-1-semester.html">111學年度六上</a></li>
-                <li><a class="dropdown-item" href="06-HonorRoll-6grad-2-semester.html">111學年度六下</a></li>
-              </ul>
-            </li>
-            
-
-            <li class="nav-item dropdown">
-              <span class="nav-link dropdown-toggle" id="navbarScrollingDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">行事曆</span>
-              <ul class="dropdown-menu" aria-labelledby="navbarScrollingDropdown">
-                <li><a class="dropdown-item" href="07-GoogleCalndar.html">Google行事曆</a></li>
-                <li><a class="dropdown-item" href="07-Calendar-2021.html">辦公日曆</a></li>
-                <li><a class="dropdown-item" href="07-CalendarKeyCalendar.html">愛蘭重點行事曆</a></li>
-              </ul>
-            </li>
+          <li class="nav-item dropdown">
+            <span class="nav-link dropdown-toggle" id="navbarScrollingDropdown-work" role="button"
+              data-bs-toggle="dropdown" aria-expanded="false">學童作品</span>
+            <ul class="dropdown-menu" aria-labelledby="navbarScrollingDropdown-work">
+              <li><a class="dropdown-item" href="04-01-ZizaniaShootsLittleBook.html">茭白筍小書</a></li>
+              <li><a class="dropdown-item" href="04-02-ParentChildStudyLlist.html">親子共讀學習單</a></li>
+              <li><a class="dropdown-item" href="04-03-PrincipalQuest.html">校長小客人</a></li>
+              <li><a class="dropdown-item" href="04-04-Recommended_books.html">好書報報</a></li>
+              <li><a class="dropdown-item" href="04-05-SchoolBasedCurse_worksheets.html">校本課程(蝴蝶)學習單</a></li>
+            </ul>
+          </li>
 
 
-            <li class="nav-item dropdown">
-              <span class="nav-link dropdown-toggle" id="navbarScrollingDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">數位學習</span>
-              <ul class="dropdown-menu" aria-labelledby="navbarScrollingDropdown">
-                <li><a class="dropdown-item" href="https://sites.google.com/site/sjsshuweijiaoxuewang/" target="blank">SJS數位學習網</a></li>
-                <li><a class="dropdown-item" href="https://www.notion.so/" target="blank">Notion</a></li>
-                <li><a class="dropdown-item" href="https://www.icrt.com.tw/index.php" target="blank">ICRT</a></li>
-                <li><a class="dropdown-item" href="https://www.coolenglish.edu.tw/" target="blank">coolenglish(酷英)</a></li>
-                <li><a class="dropdown-item" href="https://contest.hlc.edu.tw/typing/" target="blank">花蓮縣打字練習網</a></li>
-                <li><a class="dropdown-item" href="https://classroom.google.com/" target="blank">Google classroom</a></li>
-                <li><a class="dropdown-item" href="https://meet.google.com/" target="blank">Google meet</a></li>
-                <li><a class="dropdown-item" href="https://coggle.it/" target="blank">Coggle(心智圖)</a></li>
-                <li><a class="dropdown-item" href="https://kahoot.it/" target="blank">Kahoot學生端</a></li>
-                <li><a class="dropdown-item" href="https://adl.edu.tw/" target="blank">因材網</a></li>
-                <li><a class="dropdown-item" href="https://www.learnmode.net/" target="blank">學習吧</a></li>
-                <li><a class="dropdown-item" href="https://www.nlpi.edu.tw/" target="blank">國立公共資訊圖書館</a></li>
-                <li><a class="dropdown-item" href="https://www.junyiacademy.org/" target="blank">均一教育平台</a></li>
-              </ul>
-            </li>
+          <li class="nav-item dropdown">
+            <span class="nav-link dropdown-toggle" id="navbarScrollingDropdown-photo" role="button"
+              data-bs-toggle="dropdown" aria-expanded="false">相簿</span>
+            <ul class="dropdown-menu" aria-labelledby="navbarScrollingDropdown-photo">
+              <li><a class="dropdown-item" href="05-Album-5grad-1-semester.html">110學年度五上</a></li>
+              <li><a class="dropdown-item" href="05-Album-5grad-2-semester.html">110學年度五下</a></li>
+              <li><a class="dropdown-item" href="05-Album-6grad-1-semester.html">111學年度六上</a></li>
+              <li><a class="dropdown-item" href="05-Album-6grad-2-semester.html">111學年度六下</a></li>
+            </ul>
+          </li>
 
 
-            <li class="nav-item dropdown">
-              <span class="nav-link dropdown-toggle" id="navbarScrollingDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">常用連結</span>
-              <ul class="dropdown-menu Link" aria-labelledby="navbarScrollingDropdown">
-                <li><a class="dropdown-item" href="https://alps.ntct.edu.tw" target="blank">愛蘭國小</a></li>
-                <li><a class="dropdown-item" href="https://adl.edu.tw/" target="blank">因材網</a></li>
-                <li><a class="dropdown-item" href="https://www.junyiacademy.org/" target="blank">均一教育平台</a></li>
-                <li><a class="dropdown-item" href="https://eschool.ntct.edu.tw/" target="blank">南投縣校務行政系統</a></li>
-                <li><a class="dropdown-item" href="https://dict.mini.moe.edu.tw/" target="blank">國語小字典</a></li>
-                <li><a class="dropdown-item" href="http://dict.revised.moe.edu.tw/cbdic/" target="blank">重編國語辭典修訂本</a></li>
-                <li><a class="dropdown-item" href="https://stroke-order.learningweb.moe.edu.tw/" target="blank">筆順學習網</a></li>
-                <li><a class="dropdown-item" href="http://163.20.160.14/~word/" target="blank">書法教學網</a></li>
-                <li><a class="dropdown-item" href="http://163.20.160.14/~moodle/course/view.php?id=22" target="blank">國小硬筆字教學實務</a></li>
-                <li><a class="dropdown-item" href="http://write.phc.edu.tw/" target="blank">澎湖縣硬筆書法教學網</a></li>
-                <li><a class="dropdown-item" href="http://163.20.160.14/~ntc/course/index.php?categoryid=17" target="blank">新北市書法教學網</a></li>
-                <li><a class="dropdown-item" href="http://www.emath.math.ncu.edu.tw/e_school/" target="blank">子由數學小學堂</a></li>
-                <li><a class="dropdown-item" href="https://tw.dictionary.search.yahoo.com/" target="blank">奇摩英語字典</a></li>
-                <li><a class="dropdown-item" href="https://translate.google.com.tw/?hl=zh-TW" target="blank">Google翻譯</a></li>
-                <li><a class="dropdown-item" href="https://www.egame.kh.edu.tw/" target="blank">U世代島嶼學習樂園</a></li>               
-              </ul>
-            </li> 
-          </ul>
-        </div>
+
+          <li class="nav-item dropdown">
+            <span class="nav-link dropdown-toggle" id="navbarScrollingDropdown-honor" role="button"
+              data-bs-toggle="dropdown" aria-expanded="false">榮譽榜</span>
+            <ul class="dropdown-menu" aria-labelledby="navbarScrollingDropdown-honor">
+              <li><a class="dropdown-item" href="06-HonorRoll-5grad-1-semester.html">110學年度五上</a></li>
+              <li><a class="dropdown-item" href="06-HonorRoll-5grad-2-semester.html">110學年度五下</a></li>
+              <li><a class="dropdown-item" href="06-HonorRoll-6grad-1-semester.html">111學年度六上</a></li>
+              <li><a class="dropdown-item" href="06-HonorRoll-6grad-2-semester.html">111學年度六下</a></li>
+            </ul>
+          </li>
+
+
+
+          <li class="nav-item dropdown">
+            <span class="nav-link dropdown-toggle" id="navbarScrollingDropdown-cal" role="button"
+              data-bs-toggle="dropdown" aria-expanded="false">行事曆</span>
+            <ul class="dropdown-menu" aria-labelledby="navbarScrollingDropdown-cal">
+              <li><a class="dropdown-item" href="07-GoogleCalndar.html">Google行事曆</a></li>
+              <li><a class="dropdown-item" href="07-Calendar-2021.html">辦公日曆</a></li>
+              <li><a class="dropdown-item" href="07-CalendarKeyCalendar.html">愛蘭重點行事曆</a></li>
+            </ul>
+          </li>
+
+
+          <li class="nav-item dropdown">
+            <span class="nav-link dropdown-toggle" id="navbarScrollingDropdown-digital-study" role="button"
+              data-bs-toggle="dropdown" aria-expanded="false">數位學習</span>
+            <ul class="dropdown-menu" aria-labelledby="navbarScrollingDropdown-digital-study">
+              <li><a class="dropdown-item" href="https://sites.google.com/site/sjsshuweijiaoxuewang/"
+                  target="blank">SJS數位學習網</a></li>
+              <li><a class="dropdown-item" href="https://www.notion.so/" target="blank">Notion</a></li>
+              <li><a class="dropdown-item" href="https://www.icrt.com.tw/index.php" target="blank">ICRT</a></li>
+              <li><a class="dropdown-item" href="https://www.coolenglish.edu.tw/" target="blank">coolenglish(酷英)</a>
+              </li>
+              <li><a class="dropdown-item" href="https://contest.hlc.edu.tw/typing/" target="blank">花蓮縣打字練習網</a></li>
+              <li><a class="dropdown-item" href="https://classroom.google.com/" target="blank">Google classroom</a></li>
+              <li><a class="dropdown-item" href="https://meet.google.com/" target="blank">Google meet</a></li>
+              <li><a class="dropdown-item" href="https://coggle.it/" target="blank">Coggle(心智圖)</a></li>
+              <li><a class="dropdown-item" href="https://kahoot.it/" target="blank">Kahoot學生端</a></li>
+              <li><a class="dropdown-item" href="https://adl.edu.tw/" target="blank">因材網</a></li>
+              <li><a class="dropdown-item" href="https://www.learnmode.net/" target="blank">學習吧</a></li>
+              <li><a class="dropdown-item" href="https://www.nlpi.edu.tw/" target="blank">國立公共資訊圖書館</a></li>
+              <li><a class="dropdown-item" href="https://www.junyiacademy.org/" target="blank">均一教育平台</a></li>
+            </ul>
+          </li>
+
+
+
+          <li class="nav-item dropdown">
+            <span class="nav-link dropdown-toggle" id="navbarScrollingDropdown-normal" role="button"
+              data-bs-toggle="dropdown" aria-expanded="false">常用連結</span>
+            <ul class="dropdown-menu Link" aria-labelledby="navbarScrollingDropdown-normal">
+              <li><a class="dropdown-item" href="https://alps.ntct.edu.tw" target="blank">愛蘭國小</a></li>
+              <li><a class="dropdown-item" href="https://adl.edu.tw/" target="blank">因材網</a></li>
+              <li><a class="dropdown-item" href="https://www.junyiacademy.org/" target="blank">均一教育平台</a></li>
+              <li><a class="dropdown-item" href="https://eschool.ntct.edu.tw/" target="blank">南投縣校務行政系統</a></li>
+              <li><a class="dropdown-item" href="https://dict.mini.moe.edu.tw/" target="blank">國語小字典</a></li>
+              <li><a class="dropdown-item" href="http://dict.revised.moe.edu.tw/cbdic/" target="blank">重編國語辭典修訂本</a>
+              </li>
+              <li><a class="dropdown-item" href="https://stroke-order.learningweb.moe.edu.tw/" target="blank">筆順學習網</a>
+              </li>
+              <li><a class="dropdown-item" href="http://163.20.160.14/~word/" target="blank">書法教學網</a></li>
+              <li><a class="dropdown-item" href="http://163.20.160.14/~moodle/course/view.php?id=22"
+                  target="blank">國小硬筆字教學實務</a></li>
+              <li><a class="dropdown-item" href="http://write.phc.edu.tw/" target="blank">澎湖縣硬筆書法教學網</a></li>
+              <li><a class="dropdown-item" href="http://163.20.160.14/~ntc/course/index.php?categoryid=17"
+                  target="blank">新北市書法教學網</a></li>
+              <li><a class="dropdown-item" href="http://www.emath.math.ncu.edu.tw/e_school/" target="blank">子由數學小學堂</a>
+              </li>
+              <li><a class="dropdown-item" href="https://tw.dictionary.search.yahoo.com/" target="blank">奇摩英語字典</a></li>
+              <li><a class="dropdown-item" href="https://translate.google.com.tw/?hl=zh-TW" target="blank">Google翻譯</a>
+              </li>
+              <li><a class="dropdown-item" href="https://www.egame.kh.edu.tw/" target="blank">U世代島嶼學習樂園</a></li>
+            </ul>
+          </li>
+        </ul>
       </div>
-    </nav>
+    </div>
+  </nav>
 
   <!-- Carousel -->
   <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
     <div class="carousel-indicators">
-      <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-      <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
-      <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
-      <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="3" aria-label="Slide 4"></button>
-      <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="4" aria-label="Slide 5"></button>
+      <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active"
+        aria-current="true" aria-label="Slide 1"></button>
+      <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"
+        aria-label="Slide 2"></button>
+      <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"
+        aria-label="Slide 3"></button>
+      <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="3"
+        aria-label="Slide 4"></button>
+      <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="4"
+        aria-label="Slide 5"></button>
     </div>
     <div class="carousel-inner">
       <div class="carousel-item active">
@@ -228,7 +278,7 @@
       </div>
       <div class="carousel-item">
         <img src="img/02.jpg" class="d-block" alt="...">
-        <div class="carousel-caption d-md-block">          
+        <div class="carousel-caption d-md-block">
           <h5>追求卓越，成功自然會找上門來</h5>
           <p> Chase excellence,success will follow. </p>
         </div>
@@ -242,276 +292,345 @@
       </div>
       <div class="carousel-item">
         <img src="img/04.jpg" class="d-block" alt="...">
-        <div class="carousel-caption d-md-block">          
+        <div class="carousel-caption d-md-block">
           <h5>追求卓越，成功自然會找上門來</h5>
           <p> Chase excellence,success will follow. </p>
         </div>
       </div>
       <div class="carousel-item">
         <img src="img/05.jpg" class="d-block" alt="...">
-        <div class="carousel-caption d-md-block">          
+        <div class="carousel-caption d-md-block">
           <h5>追求卓越，成功自然會找上門來</h5>
           <p> Chase excellence,success will follow. </p>
         </div>
       </div>
     </div>
-    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
+      data-bs-slide="prev">
       <span class="carousel-control-prev-icon" aria-hidden="true"></span>
       <span class="visually-hidden">Previous</span>
     </button>
-    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators"
+      data-bs-slide="next">
       <span class="carousel-control-next-icon" aria-hidden="true"></span>
       <span class="visually-hidden">Next</span>
     </button>
-  </div> 
+  </div>
 
-<br>
+  <br>
 
-<div class="container">
-  <!-- 以下第一列：2021-9月 -->
-  <div class="row">
-    <a href="https://photos.app.goo.gl/AgcFZTdMQcTRZCmU7" target="blank" style="color: purple; text-decoration: none; text-align: left;"><h5 class="card-title">2022.09.15-校本課程學習單(蝴蝶簡介)《前往相簿》</h5>
-    </a>
-    <div class="col-md-2">
-      <div class="card">
-        <img id="PrincipleQuest" src="https://lh3.googleusercontent.com/pw/AL9nZEXpbUKC0peQMEDHt24wxBUQorpJhr0b8h3NawqmxKvMHDfBMs8cudK8LqOJSEl65l_Iwb4cLffWn-nN7pMc6eFwl98f7pcfge2B-0Pa6HkrD6n2wJQwE4JftkSogP_mB83_2KlI7gatEyhTZroCZBoMww=w657-h929-no?authuser=0" class="card-img-top" title="點擊圖片可以縮放圖片" data-action="zoom">             
+  <div class="container">
+    <!-- 以下第一列：2021-9月 -->
+    <div class="row">
+      <a href="https://photos.app.goo.gl/AgcFZTdMQcTRZCmU7" target="blank"
+        style="color: purple; text-decoration: none; text-align: left;">
+        <h5 class="card-title">2022.09.15-校本課程學習單(蝴蝶簡介)《前往相簿》</h5>
+      </a>
+      <div class="col-md-2">
+        <div class="card">
+          <img id="PrincipleQuest"
+            src="https://lh3.googleusercontent.com/pw/AL9nZEXpbUKC0peQMEDHt24wxBUQorpJhr0b8h3NawqmxKvMHDfBMs8cudK8LqOJSEl65l_Iwb4cLffWn-nN7pMc6eFwl98f7pcfge2B-0Pa6HkrD6n2wJQwE4JftkSogP_mB83_2KlI7gatEyhTZroCZBoMww=w657-h929-no?authuser=0"
+            class="card-img-top" title="點擊圖片可以縮放圖片" data-action="zoom">
+        </div>
+        <p class="card-text" style="font-size: 14px; text-align: center;">作者：沛云</p>
       </div>
-      <p class="card-text" style="font-size: 14px; text-align: center;">作者：沛云</p>
-    </div>
-    
-    <div class="col-md-2">
-      <div class="card">
-        <img id="PrincipleQuest" src="https://lh3.googleusercontent.com/pw/AL9nZEVUkDAZfZaq89U31KLgpcZwnEGRyWTazhL58w7pHE9guIVugE_HTiibG27KmWkDuCu6OKHJUBxSXUgRqoGIltRaLXemQ3TK3eDbg0QD128oFOYz3xREGTyNhxMfnrtfG3tHjMToYDFFTROlaXeZja47HQ=w657-h929-no?authuser=0" class="card-img-top" title="點擊圖片可以縮放圖片" data-action="zoom">             
-      </div>
-      <p class="card-text" style="font-size: 14px; text-align: center;">作者：恩哲</p>
-    </div>
 
-    <div class="col-md-2">
-      <div class="card">
-        <img id="PrincipleQuest" src="https://lh3.googleusercontent.com/pw/AL9nZEXEk9tlEBjEKKqPZorue-YoFZTIAthU2nk_qrE9do9epkK9YApLmaeEpRvqzkc3oWyWa2pEiPhNQ13y_RVsw6e3yeBbqN0lYruZe7U17MY95PGhOBWekC_glRvlWiXtBZJ0r_Eehl4Xg0BCMWZ10AzJ5w=w657-h929-no?authuser=0" class="card-img-top" title="點擊圖片可以縮放圖片" data-action="zoom">             
+      <div class="col-md-2">
+        <div class="card">
+          <img id="PrincipleQuest"
+            src="https://lh3.googleusercontent.com/pw/AL9nZEVUkDAZfZaq89U31KLgpcZwnEGRyWTazhL58w7pHE9guIVugE_HTiibG27KmWkDuCu6OKHJUBxSXUgRqoGIltRaLXemQ3TK3eDbg0QD128oFOYz3xREGTyNhxMfnrtfG3tHjMToYDFFTROlaXeZja47HQ=w657-h929-no?authuser=0"
+            class="card-img-top" title="點擊圖片可以縮放圖片" data-action="zoom">
+        </div>
+        <p class="card-text" style="font-size: 14px; text-align: center;">作者：恩哲</p>
       </div>
-      <p class="card-text" style="font-size: 14px; text-align: center;">作者：亨一</p>
-    </div>
 
-    <div class="col-md-2">
-      <div class="card">
-        <img id="PrincipleQuest" src="https://lh3.googleusercontent.com/pw/AL9nZEVAjHVGZo2tKtcdlnuBHJU4ePqfXFfqDUGX4icqkIBwsd_oxf_447jIAbTeNibXs5WHrGXleD2QIedg5xXceyavRs44c_ucV_7P4Ci_DWluoW2lJoYyvm7L6af5tZMbEqC2_tOSwfawOGm5OXzxbpY8wQ=w657-h929-no?authuser=0" class="card-img-top" title="點擊圖片可以縮放圖片" data-action="zoom">             
+      <div class="col-md-2">
+        <div class="card">
+          <img id="PrincipleQuest"
+            src="https://lh3.googleusercontent.com/pw/AL9nZEXEk9tlEBjEKKqPZorue-YoFZTIAthU2nk_qrE9do9epkK9YApLmaeEpRvqzkc3oWyWa2pEiPhNQ13y_RVsw6e3yeBbqN0lYruZe7U17MY95PGhOBWekC_glRvlWiXtBZJ0r_Eehl4Xg0BCMWZ10AzJ5w=w657-h929-no?authuser=0"
+            class="card-img-top" title="點擊圖片可以縮放圖片" data-action="zoom">
+        </div>
+        <p class="card-text" style="font-size: 14px; text-align: center;">作者：亨一</p>
       </div>
-      <p class="card-text" style="font-size: 14px; text-align: center;">作者：詠淩</p>
-    </div>
 
-    <div class="col-md-2">
-      <div class="card">
-        <img id="PrincipleQuest" src="https://lh3.googleusercontent.com/pw/AL9nZEXYocYlAkuMizRoD6b0PCC_KSxTKJ7txVewXvhjKs5-ZajNXMAnE6ogNIRIrTCq4gDIGKab_g1MiyAAA6W_p7HIHPo_wQZj5zkqXSR2fewnpT9apXLlL9R7GspQ_ULRF6DzwYwbBLEwnwFRN09bf52oGA=w657-h929-no?authuser=0" class="card-img-top" title="點擊圖片可以縮放圖片" data-action="zoom">             
+      <div class="col-md-2">
+        <div class="card">
+          <img id="PrincipleQuest"
+            src="https://lh3.googleusercontent.com/pw/AL9nZEVAjHVGZo2tKtcdlnuBHJU4ePqfXFfqDUGX4icqkIBwsd_oxf_447jIAbTeNibXs5WHrGXleD2QIedg5xXceyavRs44c_ucV_7P4Ci_DWluoW2lJoYyvm7L6af5tZMbEqC2_tOSwfawOGm5OXzxbpY8wQ=w657-h929-no?authuser=0"
+            class="card-img-top" title="點擊圖片可以縮放圖片" data-action="zoom">
+        </div>
+        <p class="card-text" style="font-size: 14px; text-align: center;">作者：詠淩</p>
       </div>
-      <p class="card-text" style="font-size: 14px; text-align: center;">作者：禾豐</p>
-    </div>
 
-    <div class="col-md-2">
-      <div class="card">
-        <img id="PrincipleQuest" src="https://lh3.googleusercontent.com/pw/AL9nZEW_MlneEpVK6U2BIEo-GJNQ6In2Sc_XiEVDdj6Wv_I_3PYmR2LPfyoLEM7M5PmgnkN8xClk0mzE0tgocqDlaaf6jVReLtPzxGIVCuigzDGLLh4rEoJw7yE4Qk0K5Pf5NzwZ8mi-3kM0VxClTw1m3suTbg=w657-h929-no?authuser=0" class="card-img-top" title="點擊圖片可以縮放圖片" data-action="zoom">             
+      <div class="col-md-2">
+        <div class="card">
+          <img id="PrincipleQuest"
+            src="https://lh3.googleusercontent.com/pw/AL9nZEXYocYlAkuMizRoD6b0PCC_KSxTKJ7txVewXvhjKs5-ZajNXMAnE6ogNIRIrTCq4gDIGKab_g1MiyAAA6W_p7HIHPo_wQZj5zkqXSR2fewnpT9apXLlL9R7GspQ_ULRF6DzwYwbBLEwnwFRN09bf52oGA=w657-h929-no?authuser=0"
+            class="card-img-top" title="點擊圖片可以縮放圖片" data-action="zoom">
+        </div>
+        <p class="card-text" style="font-size: 14px; text-align: center;">作者：禾豐</p>
       </div>
-      <p class="card-text" style="font-size: 14px; text-align: center;">作者：柏翔</p>
-    </div>
-  </div><br>
-  <!-- 以下第二列：2022.09.22 -->
-  <div class="row">
-    <a href="https://photos.app.goo.gl/Ri38oASeJoD5MEoQ6" target="blank" style="color: purple; text-decoration: none; text-align: left;"><h5 class="card-title">2022.09.22-校本課程學習單(蝴蝶的婚禮、卵、幼蟲、化蛹、羽化、成蟲)《前往相簿》</h5>
-    </a>
-    <div class="col-md-2">
-      <div class="card">
-        <img id="PrincipleQuest" src="https://lh3.googleusercontent.com/pw/AL9nZEVxN43ptrXCRSJEwuPXv-8XV0VaW8xeHDKoUNF8UP945s0l3UTkwvWbBsc1RrUUg2FBQIFWjN-QYpEpHUj0flgG6Ni2zaHTs9CS8r5vsvND0fP0LadUgBFl7KMujkjC_eEacAT2SMagtBPD5DpwqGnoUA=w658-h929-no?authuser=0" class="card-img-top" title="點擊圖片可以縮放圖片" data-action="zoom">             
-      </div>
-      <p class="card-text" style="font-size: 14px; text-align: center;">作者：沛云</p>
-    </div>
-    
-    <div class="col-md-2">
-      <div class="card">
-        <img id="PrincipleQuest" src="https://lh3.googleusercontent.com/pw/AL9nZEXGT8fB4FSrocU6sfL5y4QlhlPlnafXtROJEEo-lyiTg9C9lLNrIfB94_x_p3UKOcnB2J1_mEwCRLDWw_sPMbWLzIQzX__iziv-CZg1J2rX9PlQj_R8JSiJm9r5x7VDAchsiEQ58p9MsWtvwF5n1iwEHg=w658-h929-no?authuser=0" class="card-img-top" title="點擊圖片可以縮放圖片" data-action="zoom">             
-      </div>
-      <p class="card-text" style="font-size: 14px; text-align: center;">作者：恩哲</p>
-    </div>
 
-    <div class="col-md-2">
-      <div class="card">
-        <img id="PrincipleQuest" src="https://lh3.googleusercontent.com/pw/AL9nZEXgPhom3yEzdNZFtgSMDWjZSl603gPUxtBy0PP6ZR88Y_ug_YTOVrLxYEbYMxhsVk6AxhRGB_mayVx58-LHYbTrAcDadFAtO_VOi2z5e5-V_3mytFonmg3s57TGgyrNNsRezdV9ictZyeY5ii0nbs0CXw=w658-h929-no?authuser=0" class="card-img-top" title="點擊圖片可以縮放圖片" data-action="zoom">             
+      <div class="col-md-2">
+        <div class="card">
+          <img id="PrincipleQuest"
+            src="https://lh3.googleusercontent.com/pw/AL9nZEW_MlneEpVK6U2BIEo-GJNQ6In2Sc_XiEVDdj6Wv_I_3PYmR2LPfyoLEM7M5PmgnkN8xClk0mzE0tgocqDlaaf6jVReLtPzxGIVCuigzDGLLh4rEoJw7yE4Qk0K5Pf5NzwZ8mi-3kM0VxClTw1m3suTbg=w657-h929-no?authuser=0"
+            class="card-img-top" title="點擊圖片可以縮放圖片" data-action="zoom">
+        </div>
+        <p class="card-text" style="font-size: 14px; text-align: center;">作者：柏翔</p>
       </div>
-      <p class="card-text" style="font-size: 14px; text-align: center;">作者：楓棠</p>
-    </div>
+    </div><br>
+    <!-- 以下第二列：2022.09.22 -->
+    <div class="row">
+      <a href="https://photos.app.goo.gl/Ri38oASeJoD5MEoQ6" target="blank"
+        style="color: purple; text-decoration: none; text-align: left;">
+        <h5 class="card-title">2022.09.22-校本課程學習單(蝴蝶的婚禮、卵、幼蟲、化蛹、羽化、成蟲)《前往相簿》</h5>
+      </a>
+      <div class="col-md-2">
+        <div class="card">
+          <img id="PrincipleQuest"
+            src="https://lh3.googleusercontent.com/pw/AL9nZEVxN43ptrXCRSJEwuPXv-8XV0VaW8xeHDKoUNF8UP945s0l3UTkwvWbBsc1RrUUg2FBQIFWjN-QYpEpHUj0flgG6Ni2zaHTs9CS8r5vsvND0fP0LadUgBFl7KMujkjC_eEacAT2SMagtBPD5DpwqGnoUA=w658-h929-no?authuser=0"
+            class="card-img-top" title="點擊圖片可以縮放圖片" data-action="zoom">
+        </div>
+        <p class="card-text" style="font-size: 14px; text-align: center;">作者：沛云</p>
+      </div>
 
-    <div class="col-md-2">
-      <div class="card">
-        <img id="PrincipleQuest" src="https://lh3.googleusercontent.com/pw/AL9nZEUW0aFb8xI6QYzbr4UkZz0whBQDg8JGWkIVkdoSVJn4m0LYhhQEuHGWqtQcwM-HjAboZg-tIYFk7K6wLTrhlAB33TdrlfPmsk74ArQbohMWm8tIr6W8hqi01MJXidYTuq9HElx5iFwk3BBnH_ZpuNh0pA=w658-h929-no?authuser=0" class="card-img-top" title="點擊圖片可以縮放圖片" data-action="zoom">             
+      <div class="col-md-2">
+        <div class="card">
+          <img id="PrincipleQuest"
+            src="https://lh3.googleusercontent.com/pw/AL9nZEXGT8fB4FSrocU6sfL5y4QlhlPlnafXtROJEEo-lyiTg9C9lLNrIfB94_x_p3UKOcnB2J1_mEwCRLDWw_sPMbWLzIQzX__iziv-CZg1J2rX9PlQj_R8JSiJm9r5x7VDAchsiEQ58p9MsWtvwF5n1iwEHg=w658-h929-no?authuser=0"
+            class="card-img-top" title="點擊圖片可以縮放圖片" data-action="zoom">
+        </div>
+        <p class="card-text" style="font-size: 14px; text-align: center;">作者：恩哲</p>
       </div>
-      <p class="card-text" style="font-size: 14px; text-align: center;">作者：柏翔</p>
-    </div>
 
-    <div class="col-md-2">
-      <div class="card">
-        <img id="PrincipleQuest" src="https://lh3.googleusercontent.com/pw/AL9nZEXHv_SZnkjBT-slUF_6_aHIfwbzmre1NMS4MOx-7wS-yM4RQYgzWcxtVrES9-YULO33H6_I8NhGOm2tlyZcY7_FyLWztg9XYR7S6msOwhrpBWQ4WKrsPaLJ_g1dZMh_aKJquRTZLNGNNrtPfmwj0svHQw=w658-h929-no?authuser=0" class="card-img-top" title="點擊圖片可以縮放圖片" data-action="zoom">             
+      <div class="col-md-2">
+        <div class="card">
+          <img id="PrincipleQuest"
+            src="https://lh3.googleusercontent.com/pw/AL9nZEXgPhom3yEzdNZFtgSMDWjZSl603gPUxtBy0PP6ZR88Y_ug_YTOVrLxYEbYMxhsVk6AxhRGB_mayVx58-LHYbTrAcDadFAtO_VOi2z5e5-V_3mytFonmg3s57TGgyrNNsRezdV9ictZyeY5ii0nbs0CXw=w658-h929-no?authuser=0"
+            class="card-img-top" title="點擊圖片可以縮放圖片" data-action="zoom">
+        </div>
+        <p class="card-text" style="font-size: 14px; text-align: center;">作者：楓棠</p>
       </div>
-      <p class="card-text" style="font-size: 14px; text-align: center;">作者：囿妘</p>
-    </div>
 
-    <div class="col-md-2">
-      <div class="card">
-        <img id="PrincipleQuest" src="https://lh3.googleusercontent.com/pw/AL9nZEXX7x5EitdJAJOnvApTg0058uaW9O8xIQZFE_v9BaHxmwYAUTpxWNSAVB0G4b9sJVdeCYY2akQQo2JYEpxh1nv0D4upiHX2kxtfeC7P2n7skEwSmbMUMRNqm6WKBWncLVX2FlXUF4B96oBVdKGt55HALA=w658-h929-no?authuser=0" class="card-img-top" title="點擊圖片可以縮放圖片" data-action="zoom">             
+      <div class="col-md-2">
+        <div class="card">
+          <img id="PrincipleQuest"
+            src="https://lh3.googleusercontent.com/pw/AL9nZEUW0aFb8xI6QYzbr4UkZz0whBQDg8JGWkIVkdoSVJn4m0LYhhQEuHGWqtQcwM-HjAboZg-tIYFk7K6wLTrhlAB33TdrlfPmsk74ArQbohMWm8tIr6W8hqi01MJXidYTuq9HElx5iFwk3BBnH_ZpuNh0pA=w658-h929-no?authuser=0"
+            class="card-img-top" title="點擊圖片可以縮放圖片" data-action="zoom">
+        </div>
+        <p class="card-text" style="font-size: 14px; text-align: center;">作者：柏翔</p>
       </div>
-      <p class="card-text" style="font-size: 14px; text-align: center;">作者：守中</p>
-    </div>
-  </div><br>
-  <!-- 以下第三列：2022.09.29 -->
-  <div class="row">
-    <a href="https://photos.app.goo.gl/irAvBs1rrwYnTvdQA" target="blank" style="color: purple; text-decoration: none; text-align: left;"><h5 class="card-title">2022.09.29-校本課程學習單(蝴蝶的天敵與防衛)《前往相簿》</h5>
-    </a>
-    <div class="col-md-2">
-      <div class="card">
-        <img id="PrincipleQuest" src="https://lh3.googleusercontent.com/pw/AL9nZEVRNsIxYAybjBH5aWXbgcRfDhDp8pNSZZ899X-RzIBNBEs4759OO9M3GnQfy40iu4ICWI9OslHkqZF7vFeLxeL5Ehc6FJbxOpf6XoB30LpxzSXjedayeDmS9tZVpUpPEatH3Kf3BcuUklbhwZKAGCKaoQ=w658-h929-no?authuser=0" class="card-img-top" title="點擊圖片可以縮放圖片" data-action="zoom">             
-      </div>
-      <p class="card-text" style="font-size: 14px; text-align: center;">作者：沛云</p>
-    </div>
-    
-    <div class="col-md-2">
-      <div class="card">
-        <img id="PrincipleQuest" src="https://lh3.googleusercontent.com/pw/AL9nZEXcMj5F3F9HquVCSoO5K2_D1518nNGabfjAOSOKPlXbcNJTSz5ELPRGgj2ttW0KdFFq6F5HYkVksFp51fUeOsqL2ajJNT2giyRjltWej_vnqaNda6fDgBX_d227UGC4FoYj7eDsEjqUpCk9PI38TN7Few=w658-h929-no?authuser=0" class="card-img-top" title="點擊圖片可以縮放圖片" data-action="zoom">             
-      </div>
-      <p class="card-text" style="font-size: 14px; text-align: center;">作者：恩哲</p>
-    </div>
 
-    <div class="col-md-2">
-      <div class="card">
-        <img id="PrincipleQuest" src="https://lh3.googleusercontent.com/pw/AL9nZEV38pFdahPMFFQ14IdQPmgB6veIf2TvSV-sH5MIcpqgTYSu5iAyili7TrlWzKrNOVFYy2w6IzmNCD4-UpQDPWtZyt5GmwyfBJkBOBPWxwtZrIP7ja6wfg5e-uEzl6dlduRK4IwMc0urXhrLQgJTfn1ncw=w658-h929-no?authuser=0" class="card-img-top" title="點擊圖片可以縮放圖片" data-action="zoom">             
+      <div class="col-md-2">
+        <div class="card">
+          <img id="PrincipleQuest"
+            src="https://lh3.googleusercontent.com/pw/AL9nZEXHv_SZnkjBT-slUF_6_aHIfwbzmre1NMS4MOx-7wS-yM4RQYgzWcxtVrES9-YULO33H6_I8NhGOm2tlyZcY7_FyLWztg9XYR7S6msOwhrpBWQ4WKrsPaLJ_g1dZMh_aKJquRTZLNGNNrtPfmwj0svHQw=w658-h929-no?authuser=0"
+            class="card-img-top" title="點擊圖片可以縮放圖片" data-action="zoom">
+        </div>
+        <p class="card-text" style="font-size: 14px; text-align: center;">作者：囿妘</p>
       </div>
-      <p class="card-text" style="font-size: 14px; text-align: center;">作者：楓棠</p>
-    </div>
 
-    <div class="col-md-2">
-      <div class="card">
-        <img id="PrincipleQuest" src="https://lh3.googleusercontent.com/pw/AL9nZEW5NNPgaLVQXRY-shM9hVVarlB6tJg6QI4J6AxcnUpnObP3ZY29Zjqk2I9l3r2-P0Ho3hf5BF3A4X4i1YBzK49KiQgjdLzIfaGK1vdVkJk3WnlOLHbQBoTBEbfInmZa_jNS01ivPVTbEBIDkZh-YMPOWw=w658-h929-no?authuser=0" class="card-img-top" title="點擊圖片可以縮放圖片" data-action="zoom">             
+      <div class="col-md-2">
+        <div class="card">
+          <img id="PrincipleQuest"
+            src="https://lh3.googleusercontent.com/pw/AL9nZEXX7x5EitdJAJOnvApTg0058uaW9O8xIQZFE_v9BaHxmwYAUTpxWNSAVB0G4b9sJVdeCYY2akQQo2JYEpxh1nv0D4upiHX2kxtfeC7P2n7skEwSmbMUMRNqm6WKBWncLVX2FlXUF4B96oBVdKGt55HALA=w658-h929-no?authuser=0"
+            class="card-img-top" title="點擊圖片可以縮放圖片" data-action="zoom">
+        </div>
+        <p class="card-text" style="font-size: 14px; text-align: center;">作者：守中</p>
       </div>
-      <p class="card-text" style="font-size: 14px; text-align: center;">作者：柏翔</p>
-    </div>
-
-    <div class="col-md-2">
-      <div class="card">
-        <img id="PrincipleQuest" src="https://lh3.googleusercontent.com/pw/AL9nZEWPHKfrMIWpDEUI0NOi65DmfjIiD0HZTcgnOwUXC7JNlzBFBQRt8iEpqvyUn_Z0oBNQN56AbfqS_r4rTfyEATAx_j0SMfRyOS-sUw49YKvjaWRc7Y7j_rjEakTn0Xx8Osuxjxyy9HOIvewrkFJOC6mnwA=w658-h929-no?authuser=0" class="card-img-top" title="點擊圖片可以縮放圖片" data-action="zoom">             
+    </div><br>
+    <!-- 以下第三列：2022.09.29 -->
+    <div class="row">
+      <a href="https://photos.app.goo.gl/irAvBs1rrwYnTvdQA" target="blank"
+        style="color: purple; text-decoration: none; text-align: left;">
+        <h5 class="card-title">2022.09.29-校本課程學習單(蝴蝶的天敵與防衛)《前往相簿》</h5>
+      </a>
+      <div class="col-md-2">
+        <div class="card">
+          <img id="PrincipleQuest"
+            src="https://lh3.googleusercontent.com/pw/AL9nZEVRNsIxYAybjBH5aWXbgcRfDhDp8pNSZZ899X-RzIBNBEs4759OO9M3GnQfy40iu4ICWI9OslHkqZF7vFeLxeL5Ehc6FJbxOpf6XoB30LpxzSXjedayeDmS9tZVpUpPEatH3Kf3BcuUklbhwZKAGCKaoQ=w658-h929-no?authuser=0"
+            class="card-img-top" title="點擊圖片可以縮放圖片" data-action="zoom">
+        </div>
+        <p class="card-text" style="font-size: 14px; text-align: center;">作者：沛云</p>
       </div>
-      <p class="card-text" style="font-size: 14px; text-align: center;">作者：亨一</p>
-    </div>
 
-    <div class="col-md-2">
-      <div class="card">
-        <img id="PrincipleQuest" src="https://lh3.googleusercontent.com/pw/AL9nZEUD_LxewqMDnBibZrSJu-gh3N-AZjrxcjaXFIk5I63ZzDGR5uyK7ilJVQmTYrcL7UCLt4EznG9pNgem-Dk33gNOapw2qg5gtqkcchmmCb4V6IC9p3xkMpkmYtDg14Yh_z0sJl8VjATUeyRFMzNnnu3hzQ=w658-h929-no?authuser=0" class="card-img-top" title="點擊圖片可以縮放圖片" data-action="zoom">             
+      <div class="col-md-2">
+        <div class="card">
+          <img id="PrincipleQuest"
+            src="https://lh3.googleusercontent.com/pw/AL9nZEXcMj5F3F9HquVCSoO5K2_D1518nNGabfjAOSOKPlXbcNJTSz5ELPRGgj2ttW0KdFFq6F5HYkVksFp51fUeOsqL2ajJNT2giyRjltWej_vnqaNda6fDgBX_d227UGC4FoYj7eDsEjqUpCk9PI38TN7Few=w658-h929-no?authuser=0"
+            class="card-img-top" title="點擊圖片可以縮放圖片" data-action="zoom">
+        </div>
+        <p class="card-text" style="font-size: 14px; text-align: center;">作者：恩哲</p>
       </div>
-      <p class="card-text" style="font-size: 14px; text-align: center;">作者：承裕</p>
-    </div>
-  </div><br>
-  <!-- 以下第四列：2022.10.21 -->
-  <div class="row">
-    <a href="https://photos.app.goo.gl/EXrQnnvamFuGPH8n6" target="blank" style="color: purple; text-decoration: none; text-align: left;"><h5 class="card-title">2022.10.21-校本課程學習單(蝴蝶飼養觀察記錄單)《前往相簿》</h5>
-    </a>
-    <div class="col-md-3">
-      <div class="card">
-        <img id="PrincipleQuest" src="https://lh3.googleusercontent.com/pw/AL9nZEXFrw1fyTmQthIi8PpkKoGrPBHmSHb4nHNrbFmffV0cqz2k4mSdZgEZ7bhNDcLkVwa5X-zjf90M2UzwNPJlPxM2fbUMe3hjdDJXxQOOE3iJsdMKWZ_bsQFtWb7dh8GNQvL9RF-ewOSZOHyfYy2N7h23lA=w1315-h929-no?authuser=0" class="card-img-top" title="點擊圖片可以縮放圖片" data-action="zoom">             
+
+      <div class="col-md-2">
+        <div class="card">
+          <img id="PrincipleQuest"
+            src="https://lh3.googleusercontent.com/pw/AL9nZEV38pFdahPMFFQ14IdQPmgB6veIf2TvSV-sH5MIcpqgTYSu5iAyili7TrlWzKrNOVFYy2w6IzmNCD4-UpQDPWtZyt5GmwyfBJkBOBPWxwtZrIP7ja6wfg5e-uEzl6dlduRK4IwMc0urXhrLQgJTfn1ncw=w658-h929-no?authuser=0"
+            class="card-img-top" title="點擊圖片可以縮放圖片" data-action="zoom">
+        </div>
+        <p class="card-text" style="font-size: 14px; text-align: center;">作者：楓棠</p>
       </div>
-      <p class="card-text" style="font-size: 14px; text-align: center;">作者：沛云</p>
-    </div>
-    
-    <div class="col-md-3">
-      <div class="card">
-        <img id="PrincipleQuest" src="https://lh3.googleusercontent.com/pw/AL9nZEUUcMnpCupl64XTIkTFZkp8TrISXrfN4KkvlZV3hG8EqraHHSbSwq_xJ4VmRFq8tY3jsqLWFSLD9BOW15ZixrpSfRXB11Wl1nwSRSubfYlIwqveEeIp1PqBxa5Yiti-QzY90I2Cw5NrLks6GTBGiKoCoQ=w1315-h929-no?authuser=0" class="card-img-top" title="點擊圖片可以縮放圖片" data-action="zoom">             
+
+      <div class="col-md-2">
+        <div class="card">
+          <img id="PrincipleQuest"
+            src="https://lh3.googleusercontent.com/pw/AL9nZEW5NNPgaLVQXRY-shM9hVVarlB6tJg6QI4J6AxcnUpnObP3ZY29Zjqk2I9l3r2-P0Ho3hf5BF3A4X4i1YBzK49KiQgjdLzIfaGK1vdVkJk3WnlOLHbQBoTBEbfInmZa_jNS01ivPVTbEBIDkZh-YMPOWw=w658-h929-no?authuser=0"
+            class="card-img-top" title="點擊圖片可以縮放圖片" data-action="zoom">
+        </div>
+        <p class="card-text" style="font-size: 14px; text-align: center;">作者：柏翔</p>
       </div>
-      <p class="card-text" style="font-size: 14px; text-align: center;">作者：亨一</p>
-    </div>
 
-    <div class="col-md-3">
-      <div class="card">
-        <img id="PrincipleQuest" src="https://lh3.googleusercontent.com/pw/AL9nZEX7oIExzYS2kcSaQ_BdiEA21wFt02nYoxf56fRPA18WOUlnOwIztoEhvdyOwT6AvPBhr_RuwneplTWZrzfrrNlXcoRMNjWCT9qu4dvS8curgRFQIPZkaMIDbMCkTvsM7OuI96XZwtuLS6yQA-EvQkEcXA=w1315-h929-no?authuser=0" class="card-img-top" title="點擊圖片可以縮放圖片" data-action="zoom">             
+      <div class="col-md-2">
+        <div class="card">
+          <img id="PrincipleQuest"
+            src="https://lh3.googleusercontent.com/pw/AL9nZEWPHKfrMIWpDEUI0NOi65DmfjIiD0HZTcgnOwUXC7JNlzBFBQRt8iEpqvyUn_Z0oBNQN56AbfqS_r4rTfyEATAx_j0SMfRyOS-sUw49YKvjaWRc7Y7j_rjEakTn0Xx8Osuxjxyy9HOIvewrkFJOC6mnwA=w658-h929-no?authuser=0"
+            class="card-img-top" title="點擊圖片可以縮放圖片" data-action="zoom">
+        </div>
+        <p class="card-text" style="font-size: 14px; text-align: center;">作者：亨一</p>
       </div>
-      <p class="card-text" style="font-size: 14px; text-align: center;">作者：詠淩</p>
-    </div>
 
-    <div class="col-md-3">
-      <div class="card">
-        <img id="PrincipleQuest" src="https://lh3.googleusercontent.com/pw/AL9nZEXbCZJxoQ_Ks5gt-n0taqeGTCNT6OZFzwoDKUEjEv5BX9SnE96d3EZp3k9mOxtByeO4MwNZcv6f8-gLyRKU9xliF2QzGFLwSoY7LJLEpJ32cLNYGnwasQUIiFRw13IfZR2gtfjSMJy1T_BWznJPgL3meQ=w1315-h929-no?authuser=0" class="card-img-top" title="點擊圖片可以縮放圖片" data-action="zoom">             
+      <div class="col-md-2">
+        <div class="card">
+          <img id="PrincipleQuest"
+            src="https://lh3.googleusercontent.com/pw/AL9nZEUD_LxewqMDnBibZrSJu-gh3N-AZjrxcjaXFIk5I63ZzDGR5uyK7ilJVQmTYrcL7UCLt4EznG9pNgem-Dk33gNOapw2qg5gtqkcchmmCb4V6IC9p3xkMpkmYtDg14Yh_z0sJl8VjATUeyRFMzNnnu3hzQ=w658-h929-no?authuser=0"
+            class="card-img-top" title="點擊圖片可以縮放圖片" data-action="zoom">
+        </div>
+        <p class="card-text" style="font-size: 14px; text-align: center;">作者：承裕</p>
       </div>
-      <p class="card-text" style="font-size: 14px; text-align: center;">作者：柏瑜</p>
-    </div>
-  </div><br>
-  <!-- 以下第四列：校本課程-蝴蝶食草生長紀錄單 -->
-  <div class="row">
-    <a href="https://photos.app.goo.gl/7rbouBiQ8ampzLZq7" target="blank" style="color: purple; text-decoration: none; text-align: left;"><h5 class="card-title">2022.12.05-校本課程-蝴蝶食草生長記錄單《前往相簿》</h5>
-    </a>
-    <div class="col-md-2">
-      <div class="card">
-        <img id="PrincipleQuest" src="https://lh3.googleusercontent.com/pw/AL9nZEXdShxTknGIL72M9Dx1aImi8F3NYl78JHazJr-DKcUvy4Ce_MGxxw4Y-e2uYNVhLks4Ixlq8zeRDKg4waD8w8xi9i8WnlTGYyKnrTc5Ld8D9CgPN26wXQPOQETQBiEi9y_-icVBMY2a5aqJPymkVys9Dw=w1314-h929-no?authuser=0" class="card-img-top" title="點擊圖片可以縮放圖片" data-action="zoom">             
+    </div><br>
+    <!-- 以下第四列：2022.10.21 -->
+    <div class="row">
+      <a href="https://photos.app.goo.gl/EXrQnnvamFuGPH8n6" target="blank"
+        style="color: purple; text-decoration: none; text-align: left;">
+        <h5 class="card-title">2022.10.21-校本課程學習單(蝴蝶飼養觀察記錄單)《前往相簿》</h5>
+      </a>
+      <div class="col-md-3">
+        <div class="card">
+          <img id="PrincipleQuest"
+            src="https://lh3.googleusercontent.com/pw/AL9nZEXFrw1fyTmQthIi8PpkKoGrPBHmSHb4nHNrbFmffV0cqz2k4mSdZgEZ7bhNDcLkVwa5X-zjf90M2UzwNPJlPxM2fbUMe3hjdDJXxQOOE3iJsdMKWZ_bsQFtWb7dh8GNQvL9RF-ewOSZOHyfYy2N7h23lA=w1315-h929-no?authuser=0"
+            class="card-img-top" title="點擊圖片可以縮放圖片" data-action="zoom">
+        </div>
+        <p class="card-text" style="font-size: 14px; text-align: center;">作者：沛云</p>
       </div>
-      <p class="card-text" style="font-size: 14px; text-align: center;">作者：承裕</p>
-    </div>
-    
-    <div class="col-md-2">
-      <div class="card">
-        <img id="PrincipleQuest" src="https://lh3.googleusercontent.com/pw/AL9nZEVwVFjrn1B_25OWwX7b8FX5o919xEVuoOZgg6QM1mJZhNZKwIgQCZSCYSv4zb1wX7G4qrlVSWgjvFARb8BfXQIuDgfV9WyMVN021wE47pRjKnCuf3kparJQHFrWJKw1bmSnj426T3k-kS7xTWJf_OwiHA=w1314-h929-no?authuser=0" class="card-img-top" title="點擊圖片可以縮放圖片" data-action="zoom">             
+
+      <div class="col-md-3">
+        <div class="card">
+          <img id="PrincipleQuest"
+            src="https://lh3.googleusercontent.com/pw/AL9nZEUUcMnpCupl64XTIkTFZkp8TrISXrfN4KkvlZV3hG8EqraHHSbSwq_xJ4VmRFq8tY3jsqLWFSLD9BOW15ZixrpSfRXB11Wl1nwSRSubfYlIwqveEeIp1PqBxa5Yiti-QzY90I2Cw5NrLks6GTBGiKoCoQ=w1315-h929-no?authuser=0"
+            class="card-img-top" title="點擊圖片可以縮放圖片" data-action="zoom">
+        </div>
+        <p class="card-text" style="font-size: 14px; text-align: center;">作者：亨一</p>
       </div>
-      <p class="card-text" style="font-size: 14px; text-align: center;">作者：恩哲</p>
-    </div>
 
-    <div class="col-md-2">
-      <div class="card">
-        <img id="PrincipleQuest" src="https://lh3.googleusercontent.com/pw/AL9nZEXxaMqiLrD_zRKVPTlJwxeIX4xIuN7M61hffNE_Qk0ZTO1lbCfztGk7S1ozY-nmwbTVW7l_rlT916cRcEeAxMyuaLVyX0MHO8MopglaVlXX_z87Q1nixLskTOoyeE3ln4-XYjKLMJauXU85hxXSZ2SEQQ=w1314-h929-no?authuser=0" class="card-img-top" title="點擊圖片可以縮放圖片" data-action="zoom">             
+      <div class="col-md-3">
+        <div class="card">
+          <img id="PrincipleQuest"
+            src="https://lh3.googleusercontent.com/pw/AL9nZEX7oIExzYS2kcSaQ_BdiEA21wFt02nYoxf56fRPA18WOUlnOwIztoEhvdyOwT6AvPBhr_RuwneplTWZrzfrrNlXcoRMNjWCT9qu4dvS8curgRFQIPZkaMIDbMCkTvsM7OuI96XZwtuLS6yQA-EvQkEcXA=w1315-h929-no?authuser=0"
+            class="card-img-top" title="點擊圖片可以縮放圖片" data-action="zoom">
+        </div>
+        <p class="card-text" style="font-size: 14px; text-align: center;">作者：詠淩</p>
       </div>
-      <p class="card-text" style="font-size: 14px; text-align: center;">作者：士凱</p>
-    </div>
 
-    <div class="col-md-2">
-      <div class="card">
-        <img id="PrincipleQuest" src="https://lh3.googleusercontent.com/pw/AL9nZEW4KEt5XuJkhLZHs3gSQWTdaen-wOQmJifIUeDyDrRe5-2HOjuDaWnw3YAy8MPi6moScwQAWV58Hl2LF52pLtUFtgPzdL0JH7Q2hFjkWE7tvm3SEmUfm51UzW_m-Se85xsnoXbTnXiFmJwAEhlGEeQUvg=w1314-h929-no?authuser=0" class="card-img-top" title="點擊圖片可以縮放圖片" data-action="zoom">             
+      <div class="col-md-3">
+        <div class="card">
+          <img id="PrincipleQuest"
+            src="https://lh3.googleusercontent.com/pw/AL9nZEXbCZJxoQ_Ks5gt-n0taqeGTCNT6OZFzwoDKUEjEv5BX9SnE96d3EZp3k9mOxtByeO4MwNZcv6f8-gLyRKU9xliF2QzGFLwSoY7LJLEpJ32cLNYGnwasQUIiFRw13IfZR2gtfjSMJy1T_BWznJPgL3meQ=w1315-h929-no?authuser=0"
+            class="card-img-top" title="點擊圖片可以縮放圖片" data-action="zoom">
+        </div>
+        <p class="card-text" style="font-size: 14px; text-align: center;">作者：柏瑜</p>
       </div>
-      <p class="card-text" style="font-size: 14px; text-align: center;">作者：沛云</p>
-    </div>
-
-    <div class="col-md-2">
-      <div class="card">
-        <img id="PrincipleQuest" src="https://lh3.googleusercontent.com/pw/AL9nZEULbcoVgd67DKr7xBZ3rnPQeO9Yymi5ygBwh2Lkdn6pK-dONWnJvSHYyASIaAWnsGnNp0WwbNDRkvzltGcmJyVc_qkyQQGvBSM512diybe2Xd7kTTY1cA4f8yjKptb3dQhGdj_e4qc9NMn78NdhMhNVJQ=w1314-h929-no?authuser=0" class="card-img-top" title="點擊圖片可以縮放圖片" data-action="zoom">             
+    </div><br>
+    <!-- 以下第四列：校本課程-蝴蝶食草生長紀錄單 -->
+    <div class="row">
+      <a href="https://photos.app.goo.gl/7rbouBiQ8ampzLZq7" target="blank"
+        style="color: purple; text-decoration: none; text-align: left;">
+        <h5 class="card-title">2022.12.05-校本課程-蝴蝶食草生長記錄單《前往相簿》</h5>
+      </a>
+      <div class="col-md-2">
+        <div class="card">
+          <img id="PrincipleQuest"
+            src="https://lh3.googleusercontent.com/pw/AL9nZEXdShxTknGIL72M9Dx1aImi8F3NYl78JHazJr-DKcUvy4Ce_MGxxw4Y-e2uYNVhLks4Ixlq8zeRDKg4waD8w8xi9i8WnlTGYyKnrTc5Ld8D9CgPN26wXQPOQETQBiEi9y_-icVBMY2a5aqJPymkVys9Dw=w1314-h929-no?authuser=0"
+            class="card-img-top" title="點擊圖片可以縮放圖片" data-action="zoom">
+        </div>
+        <p class="card-text" style="font-size: 14px; text-align: center;">作者：承裕</p>
       </div>
-      <p class="card-text" style="font-size: 14px; text-align: center;">作者：羽捷</p>
-    </div>
 
-    <div class="col-md-2">
-      <div class="card">
-        <img id="PrincipleQuest" src="https://lh3.googleusercontent.com/pw/AL9nZEU2suQkXLkBtCO4noW0uj6e9dwb65Oxd1TbgN3mTGS4J8cQQQy-bLFlteW5zEMoQq9NvAtesfYjtzCRt3wGY-9XrjojhlrynLEtdkHZJsfuB3iWuyh8ZSxyt4GEZIBpGh7b3fZI9hILvyTkDaOZjjOSXA=w1314-h929-no?authuser=0" class="card-img-top" title="點擊圖片可以縮放圖片" data-action="zoom">             
+      <div class="col-md-2">
+        <div class="card">
+          <img id="PrincipleQuest"
+            src="https://lh3.googleusercontent.com/pw/AL9nZEVwVFjrn1B_25OWwX7b8FX5o919xEVuoOZgg6QM1mJZhNZKwIgQCZSCYSv4zb1wX7G4qrlVSWgjvFARb8BfXQIuDgfV9WyMVN021wE47pRjKnCuf3kparJQHFrWJKw1bmSnj426T3k-kS7xTWJf_OwiHA=w1314-h929-no?authuser=0"
+            class="card-img-top" title="點擊圖片可以縮放圖片" data-action="zoom">
+        </div>
+        <p class="card-text" style="font-size: 14px; text-align: center;">作者：恩哲</p>
       </div>
-      <p class="card-text" style="font-size: 14px; text-align: center;">作者：楓棠</p>
-    </div>
-  </div><br>
 
-</div>
-<br>
+      <div class="col-md-2">
+        <div class="card">
+          <img id="PrincipleQuest"
+            src="https://lh3.googleusercontent.com/pw/AL9nZEXxaMqiLrD_zRKVPTlJwxeIX4xIuN7M61hffNE_Qk0ZTO1lbCfztGk7S1ozY-nmwbTVW7l_rlT916cRcEeAxMyuaLVyX0MHO8MopglaVlXX_z87Q1nixLskTOoyeE3ln4-XYjKLMJauXU85hxXSZ2SEQQ=w1314-h929-no?authuser=0"
+            class="card-img-top" title="點擊圖片可以縮放圖片" data-action="zoom">
+        </div>
+        <p class="card-text" style="font-size: 14px; text-align: center;">作者：士凱</p>
+      </div>
+
+      <div class="col-md-2">
+        <div class="card">
+          <img id="PrincipleQuest"
+            src="https://lh3.googleusercontent.com/pw/AL9nZEW4KEt5XuJkhLZHs3gSQWTdaen-wOQmJifIUeDyDrRe5-2HOjuDaWnw3YAy8MPi6moScwQAWV58Hl2LF52pLtUFtgPzdL0JH7Q2hFjkWE7tvm3SEmUfm51UzW_m-Se85xsnoXbTnXiFmJwAEhlGEeQUvg=w1314-h929-no?authuser=0"
+            class="card-img-top" title="點擊圖片可以縮放圖片" data-action="zoom">
+        </div>
+        <p class="card-text" style="font-size: 14px; text-align: center;">作者：沛云</p>
+      </div>
+
+      <div class="col-md-2">
+        <div class="card">
+          <img id="PrincipleQuest"
+            src="https://lh3.googleusercontent.com/pw/AL9nZEULbcoVgd67DKr7xBZ3rnPQeO9Yymi5ygBwh2Lkdn6pK-dONWnJvSHYyASIaAWnsGnNp0WwbNDRkvzltGcmJyVc_qkyQQGvBSM512diybe2Xd7kTTY1cA4f8yjKptb3dQhGdj_e4qc9NMn78NdhMhNVJQ=w1314-h929-no?authuser=0"
+            class="card-img-top" title="點擊圖片可以縮放圖片" data-action="zoom">
+        </div>
+        <p class="card-text" style="font-size: 14px; text-align: center;">作者：羽捷</p>
+      </div>
+
+      <div class="col-md-2">
+        <div class="card">
+          <img id="PrincipleQuest"
+            src="https://lh3.googleusercontent.com/pw/AL9nZEU2suQkXLkBtCO4noW0uj6e9dwb65Oxd1TbgN3mTGS4J8cQQQy-bLFlteW5zEMoQq9NvAtesfYjtzCRt3wGY-9XrjojhlrynLEtdkHZJsfuB3iWuyh8ZSxyt4GEZIBpGh7b3fZI9hILvyTkDaOZjjOSXA=w1314-h929-no?authuser=0"
+            class="card-img-top" title="點擊圖片可以縮放圖片" data-action="zoom">
+        </div>
+        <p class="card-text" style="font-size: 14px; text-align: center;">作者：楓棠</p>
+      </div>
+    </div><br>
+
+  </div>
+  <br>
 
 
 
 
-<script>
-  click_resize = () => {
-    if (document.documentElement.clientWidth > 768) {
-      // data-bs-toggle="dropdown"
-      $("span.nav-link").removeAttr("data-bs-toggle")
-    } else {
-      $("span.nav-link").attr("data-bs-toggle", "dropdown")
+  <script>
+    click_resize = () => {
+      if (document.documentElement.clientWidth > 768) {
+        // data-bs-toggle="dropdown"
+        $("span.nav-link").removeAttr("data-bs-toggle")
+      } else {
+        $("span.nav-link").attr("data-bs-toggle", "dropdown")
+      }
     }
-  }
-  window.onresize = click_resize
-  click_resize();
-</script>
-<!-- 平滑回到 TOP -->
-<script>
-	for(var i = 0; i < 100; i++) {
-		$(".demo").append("<p>jQuery Scrolls.js: Back To Top Plugin Example</p>")
-	}
-</script>
-<script type="text/javascript">
-	scroller.init();
-</script>
-<!-- 平滑回到 TOP -->
-   </body>
+    window.onresize = click_resize
+    click_resize();
+  </script>
+  <!-- 平滑回到 TOP -->
+  <script>
+    for (var i = 0; i < 100; i++) {
+      $(".demo").append("<p>jQuery Scrolls.js: Back To Top Plugin Example</p>")
+    }
+  </script>
+  <script type="text/javascript">
+    scroller.init();
+  </script>
+  <!-- 平滑回到 TOP -->
+</body>
+
 </html>
