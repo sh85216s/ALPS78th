@@ -1,0 +1,20 @@
+
+
+.container {
+    margin: 10px auto;
+}
+
+  .col {
+    /* text-align: center; */
+    position: fixed;
+}
+
+  iframe {
+    width: 90%; height: 95vh; padding-top: 5px;
+}
+
+@media screen and(min-width: 768px) {
+    .dropdown:hover .dropdown-menu {
+        display: block;
+    }
+}
