@@ -29,7 +29,7 @@ text-decoration:underline;
 font-weight:normal;
 text-align: center;
 font-size: 2.2em;
-line-height: 1.5;
+line-height: 1.2;
 }
 
 .example{
@@ -61,7 +61,7 @@ text-align: center;
 line-height: 1.2;
 background:#bfdfb7;
 padding: 20px;
-width: 45%;
+width: 43%;
 margin: 50px auto;
 border-radius: 5px;
 -khtml-border-radius: 5px;
