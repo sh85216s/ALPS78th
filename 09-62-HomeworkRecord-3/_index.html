@@ -1,0 +1,58 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link href="hoverline.css" rel="stylesheet" />
+
+  <script src="http://code.jquery.com/jquery-1.12.4.min.js"></script>
+  <script type="text/javascript" src="hoverline.js"></script>
+  <script type="text/javascript">
+    $(document).ready(function () {
+      $('.navbar').makeNavbar();
+      $('#nav1').hoverline();
+      $('#nav2').hoverline({ 'start': '3' });
+      $('#nav3').hoverline({ 'color': 'red' });
+      $('#nav4').hoverline({ 'speed': '1000' });
+      $('#nav5').hoverline({ 'height': '5px' });
+      $('#nav6').hoverline({
+        'border': 'red',
+        'borderwidthside': '1px',
+        'borderwidthtop': '1px',
+        'borderstyle': 'solid'
+      });
+    });
+  </script>
+  <title>愛蘭國小第78屆六乙下學期作業登記</title>
+</head>
+
+<body>
+  <div class="contain">
+    <div class="row">
+      <div id="outer-wrap">
+        <div class="example" id="ex3">
+          <h2 class="desc">愛蘭國小第78屆六乙下學期作業登記</h2>
+          <div class="ex-inner">
+            <div class="navbar" id="nav3">
+              <ul>
+                <li><a href="Mandarin-Learn-to-write-words-1.html" target="_blank">國語科</a></li>
+                <li><a href="Math-textBook.html" target="_blank">數學科</a></li>
+                <li><a href="ContactBook-2.html" target="_blank">聯絡簿</a></li>
+                <li><a href="Others-Weekly-diary.html" target="_blank">其他</a></li>
+              </ul>
+            </div> <!-- Navbar -->
+            <div id="code">
+              <p>麻煩家長們每天撥冗察看貴子弟的功課是否按時完成，並提醒訂正作業上的錯誤。<br>學習成效是需要日積月累的，期待貴子弟在家長們的關心、呵護下，功課越來越好。</p>
+            </div>
+          </div>
+        </div> <!--Example -->
+      </div> <!-- Outer Wrap -->
+    </div>
+  </div>
+
+</body>
+
+</html>
