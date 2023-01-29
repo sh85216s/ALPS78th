@@ -61,7 +61,7 @@ text-align: center;
 line-height: 1.2;
 background:#bfdfb7;
 padding: 20px;
-width: 43%;
+width: 60%;
 margin: 50px auto;
 border-radius: 5px;
 -khtml-border-radius: 5px;
@@ -76,12 +76,21 @@ nav3 ul {
 text-align: center;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1100px) {
     ul li {
         float: unset !important;
         margin: '0px 10px';
+        line-height: 2em;
+        font-size: 1.5em;
+    }
+    a:hover {
+        background-color: yellow;
+        color: red;
     }
     .hoverline {
         visibility: hidden;
+    }
+    #code {
+        font-size: 1.4em;
     }
 }
