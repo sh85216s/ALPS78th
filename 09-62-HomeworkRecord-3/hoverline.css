@@ -77,8 +77,10 @@ text-align: center;
 }
 
 @media (max-width: 1180px) {
-    ul li {
+    .navbar {
         width: 60%;
+    }
+    ul li {
         float: unset !important;
         margin: '0px 10px';
         line-height: 2em;
