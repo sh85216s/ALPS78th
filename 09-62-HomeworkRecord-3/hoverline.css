@@ -86,7 +86,7 @@ text-align: center;
         line-height: 2em;
         font-size: 1.2em;
     }
-    a:hover {
+    #nav3 ul li a:hover {
         background-color: yellow;
         color: red;
     }
