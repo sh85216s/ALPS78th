@@ -7,16 +7,12 @@
   .col {
     /* text-align: center; */
     position: fixed;
+    background-color: #fff;
 }
 
   iframe {
     width: 90%; height: 95vh; padding-top: 10px;
 }
-
-/* .for-computer {
-  font-size: 1.2em;
-  color: red;
-} */
 
 @media screen and(min-width: 768px) {
     .dropdown:hover .dropdown-menu {
