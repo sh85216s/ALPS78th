@@ -6,12 +6,14 @@
 
   .col {
     /* text-align: center; */
-    position: fixed;
+    /* position: fixed; */
     background-color: #fff;
 }
 
   iframe {
-    width: 90%; height: 95vh; padding-top: 10px;
+    width: 90%;
+    height: 95vh;
+    /* padding-top: 10px; */
 }
 
 @media screen and(min-width: 768px) {
