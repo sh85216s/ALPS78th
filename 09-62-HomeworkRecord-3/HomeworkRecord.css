@@ -5,12 +5,19 @@
 }
 
   .col {
-    position: fixed;
+    /* position: fixed; */
     background-color: #fff;
 }
 
   iframe {
     width: 90%;
     height: 95vh;
-    /* padding-top: 10px; */
+    padding-top: 10px;
+}
+
+@media (min-width: 1181px) {
+  .col {
+    position: fixed;
+  }
+  
 }
