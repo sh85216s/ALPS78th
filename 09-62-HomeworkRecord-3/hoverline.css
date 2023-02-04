@@ -96,4 +96,7 @@ text-align: center;
     #code {
         font-size: 1.4em;
     }
+    .container {
+        margin-bottom: 30px;
+    }
 }
