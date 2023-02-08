@@ -1,9 +1,9 @@
 a { text-decoration:none; }
-.animate__bounce { display: inline-block; margin: 0 0.5rem; animation: bounceIn; animation-duration: 2s; padding: 10px 0; 
+/* .animate__bounce { display: inline-block; margin: 0 0.5rem; animation: bounceIn; animation-duration: 2s; padding: 10px 0; 
     background: linear-gradient(90deg, rgba(199,116,212,1) 0%, rgba(141,7,224,1) 35%, rgba(71,7,190,1) 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-  }
+  } */
 .Box { width: 226px; height: 226px; text-align: center; background-color: #f6f7cc; border-radius: 50%; border: 3px #12521d dashed; padding: 50px 0px 0px 0px; margin: auto;} 
 .btn-sm { font-size: 18px;}
 .card { border: #58129F 2px;}
