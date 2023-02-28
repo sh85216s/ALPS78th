@@ -65,7 +65,7 @@ nav {
     overflow-y: visible;
     z-index: 100;
 }
-.piauti { font-size: 16px; font-weight: bold;}
+.piauti { font-size: 20px; font-weight: bold;}
 .Record { width: 100%; margin: 0px auto; }   
 .Record > table { border-collapse: separate; border-spacing: 0; width: 100%; }
 .Red { color: red;}
