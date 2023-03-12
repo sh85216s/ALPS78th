@@ -4,9 +4,11 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="js/scrolls.js"></script>
   <title>相簿-111學年度六上</title>
 </head>
 <style>
@@ -15,9 +17,41 @@
     z-index: 100;
   }
 
+  .animate__bounce {
+    display: inline-block;
+    margin: 0 0.5rem;
+    animation: bounceIn;
+    animation-duration: 2s;
+    padding: 10px 0;
+    background: linear-gradient(90deg, rgba(199, 116, 212, 1) 0%, rgba(141, 7, 224, 1) 35%, rgba(71, 7, 190, 1) 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
   .carousel-item img {
     width: 100%;
     height: 300px;
+  }
+
+  .card .SM {
+    overflow: hidden;
+  }
+
+  .card:hover {
+    border-color: rgb(207, 160, 235);
+    background-color: rgb(248, 248, 221);
+  }
+
+  .card img {
+    transform: scale(1, 1);
+    transition: all .5s ease-out;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .card img:hover {
+    transform: scale(1.2, 1.2);
   }
 
   .dropdown-menu.Link {
@@ -257,6 +291,157 @@
     </button>
   </div>
 
+  <br>
+
+  <div class="container">
+    <div class="row">
+      <div class="col">
+        <h2 class="animate__bounce">111學年度六下相簿</h2>
+      </div>
+    </div>
+
+    <!-- 第1列 -->
+    <div class="row">
+      <div class="col-md-3">
+        <div class="card h-100">
+          <div class="SM ratio ratio-4x3">
+            <a href="https://photos.app.goo.gl/cYJY9cXRKTeVzAUG7" target="blank"><img
+                src="https://lh3.googleusercontent.com/pw/AMWts8AUU9HBenUKmg_BYgTsOmJAMSPgGmlYon2C3CkVGRwxfEZ7Fq8rwQ6GP3K70_F8wef-_XrzWlSa7Zi0cLrnqEPRAxBnMK23cmyQe6geM0AsKqWKoW3YdLSjE3WLV5aHDg7pYJqb4kI5bvUYWBDF9AHvJg=w1165-h873-no?authuser=0"
+                class="card-img-top" title="前往相簿" alt="..."></a>
+          </div>
+          <div class="card-body">
+            <h5 class="card-title">魚菜共生簡報</h5>
+            <p class="card-text" style="font-size: 13px;">
+              時間：2023.02.16&nbsp;&nbsp;09:00~11:00<br>地點：本校活動中心<br>
+              活動內容：<br>
+              1.什麼是「魚菜共生」？<br>
+              2.魚菜共生系統循環原理<br>
+              3.水質主要參數：溶氧 (DO)、pH、水溫、總氮 (TN)、硝化菌<br>
+              4.如何設置魚菜共生、系統運作原理、系統維護、生態水培器材
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-3">
+        <div class="card h-100">
+          <div class="SM ratio ratio-4x3">
+            <a href="https://photos.app.goo.gl/dh8NTT8Gc4kxLQTC6" target="blank"><img
+                src="https://lh3.googleusercontent.com/pw/AMWts8CpKXOIm7L0ysFBv08eOzOB6YqZjzbscPRvJnCDMUkYwRjdwskDNFZlUVgmISRCLCesi7hNgf_tRLp0UR2XdOKVSj539Dbys5q54BfZgMXgyohnvfv7gFPXCzPXlHl2wbIdOE7RGLUhtyMoM-Roux1I8w=w1164-h873-no?authuser=0"
+                class="card-img-top" title="前往相簿" alt="..."></a>
+          </div>
+          <div class="card-body">
+            <h5 class="card-title">水質測量與實作</h5>
+            <p class="card-text" style="font-size: 13px;">
+              時間：2023.03.02&nbsp;&nbsp;09:00~11:00<br>地點：本校活動中心<br>活動內容：<br>魚菜共生魚缸(水族箱)介紹、組裝，以及觀察記錄</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-3">
+        <div class="card h-100">
+          <div class="SM ratio ratio-4x3">
+            <a href="https://photos.app.goo.gl/x2CqHHpgfmCV64BYA" target="blank"><img
+                src="https://lh3.googleusercontent.com/pw/AMWts8C8OcmETN4nZKZVdWPfvlZquRvAtwyXM0ozsS-UlTSnEXh-xOGkoIV-BzaQOt5ZEOHBtgBpnUmfOnANcjvnOH6wgcp7lVuThbc0rmyijoNBxALUbCHgcONxAjFszk0z7nBnyWVv4bKEEcTU4BC_HNVglg=w920-h690-no?authuser=0"
+                class="card-img-top" title="前往相簿" alt="..."></a>
+          </div>
+          <div class="card-body">
+            <h5 class="card-title">國語第二課小組報告</h5>
+            <p class="card-text" style="font-size: 13px;">時間：2023.03.07<br>地點：六乙教室<br>活動內容：<br>各小組依序上台報告課文架構。</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-3">
+        <div class="card h-100">
+          <div class="SM ratio ratio-4x3">
+            <a href="https://photos.app.goo.gl/o6XxChRmKwtyjqzq5" target="blank"><img
+                src="https://lh3.googleusercontent.com/pw/AMWts8BBFID6Zsf5SI5vciOoILW8VUklVxQ6Hyt3n7ILNFGVCy9-jwOTNsakdKS3cVIy7Ac0NNbjSuttRNcJaguKu6li2xEmigfwmCffAf8Sj1Ny7RkT9paV7AHphTFPON_vtoz7ixMtIm1D_fDJpR3jL9QZ0Q=w1164-h873-no?authuser=0"
+                class="card-img-top" title="前往相簿" alt="..."></a>
+          </div>
+          <div class="card-body">
+            <h5 class="card-title">製作畢旅影片</h5>
+            <p class="card-text" style="font-size: 13px;">
+              時間：2022.03.07<br>地點：電腦教室<br>活動內容：<br>每位小朋友利用CANVA製作個人專屬的畢業旅行影片。</p>
+          </div>
+        </div>
+      </div>
+    </div><br>
+
+    <!-- 第2列 -->
+    <!-- <div class="row">
+      <div class="col-md-3">
+        <div class="card h-100">
+          <div class="SM ratio ratio-4x3">
+            <a href="https://photos.app.goo.gl/7HCGxXoEPfgVyu598" target="blank"><img
+                src="https://lh3.googleusercontent.com/pw/AL9nZEWQlEBRevczvTWUt0MAEyhF_MnjGjjXH6CEM25iW-9k6iLPPsq3S3Hq3xlZz7XU_GkwM22YixBBN4tsds29kXL9fuhGshF6-sb-L7aE9sLet17oeYpxBT-ClOOd-z4-fKhH2Yw2LY6-P2oe9auZWSNGww=w1165-h873-no?authuser=0"
+                class="card-img-top" title="前往相簿" alt="..."></a>
+          </div>
+          <div class="card-body">
+            <h5 class="card-title">六乙觀課</h5>
+            <p class="card-text" style="font-size: 13px;">時間：2022.09.28<br>地點：六乙教室<br>活動內容：<br>針對康軒六上數學3-1圖形規律做教學演示</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-3">
+        <div class="card h-100">
+          <div class="SM ratio ratio-4x3">
+            <a href="https://photos.app.goo.gl/eDnNQWfyK4LNJswk8" target="blank"><img
+                src="https://lh3.googleusercontent.com/pw/AL9nZEWz0CdI0gEhAcrjdNZdg_l2L9zEQrRMk4TQJjThzscgCW0_wZLLP7T_IrshsfK5_ypCpa3ptQQuZH_8pK9ktG1luFsLqIWoGkcuxWwXNkoPq6PwoZWP1s5OCusPjRS5_HSGRWX89AJLe8_i1qz8n1Ut7w=w920-h690-no?authuser=0"
+                class="card-img-top" title="前往相簿" alt="..."></a>
+          </div>
+          <div class="card-body">
+            <h5 class="card-title">六年級校本課程-蝴蝶介紹(第3場)</h5>
+            <p class="card-text" style="font-size: 13px;">時間：2022.09.29<br>地點：本校玉山圖書館<br>活動內容：<br>蝴蝶的天敵、蝴蝶的防禦機制</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-3">
+        <div class="card h-100">
+          <div class="SM ratio ratio-4x3">
+            <a href="https://photos.app.goo.gl/8YMUdmM81NSgz87DA" target="blank"><img
+                src="https://lh3.googleusercontent.com/pw/AL9nZEXVV2HGom7qyl2rq-NfgnV2-z0c7j7etsA-cnqWaiZu3pQ3KDgs_nGJT9mUt_-4Hpt6Y_wH9UZowbRmI7Fm3mtYJW3JAJJ7Op-VZ0_pcQdPQOfXJ2T0g4MiZFLRplrzojcmR46dTo6-JQO3LqR9cnEXGA=w1239-h929-no?authuser=0"
+                class="card-img-top" title="前往相簿" alt="..."></a>
+          </div>
+          <div class="card-body">
+            <h5 class="card-title">小小說書人</h5>
+            <p class="card-text" style="font-size: 13px;">
+              時間：2022.10.05<br>地點：東棟穿堂<br>活動內容：<br>沛云在第二節下課時間說了「妖怪出租」這本書中的「兩口」故事。</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-3">
+        <div class="card h-100">
+          <div class="SM ratio ratio-4x3">
+            <a href="https://photos.app.goo.gl/ezpuBTmnm76rN59D8" target="blank"><img
+                src="https://lh3.googleusercontent.com/pw/AL9nZEVjUge1d_DSoqDbU_g5C6mov0JaZ0idavLWFW5xwTXi5KF1cDEXtjp4hQXnbfyDqzzHokZ9fzX4NeBSVT6Hhrk8PFZJYD105z7gyGPPSd5826zgUvvzmuprNCe5RyGALeoayrWauDwHmVJ7YmZfUJ5aew=w1394-h929-no?authuser=0"
+                class="card-img-top" title="前往相簿" alt="..."></a>
+          </div>
+          <div class="card-body">
+            <h5 class="card-title">游泳課</h5>
+            <p class="card-text" style="font-size: 13px;">時間：2022.10.07<br>地點：暨南大學游泳池<br>活動內容：<br>六上第一堂游泳課</p>
+          </div>
+        </div>
+      </div>
+    </div><br> -->
+    <!-- 第3列 -->
+
+    <!-- 第4列 -->
+
+    <!-- 第5列 -->
+
+
+    <!-- 第6列 -->
+
+
+    <!-- 第7列 -->
+  
+
+  </div>
+
+
   <script>
     click_resize = () => {
       if (document.documentElement.clientWidth > 768) {
@@ -266,9 +451,23 @@
         $("span.nav-link").attr("data-bs-toggle", "dropdown")
       }
     }
+
     window.onresize = click_resize
+
     click_resize();
   </script>
+
+  <!-- 平滑回到 TOP -->
+  <script>
+    for (var i = 0; i < 100; i++) {
+      $(".demo").append("<p>jQuery Scrolls.js: Back To Top Plugin Example</p>")
+    }
+  </script>
+  <script type="text/javascript">
+    scroller.init();
+  </script>
+  <!-- 平滑回到 TOP -->
+
 </body>
 
 </html>
