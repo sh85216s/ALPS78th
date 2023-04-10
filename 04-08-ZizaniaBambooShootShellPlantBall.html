@@ -7,9 +7,88 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"></script>
-  <link rel="stylesheet" href="css/alps78th.css">
-  <title>掃地區域工作分配</title>
+
+  <!-- Zoom CSS -->
+  <link rel="stylesheet" type="text/css" href="css/zoom.css">
+
+  <!-- Zoom Js -->
+  <script src="js/zoom.js"></script>
+  <title>茭白筍殼植物球學習單</title>
 </head>
+<style>
+  img[data-action="zoom"] {
+    cursor: pointer;
+    cursor: -webkit-zoom-in;
+    cursor: -moz-zoom-in;
+  }
+
+  .zoom-img,
+  .zoom-img-wrap {
+    position: relative;
+    z-index: 666;
+    -webkit-transition: all 300ms;
+    -o-transition: all 300ms;
+    transition: all 300ms;
+  }
+
+  img.zoom-img {
+    cursor: pointer;
+    cursor: -webkit-zoom-out;
+    cursor: -moz-zoom-out;
+  }
+
+  .zoom-overlay {
+    z-index: 420;
+    background: #fff;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    pointer-events: none;
+    filter: "alpha(opacity=0)";
+    opacity: 0;
+    -webkit-transition: opacity 300ms;
+    -o-transition: opacity 300ms;
+    transition: opacity 300ms;
+  }
+
+  .zoom-overlay-open .zoom-overlay {
+    filter: "alpha(opacity=100)";
+    opacity: 1;
+  }
+
+  .zoom-overlay-open,
+  .zoom-overlay-transitioning {
+    cursor: default;
+  }
+
+  nav {
+    overflow-y: visible;
+    z-index: 100;
+  }
+
+  .carousel-item img {
+    width: 100%;
+    height: 300px;
+  }
+
+  .card-title:hover {
+    color: #fff;
+    background-color: rgb(237, 170, 240);
+  }
+
+  .dropdown-menu.Link {
+    left: auto;
+    right: 0;
+  }
+
+  @media screen and (min-width: 768px) {
+    .dropdown:hover .dropdown-menu {
+      display: block;
+    }
+  }
+</style>
 
 <body>
   <nav class="navbar navbar-expand-lg navbar-dark"
@@ -176,8 +255,6 @@
       </div>
     </div>
   </nav>
-
-
   <!-- Carousel -->
   <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
     <div class="carousel-indicators">
@@ -241,18 +318,225 @@
     </button>
   </div>
 
+  <br>
 
-  <!-- 掃地工作分配 -->
   <div class="container">
-    <div class="row">
-      <div class="col" style="text-align: center;">
-        <a class="btn btn-outline-secondary btn-sm" href="01-05-Sweeping.html" role="button">五下</a>
-        <a class="btn btn-outline-secondary btn-sm" href="01-05-61-Sweeping.html" role="button">六上</a>
-        <a class="btn btn-danger btn-sm disabled" href="#" role="button">六下</a>
+    <!-- 110學年度第1學期 -->
+    <!-- 第1列 -->
+    <div class="row g-3">
+      <a href="https://photos.app.goo.gl/UioAGMFEt69n5ajc7" target="blank"
+        style="color: purple; text-decoration: none; text-align: left;">
+        <h5 class="card-title">2023.04.10-茭白筍殼植物球學習單《查看學習單》</h5>
+      </a>
+      <div class=" col-md-3">
+        <div class="card aspect-ratio aspect-ratio-3x4">
+          <img
+            src="https://lh3.googleusercontent.com/pw/AMWts8CTX9iYjaSNmmifJIlY9j7HEdbRDOSrkLnxs2ZeoWZ1oaEq7TmKtee9TDF7slcMdnE3TstOc8KpG5PJ6jiGTiybZg0B3SLPe7L9bPtISdypa5SXfwG_sTtQsHlRsz4PcDyNvTCPbb3gxl7sG9HD-HMc9Q=w679-h961-s-no?authuser=0"
+            class="card-img-top" title="點擊圖片可以縮放圖片" data-action="zoom">
+        </div>
+        <p class="card-text" style="font-size: 14px; text-align: center;">作者：01-俊丞</p>
+      </div>
+
+      <div class=" col-md-3">
+        <div class="card aspect-ratio aspect-ratio-3x4">
+          <img
+            src="https://lh3.googleusercontent.com/pw/AMWts8CKLcdea09kvcOnb9zUXoLQA9DRrLnl9HNM-Wsu5cP5s0qdl8wKXLrMgNpAViNjy9yLvozeqM6agV6ikT86jiz9P0Uv2hbXIBEwYSVVbDZJ3jSfwyhVVkCrhpjjngUnxdQXy3mR_QQKK1Jh4QB5K56Jvg=w679-h961-s-no?authuser=0"
+            class="card-img-top" title="點擊圖片可以縮放圖片" data-action="zoom">
+        </div>
+        <p class="card-text" style="font-size: 14px; text-align: center;">作者：02-柏瑜</p>
+      </div>
+
+      <div class=" col-md-3">
+        <div class="card aspect-ratio aspect-ratio-3x4">
+          <img
+            src="https://lh3.googleusercontent.com/pw/AMWts8BsepZofph3QaJDPMYxIW84rE3A7AD-ejCPb498-o9Lw8TdqBmHd12MHw8HO6CK2lM_NwQD0BEMUxMhM-ZMWgmLjujEH2O6cDbE5RUUymgKIXaG_0CcLMyxDGrW-A3tXEWjkU38xLluZCsFpa6o2rFX-A=w679-h961-s-no?authuser=0"
+            class="card-img-top" title="點擊圖片可以縮放圖片" data-action="zoom">
+        </div>
+        <p class="card-text" style="font-size: 14px; text-align: center;">作者：03-宇勛</p>
+      </div>
+
+      <div class=" col-md-3">
+        <div class="card aspect-ratio aspect-ratio-3x4">
+          <img
+            src="https://lh3.googleusercontent.com/pw/AMWts8AXE_xzqFmcF332umuwst9jOo_l8Js0bWtRW_5lgbkwhnnKkeBShuQ_aFJzdWsdvwOcNTqmt1HpElOoj6ekVi-wK-Vk4aC32urXAe3Hhyu9-_SVSDGy-m90CwW4xlSQ_dZdIfkhdmcaNFBeXns_JSPLiQ=w679-h961-s-no?authuser=0"
+            class="card-img-top" title="點擊圖片可以縮放圖片" data-action="zoom">
+        </div>
+        <p class="card-text" style="font-size: 14px; text-align: center;">作者：04-友賀</p>
       </div>
     </div><br>
-    <h3 style="text-align: center;">~施工中~</h3>
+
+    <!-- 第2列 -->
+    <div class="row g-3">
+      <div class=" col-md-3">
+        <div class="card aspect-ratio aspect-ratio-3x4">
+          <img
+            src="https://lh3.googleusercontent.com/pw/AMWts8DDWSFTpstUaoFc3_Yo0RjIap6loGmaYZBU16ATpxXakcmmXKJNnjxH7bEjAe2SwzLiKsUDUXca0C_K09ucOJCwQqVa0ZZ6tp_4ERSbGEmF7WtRpywQWbbvrjv3ivCYll-N5wlE4q8Ts57AJuJtknNTYA=w679-h961-s-no?authuser=0"
+            class="card-img-top" title="點擊圖片可以縮放圖片" data-action="zoom">
+        </div>
+        <p class="card-text" style="font-size: 14px; text-align: center;">作者：05-柏翔</p>
+      </div>
+    
+      <div class=" col-md-3">
+        <div class="card aspect-ratio aspect-ratio-3x4">
+          <img
+            src="https://lh3.googleusercontent.com/pw/AMWts8CoEYTHdN7HESwILwnEf7x9YvJyEYaZlX0hzszhjA8XEAnqNgCkkJ4hll9khCC8DSnFRE_-m7UssCMP5rIfabAJAfWrSYgQQDIQ8Jy4jn7QXlN0BjhvUeF-f-LskEWZ9OPG1czWT7MPWTG6tTf2hOGdbQ=w679-h961-s-no?authuser=0"
+            class="card-img-top" title="點擊圖片可以縮放圖片" data-action="zoom">
+        </div>
+        <p class="card-text" style="font-size: 14px; text-align: center;">作者：06-柏瑜</p>
+      </div>
+    
+      <div class=" col-md-3">
+        <div class="card aspect-ratio aspect-ratio-3x4">
+          <img
+            src="https://lh3.googleusercontent.com/pw/AMWts8Cnz84R19KWQhJsMJDg6GbTmIMKROOylZlOufAXGE-DfqXT1kH_sKaAqh01ZTPcB2txlxHvSQpFqKFTVy8bUxgj7NORUYLapQWunmXdc56rMY74-TYgxICNiveCyB6hn9Sdjh75-LUp6ETc4rgsDRhIGg=w679-h961-s-no?authuser=0"
+            class="card-img-top" title="點擊圖片可以縮放圖片" data-action="zoom">
+        </div>
+        <p class="card-text" style="font-size: 14px; text-align: center;">作者：07-亨一</p>
+      </div>
+    
+      <div class=" col-md-3">
+        <div class="card aspect-ratio aspect-ratio-3x4">
+          <img
+            src="https://lh3.googleusercontent.com/pw/AMWts8DtF-SccRcz0W_8GKEnWGrpwpIoVJuDNYSw9BvUT_6x4gaxa6SIksOh2VFRt5c8kfUUS_uocFDhXttxgD4ND7mvACyXetP_ecar_gBTwWMHeekhJ39Dly_mH9P4tlT6vkOsOPhAGVxx6Jzb9iZp2heyBA=w679-h961-s-no?authuser=0"
+            class="card-img-top" title="點擊圖片可以縮放圖片" data-action="zoom">
+        </div>
+        <p class="card-text" style="font-size: 14px; text-align: center;">作者：08-守中</p>
+      </div>
+    </div><br>
+
+    <!-- 第3列 -->
+    <div class="row g-3">
+      <div class=" col-md-3">
+        <div class="card aspect-ratio aspect-ratio-3x4">
+          <img
+            src="https://lh3.googleusercontent.com/pw/AMWts8D9Cygnrxe6709GN-scya9fwXG_aDp-2qk_S7q18dkHN4SsqrUlsFVJfqIyVOg_CYze0R67qaIhn8sO1fDoWrBTD-wJr-LgjUFAwEhETNVVL7X8yGSZwMrVef6psEJohZ3k9cBJEziozDLFZchqxAtP1A=w679-h961-s-no?authuser=0"
+            class="card-img-top" title="點擊圖片可以縮放圖片" data-action="zoom">
+        </div>
+        <p class="card-text" style="font-size: 14px; text-align: center;">作者：09-仕艗</p>
+      </div>
+    
+      <div class=" col-md-3">
+        <div class="card aspect-ratio aspect-ratio-3x4">
+          <img
+            src="https://lh3.googleusercontent.com/pw/AMWts8DOzNHHnh4fHiRMN7yvaF8OPLDJJvpPrPHQVERsuedZ-7SsQyUzcm6TRhlfRijhoxRNXE1RT7F3WfmrBik-JCG69bH0Pf8_6vahMTc5R9wPdF59VjaCyR8hifKkUkha3rxZ0t0wppGsiNEduJHX2oW_VA=w679-h961-s-no?authuser=0"
+            class="card-img-top" title="點擊圖片可以縮放圖片" data-action="zoom">
+        </div>
+        <p class="card-text" style="font-size: 14px; text-align: center;">作者：10-承裕</p>
+      </div>
+    
+      <div class=" col-md-3">
+        <div class="card aspect-ratio aspect-ratio-3x4">
+          <img
+            src="https://lh3.googleusercontent.com/pw/AMWts8Cqhq52CnJXtYHyWp-8jR8gbMradMkO68pweAs9gBlRqfruYvi2S5_4jVCzXGW1L9Y6wyERGn4yd6vWd3ZpReqLRyQnSx15GZ2B8eXJddClPZaHcBYqh_5jgDG7crOV9nkxPU_J2W21KTCIDmU1QoMBGg=w679-h961-s-no?authuser=0"
+            class="card-img-top" title="點擊圖片可以縮放圖片" data-action="zoom">
+        </div>
+        <p class="card-text" style="font-size: 14px; text-align: center;">作者：11-根鋐</p>
+      </div>
+    
+      <div class=" col-md-3">
+        <div class="card aspect-ratio aspect-ratio-3x4">
+          <img
+            src="https://lh3.googleusercontent.com/pw/AMWts8BLlZJJtlNwy_UzNhcwMpHHNgqK4-OlDq9ogLCEPimHNObu00zfeNZxkr0H0zREIo76SqLHieCWOYdFsHGlSsA9QyS8nfNKb9RBlYhyiU7UemMrrEL_D2JqRcVguUyuCyw-_P4ytW99yayc2KI3xqYtbw=w679-h961-s-no?authuser=0"
+            class="card-img-top" title="點擊圖片可以縮放圖片" data-action="zoom">
+        </div>
+        <p class="card-text" style="font-size: 14px; text-align: center;">作者：12-恩哲</p>
+      </div>
+    </div><br>
+
+    <!-- 第4列 -->
+    <div class="row g-3">
+      <div class=" col-md-3">
+        <div class="card aspect-ratio aspect-ratio-3x4">
+          <img
+            src="https://lh3.googleusercontent.com/pw/AMWts8Ce-XUsKZC4CU6RTC0c8lNa3it3eyZ0vqdce7K0GB6_-w2msKIQIKE0k3amqBmDwMvBgG9YaoBMn2fPQj-dEAxjlLyqYTZ2WYteWZdTPUOfQIgULK2DI0rpoTGqZMdmIyIUMD7ddDsHGIrrUEEPv-tdsg=w679-h961-s-no?authuser=0"
+            class="card-img-top" title="點擊圖片可以縮放圖片" data-action="zoom">
+        </div>
+        <p class="card-text" style="font-size: 14px; text-align: center;">作者：13-禾豐</p>
+      </div>
+    
+      <div class=" col-md-3">
+        <div class="card aspect-ratio aspect-ratio-3x4">
+          <img
+            src="https://lh3.googleusercontent.com/pw/AMWts8CyN304gNzDV2yJejqB-4QDlBOJSKhPS1VFmZwwrx6cPsHQ9glLUU3ad12js-xQ32x76PocWT2BkqWtwaybvt-Mrf1cAbmkZxjzY-kOINZ0LfJV7sIyoRl3MvXp-C3SOBZev2oWfrXjEVae_-xUu5grhQ=w679-h961-s-no?authuser=0"
+            class="card-img-top" title="點擊圖片可以縮放圖片" data-action="zoom">
+        </div>
+        <p class="card-text" style="font-size: 14px; text-align: center;">作者：14-士楷</p>
+      </div>
+    
+      <div class=" col-md-3">
+        <div class="card aspect-ratio aspect-ratio-3x4">
+          <img
+            src="https://lh3.googleusercontent.com/pw/AMWts8DiIRhQeA1odGcubx7uA1Cpi_3kc9B8DdPliTD4Bfwj4-XmwrHXKElDX3xHNON6WPHQQZfgtsa1DDLrXj0muPqd-YBp5ZiWlsYLdvGaD9Cg8nW8WPl3ClaZ8dmyMwwbjqp3p14ndr9-nDBxEPEx7FiwvQ=w679-h961-s-no?authuser=0"
+            class="card-img-top" title="點擊圖片可以縮放圖片" data-action="zoom">
+        </div>
+        <p class="card-text" style="font-size: 14px; text-align: center;">作者：16-沛云</p>
+      </div>
+    
+      <div class=" col-md-3">
+        <div class="card aspect-ratio aspect-ratio-3x4">
+          <img
+            src="https://lh3.googleusercontent.com/pw/AMWts8AWi9qXM-idtjYWf6rwlXdkirBALm6MwAUPDgmDBQPUIDiiDgL50fjh8mpM22Pp-MnqIomdn2aiDSehbrcOIhWyXV5Cmvk6Vr56RakqxKVsrYhjEZgeQM_tUXMb7O5xVCLD7k97VnmJQXIZNS4vq8kYnQ=w679-h961-s-no?authuser=0"
+            class="card-img-top" title="點擊圖片可以縮放圖片" data-action="zoom">
+        </div>
+        <p class="card-text" style="font-size: 14px; text-align: center;">作者：17-囿妘</p>
+      </div>
+    </div><br>
+
+    <!-- 第5列 -->
+    <div class="row g-3">
+      <div class=" col-md-3">
+        <div class="card aspect-ratio aspect-ratio-3x4">
+          <img
+            src="https://lh3.googleusercontent.com/pw/AMWts8CqeqlLT1pbnMhpuUIfAwEJszhod1OPv30smA0Kmz8D-uZx5YW_-YDhS3tl8SDxwqktscDCSc08NRQWH4UA_HOS8l7j4YHKMABXgrbDrcpo9Sc7GLb9EM5laxp8DIzUR_fQ5kGBN1c30jHn1lAPdrwVPg=w679-h961-s-no?authuser=0"
+            class="card-img-top" title="點擊圖片可以縮放圖片" data-action="zoom">
+        </div>
+        <p class="card-text" style="font-size: 14px; text-align: center;">作者：19-羽捷</p>
+      </div>
+    
+      <div class=" col-md-3">
+        <div class="card aspect-ratio aspect-ratio-3x4">
+          <img
+            src="https://lh3.googleusercontent.com/pw/AMWts8AtxlHugXk0hPWbClEUjXA9sjPFITmH_2rZQgchEANfl2-X0URbi7R9goVJsNNv_zAGFouUXYgCDMJ_4PXJ7vBi0iYttm2opVgVgKuJEFzAAmI58xxNVZ6yDwt7ZPnJ80eMRhfX-W3yrw4_jB-PTfMG6w=w679-h961-s-no?authuser=0"
+            class="card-img-top" title="點擊圖片可以縮放圖片" data-action="zoom">
+        </div>
+        <p class="card-text" style="font-size: 14px; text-align: center;">作者：20-綺紜</p>
+      </div>
+    
+      <div class=" col-md-3">
+        <div class="card aspect-ratio aspect-ratio-3x4">
+          <img
+            src="https://lh3.googleusercontent.com/pw/AMWts8CrvBSMmYsYhePXK7EFCDOW5rpHNp_Sc0wBL5RVhtCGommc86P_8DbtYZW8PBcLi18g-hu3EkPpfKS4hGdD06AxlI6EKEdeTmox0NmmEVuec-1iGIfGu_0lw1XYFJa0-nGdwUu-79Hm8Cb4ZIBtyj3JTw=w679-h961-s-no?authuser=0"
+            class="card-img-top" title="點擊圖片可以縮放圖片" data-action="zoom">
+        </div>
+        <p class="card-text" style="font-size: 14px; text-align: center;">作者：21-劭澐</p>
+      </div>
+    
+      <div class=" col-md-3">
+        <div class="card aspect-ratio aspect-ratio-3x4">
+          <img
+            src="https://lh3.googleusercontent.com/pw/AMWts8D1mMxa6FKMAf9D9PIs4ekK8f6WD9yKQ-f7qlCmj2F3II1CJIk5BS2y2_phnBiJaufx9ltglV8jLcD0379o7lTFjb7ioc7ZaZYWfue6qJcype4yEBq5De70eLz6-pGomjtIX8kpxVwZefGNUEvxyFm3EA=w679-h961-s-no?authuser=0"
+            class="card-img-top" title="點擊圖片可以縮放圖片" data-action="zoom">
+        </div>
+        <p class="card-text" style="font-size: 14px; text-align: center;">作者：22-潔希</p>
+      </div>
+    </div>
+
+    <!-- 第6列 -->
+    <div class="row">      
+      <div class=" col-md-3">
+        <div class="card aspect-ratio aspect-ratio-3x4">
+          <img
+            src="https://lh3.googleusercontent.com/pw/AMWts8Bamv5Q628KegA-8cHUDrZ9DUYMcE4QFWB03JeXIKpviqtOibs28-8VivWUU-_Rslf1JPRnYFdE29FvqIqhomNW9-pO2L7dT9tiaOcA1kj307EL41xfd9BuyvBy4EqLnfUjtrHLHmI4vmqMEVORhOeYCA=w679-h961-s-no?authuser=0"
+            class="card-img-top" title="點擊圖片可以縮放圖片" data-action="zoom">
+        </div>
+        <p class="card-text" style="font-size: 14px; text-align: center;">作者：23-楓棠</p>
+      </div>    
+      
+
+
   </div>
+  <br>
+
 
 
   <script>
@@ -264,9 +548,7 @@
         $("span.nav-link").attr("data-bs-toggle", "dropdown")
       }
     }
-
     window.onresize = click_resize
-
     click_resize();
   </script>
 
