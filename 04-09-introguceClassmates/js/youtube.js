@@ -54,46 +54,46 @@ $(document).ready(function () {
 	});
 
 	// Vimeo Video
-	$('.vimeoVideo').each(function () {
-		var $videoID = $(this).attr('data-videoID'),
-			$txt = $(this).text(),
-			$vimeoVideo = $('<div class="meuVideo"> <iframe src="https://player.vimeo.com/video/' + $videoID + '?title=1&byline=1&portrait=1&badge=1&autoplay=1" width="640" height="360" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe> </div>'),
-			$thisElHack = this;
+	// $('.vimeoVideo').each(function () {
+	// 	var $videoID = $(this).attr('data-videoID'),
+	// 		$txt = $(this).text(),
+	// 		$vimeoVideo = $('<div class="meuVideo"> <iframe src="https://player.vimeo.com/video/' + $videoID + '?title=1&byline=1&portrait=1&badge=1&autoplay=1" width="640" height="360" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe> </div>'),
+	// 		$thisElHack = this;
 
-		$.getJSON('https://vimeo.com/api/v2/video/' + $videoID + '.json?callback=?', {
-			format: "json"
-		}, function (data) {
-			var $vimeoThumb = data[0].thumbnail_large;
-			$($thisElHack).prepend('<img src="' + $vimeoThumb + '" width="268" data-anchor="svBox"/>');
-		});
+	// 	$.getJSON('https://vimeo.com/api/v2/video/' + $videoID + '.json?callback=?', {
+	// 		format: "json"
+	// 	}, function (data) {
+	// 		var $vimeoThumb = data[0].thumbnail_large;
+	// 		$($thisElHack).prepend('<img src="' + $vimeoThumb + '" width="268" data-anchor="svBox"/>');
+	// 	});
 
-		$(this).click(function () {
-			$('.meuVideo, .nowPlaying').remove();
-			$('.svPlayer').prepend($vimeoVideo).hide().slideDown("fast");
-			$('.infoBox').prepend('<div class="nowPlaying"><h3 class="svTitle">' + $txt + '</h3></div>');
-			return false;
-		});
-	});
+	// 	$(this).click(function () {
+	// 		$('.meuVideo, .nowPlaying').remove();
+	// 		$('.svPlayer').prepend($vimeoVideo).hide().slideDown("fast");
+	// 		$('.infoBox').prepend('<div class="nowPlaying"><h3 class="svTitle">' + $txt + '</h3></div>');
+	// 		return false;
+	// 	});
+	// });
 
 	// DailyMotion Video
-	$('.dailyMVideo').each(function () {
-		var $videoID = $(this).attr('data-videoID'),
-			$txt = $(this).text(),
-			$dailyMVideo = $('<div class="meuVideo"> <iframe frameborder="0" width="640" height="360" src="//www.dailymotion.com/embed/video/' + $videoID + '?autoplay=1" allowfullscreen></iframe> </div>'),
-			$thisElHack = this;
+	// $('.dailyMVideo').each(function () {
+	// 	var $videoID = $(this).attr('data-videoID'),
+	// 		$txt = $(this).text(),
+	// 		$dailyMVideo = $('<div class="meuVideo"> <iframe frameborder="0" width="640" height="360" src="//www.dailymotion.com/embed/video/' + $videoID + '?autoplay=1" allowfullscreen></iframe> </div>'),
+	// 		$thisElHack = this;
 
-		$.getJSON('https://api.dailymotion.com/video/' + $videoID + '?fields=id,thumbnail_url', function (data) {
-			var $dailyMThumb = data.thumbnail_url;
-			$($thisElHack).prepend('<img src="' + $dailyMThumb + '" width="268" data-anchor="svBox"/>');
-		});
+	// 	$.getJSON('https://api.dailymotion.com/video/' + $videoID + '?fields=id,thumbnail_url', function (data) {
+	// 		var $dailyMThumb = data.thumbnail_url;
+	// 		$($thisElHack).prepend('<img src="' + $dailyMThumb + '" width="268" data-anchor="svBox"/>');
+	// 	});
 
-		$(this).click(function () {
-			$('.meuVideo, .nowPlaying').remove();
-			$('.svPlayer').prepend($dailyMVideo).hide().slideDown("fast");
-			$('.infoBox').prepend('<div class="nowPlaying"><h3 class="svTitle">' + $txt + '</h3></div>');
-			return false;
-		});
-	});
+	// 	$(this).click(function () {
+	// 		$('.meuVideo, .nowPlaying').remove();
+	// 		$('.svPlayer').prepend($dailyMVideo).hide().slideDown("fast");
+	// 		$('.infoBox').prepend('<div class="nowPlaying"><h3 class="svTitle">' + $txt + '</h3></div>');
+	// 		return false;
+	// 	});
+	// });
 });
 
 // Scroll to Top on image click
