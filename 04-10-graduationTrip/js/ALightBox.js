@@ -27,7 +27,7 @@
 			fr: { prev: "Image précédente", next: "Image suivante", close: "Fermer" },
 			es: { prev: "Imagen anterior", next: "Siguiente imagen", close: "Cerca" },
 			it: { prev: "Immagine precedente", next: "Immagine successiva", close: "Vicino" },
-			zh: { prev: "前一部影片", next: "下一部影片", close: "關閉" },
+			zh: { prev: "上一部影片", next: "下一部影片", close: "關閉" },
 			ru: { prev: "Предыдущее изображение", next: "Следующее изображение", close: "Закрыть" },
 			da: { prev: "Forrige billede", next: "Næste billede", close: "Tæt" },
 			nl: { prev: "Vorig beeld", next: "Volgend beeld", close: "Dichtbij" }
